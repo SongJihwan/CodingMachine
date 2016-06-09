@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Song</title>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <style>
+  #container-fluid {
+    overflow: hidden;
+    width: 100%;
+    min-width: 980px;
+    height: 50px;
+    margin: 15px 60px 15px 10px;
+  }
+
+
+  #container-fluid > #logo {
+    font-size: large;
+    display: inline-block;
+    color: purple;
+    padding-top: 2px;
+    margin-top: 10px;
+  }
+
+  #container-fluid > #logo:HOVER {
+    background-color: white;
+  }
+
+  #container-fluid > #menu2 {
+    float: right;
+    display: inline-block;
+    position: relative;
+  }
+
+  #container-fluid > #menu2 > * {
+    display: inline-block;
+    position: relative;
+    width: 130px;
+    text-align: center;
+    margin-top: 14px;
+  }
+
+  #container-fluid > #menu2 > #logout {
+
+  }
+
+  #container-fluid > #menu2 > *:HOVER {
+    background-color: black;
+    color: white;
+  }
+
+  .sect1 {
+    float: left;
+    border: 1px solid lightgray;
+    border-top: 0px;
+    border-bottom: 0px;
+    width: 350px;
+  }
+  .sect1:hover {
+    background-color: black;
+    opacity: 0.8;
+  }
+
+  .name {
+    width: 300px;
+    border: 0px solid black;
+    color: hsl(47, 96%, 28%);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .disc {
+    padding: 30px;
+    width: 150px;
+    border: 0px solid black;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 13px;
+    color: gray;
+  }
+  .detail {
+    padding: 5px 25px;
+    color: gray;
+    background-color: white;
+    border: 1px solid lightgray;
+    width: 150px;
+    margin: 50px auto;
+  }
+
+  .hex {
+    margin-bottom: 70px;
+  }
+
+  .hex .hexagon {
+    margin: 20px auto;
+    width: 180px;
+    height: 210px;
+    position: relative;
+    overflow: hidden;
+    line-height: 200px;
+    cursor: pointer;
+    -webkit-clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    -moz-clip-path: polygon( 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25% );
+    -ms-clip-path: polygon( 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25% );
+    clip-path: polygon( 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25% );
+  }
+
+  .hex .hexagon img {
+    width: 200px;
+    min-height: 100%; min-width: 114%; margin-left: -7%;
+  }
+
+  .load_more {
+    clear: left;
+    border: 1px solid; margin: 0 auto;
+    margin-bottom: 30px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    width: 600px;
+  }
+
+  .load_more a:hover {
+    color: gray;
+  }
+
+  a:visited {
+    color: white;
+    text-decoration: none;
+  }
+
+  .load_more a{cursor:pointer;}
+
+  .hide{
+    display:none;
+    float: left;
+    border: 1px solid lightgray;
+    border-top: 0px;
+    border-bottom: 0px;
+    width: 350px;
+  }
+
+  .hide:hover {
+    background-color: black;
+    opacity: 0.8;
+  }
+  </style>
+</head>
+<body>
+  <div id='container-fluid'>
+    <div id='logo'>S e o k W o n S o n g</div>
+    <div id="menu2">
+      <div id='home'>HOME</div>
+      <div id='sing'>SING</div>
+      <div id='songs'>SONGS</div>
+      <div id='hof'>HALL OF FAME</div>
+      <div id='songs'>MY SONGS</div>
+      <div id='logout'>LOGOUT</div>
+    </div>
+</div>
+
+  <script>
+      // html dom 이 다 로딩된 후 실행된다.
+      $(document).ready(function(){
+          // memu 클래스 바로 하위에 있는 a 태그를 클릭했을때
+          $(".page>.load_more>a").click(function(){
+              // 현재 클릭한 태그가 a 이기 때문에
+              // a 옆의 태그중 ul 태그에 hide 클래스 태그를 넣던지 빼던지 한다.
+              $(".hide").toggle();
+          });
+      });
+  </script>
+
+
+  <div class="page">
+    <div class="sect1">
+      <div class="hex">
+        <div class="hexagon">
+          <img src="/picture/sana.png" alt="" />
+        </div>
+      </div>
+      <div class="name">
+        cheerup - 사나<br>
+      </div>
+      <div class="disc">
+        ▶<br>
+        닉네임10 ♡
+      </div>
+      <div class="detail">
+        SEE DETAILS
+      </div>
+    </div>
+
+    <div class="sect1">
+      <div class="hex">
+        <div class="hexagon">
+          <img src="../userPic/tang01.PNG" alt="" />
+        </div>
+      </div>
+      <div class="name">
+        소원을 말해봐 - 소녀시대<br>
+      </div>
+      <div class="disc">
+        ▶<br>
+        닉네임09 ♡
+      </div>
+      <div class="detail">
+        SEE DETAILS
+      </div>
+    </div>
+    <div class="sect1">
+      <div class="hex">
+        <div class="hexagon">
+          <img src="../userPic/hyo.PNG" alt="" />
+        </div>
+      </div>
+      <div class="name">
+        나를 찾아줘 - 전효성<br>
+      </div>
+      <div class="disc">
+        ▶<br>
+        닉네임08 ♡
+      </div>
+      <div class="detail">
+        SEE DETAILS
+      </div>
+    </div>
+    <div class="sect1">
+      <div class="hex">
+        <div class="hexagon">
+          <img src="../userPic/han.PNG" alt="" />
+        </div>
+      </div>
+      <div class="name">
+        Hello - 허각<br>
+      </div>
+      <div class="disc">
+        ▶<br>
+        닉네임07 ♡
+      </div>
+      <div class="detail">
+        SEE DETAILS
+      </div>
+    </div>
+    <div class="sect1">
+      <div class="hex">
+        <div class="hexagon">
+          <img src="../userPic/tang02.PNG" alt="" />
+        </div>
+      </div>
+      <div class="name">
+        야생화 - 박효신<br>
+      </div>
+      <div class="disc">
+        ▶<br>
+        닉네임06 ♡
+      </div>
+      <div class="detail">
+        SEE DETAILS
+      </div>
+    </div>
+
+    <div class="hide">
+      <div class="hex">
+        <div class="hexagon">
+          <img src="../userPic/joo.PNG" alt="" />
+        </div>
+      </div>
+      <div class="name">
+        꽃송이가 - 버스커버스커<br>
+      </div>
+      <div class="disc">
+        ▶<br>
+        닉네임12 ♡
+      </div>
+      <div class="detail">
+        SEE DETAILS
+      </div>
+    </div>
+
+    <div class="hide">
+      <div class="hex">
+        <div class="hexagon">
+          <img src="../userPic/15.PNG" alt="" />
+        </div>
+      </div>
+      <div class="name">
+        야생화 - 박효신<br>
+      </div>
+      <div class="disc">
+        ▶<br>
+        닉네임06 ♡
+      </div>
+      <div class="detail">
+        SEE DETAILS
+      </div>
+    </div>
+    <div class="hide">
+      <div class="hex">
+        <div class="hexagon">
+          <img src="../userPic/16.PNG" alt="" />
+        </div>
+      </div>
+      <div class="name">
+        야생화 - 박효신<br>
+      </div>
+      <div class="disc">
+        ▶<br>
+        닉네임06 ♡
+      </div>
+      <div class="detail">
+        SEE DETAILS
+      </div>
+    </div>
+    <div class="hide">
+      <div class="hex">
+        <div class="hexagon">
+          <img src="../userPic/05.PNG" alt="" />
+        </div>
+      </div>
+      <div class="name">
+        야생화 - 박효신<br>
+      </div>
+      <div class="disc">
+        ▶<br>
+        닉네임06 ♡
+      </div>
+      <div class="detail">
+        SEE DETAILS
+      </div>
+    </div>
+    <div class="hide">
+      <div class="hex">
+        <div class="hexagon">
+          <img src="../userPic/13.PNG" alt="" />
+        </div>
+      </div>
+      <div class="name">
+        야생화 - 박효신<br>
+      </div>
+      <div class="disc">
+        ▶<br>
+        닉네임06 ♡
+      </div>
+      <div class="detail">
+        SEE DETAILS
+      </div>
+    </div>
+    <div class="hide">
+      <div class="hex">
+        <div class="hexagon">
+          <img src="../userPic/da.PNG" alt="" />
+        </div>
+      </div>
+      <div class="name">
+        야생화 - 박효신<br>
+      </div>
+      <div class="disc">
+        ▶<br>
+        닉네임06 ♡
+      </div>
+      <div class="detail">
+        SEE DETAILS
+      </div>
+    </div>
+    <div class="hide">
+      <div class="hex">
+        <div class="hexagon">
+          <img src="../userPic/who.PNG" alt="" />
+        </div>
+      </div>
+      <div class="name">
+        야생화 - 박효신<br>
+      </div>
+      <div class="disc">
+        ▶<br>
+        닉네임06 ♡
+      </div>
+      <div class="detail">
+        SEE DETAILS
+      </div>
+    </div>
+    <div class="hide">
+      <div class="hex">
+        <div class="hexagon">
+          <img src="../userPic/hani.PNG" alt="" />
+        </div>
+      </div>
+      <div class="name">
+        야생화 - 박효신<br>
+      </div>
+      <div class="disc">
+        ▶<br>
+        닉네임06 ♡
+      </div>
+      <div class="detail">
+        SEE DETAILS
+      </div>
+    </div>
+    <div class="hide">
+      <div class="hex">
+        <div class="hexagon">
+          <img src="../userPic/mo.PNG" alt="" />
+        </div>
+      </div>
+      <div class="name">
+        야생화 - 박효신<br>
+      </div>
+      <div class="disc">
+        ▶<br>
+        닉네임06 ♡
+      </div>
+      <div class="detail">
+        SEE DETAILS
+      </div>
+    </div>
+    <div class="hide">
+      <div class="hex">
+        <div class="hexagon">
+          <img src="../userPic/jung.PNG" alt="" />
+        </div>
+      </div>
+      <div class="name">
+        야생화 - 박효신<br>
+      </div>
+      <div class="disc">
+        ▶<br>
+        닉네임06 ♡
+      </div>
+      <div class="detail">
+        SEE DETAILS
+      </div>
+    </div>
+    <div class="hide">
+      <div class="hex">
+        <div class="hexagon">
+          <img src="../userPic/hyun.PNG" alt="" />
+        </div>
+      </div>
+      <div class="name">
+        야생화 - 박효신<br>
+      </div>
+      <div class="disc">
+        ▶<br>
+        닉네임06 ♡
+      </div>
+      <div class="detail">
+        SEE DETAILS
+      </div>
+    </div>
+
+    <div class="load_more">
+      <a href="#">LOAD MORE</a>
+    </div>
+
+  </div>
+</body>
+</html>
