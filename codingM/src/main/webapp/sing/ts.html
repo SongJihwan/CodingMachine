@@ -94,7 +94,7 @@
   }
   
   .container {
-    width: 40%;
+    width: 110%;
   }
   
   #h3 {
@@ -120,8 +120,9 @@
    color: black;
    text-decoration: none;
   }
+  
   #tabs {
-  width: 800px;
+  width: 50%;
   margin: 0 auto;
 }
 </style>
@@ -137,7 +138,7 @@
   $(function() {
     $( "#tabs" ).tabs();
   });
-  </script> 
+</script> 
 
 <script src="../js/bootstrap.min.js"></script>
 <div id='container-fluid'>
@@ -152,14 +153,26 @@
     </div>
 </div>
 
+<script>
+var t1 = document.getElementById("search")
+var imgbox = document.getElementById("imgbox")
+t1.onkeyup = function(event) {
+  if (t1.value.length == 0) {
+    imgbox.className = ""
+  } else {
+    imgbox.className = "success"
+  }
+};
+</script>
+
 <div id='picture' class='container'>
   <img src='/web02/sing/pic/sing.PNG'/>
 </div>
 
 <div id='searchbox'>
-  <input type='text' name='search' id='search' placeholder='반주곡 검색' onkeypress="runScript('tNode', jsonData, event)"/><div id='imgbox'></div>
+  <input type='text' name='search' id='search' placeholder='반주곡 검색' 
+  onkeypress="runScript('tNode', jsonData, event)"/><div id='imgbox'></div>
 </div>
-
 
 <div id="tabs">
   <ul>
@@ -172,29 +185,12 @@
   <table id="tNode" class="table table-hover"></table>
 </div>
   
-<script type="text/javascript" src="table.js"></script>
-<script>
-
-var t1 = document.getElementById("search")
-var imgbox = document.getElementById("imgbox")
-t1.onkeyup = function(event) {
-  if (t1.value.length == 0) {
-    imgbox.className = ""
-  } else {
-    imgbox.className = "success"
-  }
-};
+<script type="text/javascript" src="table2.js"></script>
   </div>
   <div id="tabs-2">
     <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
   </div>
 </div>
 
-
-
-
-
-
-</script>
 </body>
 </html>
