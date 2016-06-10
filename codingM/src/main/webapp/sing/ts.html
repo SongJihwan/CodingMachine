@@ -18,7 +18,7 @@
   min-width: 980px;
   height: 50px;
   margin: 15px 60px 15px 10px;
-}
+}s
 
 #container-fluid>#logo {
   font-size: large;
@@ -127,7 +127,7 @@ a:HOVER {
 #tabs {
   width: 50%;
   margin: 0 auto;
-  margin-bottom: 3%;
+  margin-bottom: 3%
 }
 </style>
 
@@ -152,7 +152,7 @@ a:HOVER {
 
   <div id='searchbox'>
     <input type='text' name='search' id='search' placeholder='반주곡 검색'
-      onkeypress="runScript('tNode', event)" />
+      onkeypress="runScript('tNode', jsonData, event)" />
     <div id='imgbox'></div>
   </div>
 
@@ -172,49 +172,28 @@ a:HOVER {
       <p></p>
     </div>
   </div>
-  
-  <script id="temp1" type="text/x-handlebars-template">
-  {{#each list}}
-	  <tr>
-	  <td rowspan="1" colspan="1"">
-	  <a href="#" onclick="onclickDetail(event)">{{제목}}</a></td>
-	  <td rowspan="1" colspan="1">{{가수}} </td>
-	  </tr>
-	{{/each}}
-  </script>  
-  
+
   <script src="../bower_components/jquery/dist/jquery.js"></script>
-  <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="../bower_components/jquery-ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="table2.js"></script>
+
   <script>
-    function runScript(tableId, event) {
-    	if (event.keyCode == 13) {
-    		alert("aa")
-    		$.getJSON('data.json', function(result) {
-    			alert("bb")
-    			var templateData = $('#temp1').html()
- 	        var template = Handlebars.compile(templateData)
- 	        var html = template(result)
- 	        alert(html)
- 	        $("#tNode").append(html)
-    		});
-    	}
-    }
-    
-    var t1 = $("#search")
-    var imgbox = $("#imgbox")
-    
-    $("#search").keyup(function(event) {
-      if (t1.val().length == 0) {
-        imgbox.attr('class', '')
-      } else {
-    	  imgbox.attr('class', 'success')
-      }
-    });
-    
     $(function() {
-      $( "#tabs" ).tabs();
+      $("#tabs").tabs();
     });
   </script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script>
+    var t1 = document.querySelector("#search")
+    var imgbox = document.querySelector("#imgbox")
+    t1.onkeyup = function(event) {
+      if (t1.value.length == 0) {
+        imgbox.className = ""
+      } else {
+        imgbox.className = "success"
+      }
+    };
+  </script>
+  
 </body>
 </html>

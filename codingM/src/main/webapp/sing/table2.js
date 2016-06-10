@@ -17,8 +17,7 @@ var jsonData = {
 		}] 
 };
 
-
-function runScript(tabId, tableId, data, event) {
+function runScript(tableId, data, event) {
 	if (event.keyCode == 13) {
 		addTable(tableId, data)
 	}
