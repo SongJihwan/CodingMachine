@@ -1,7 +1,7 @@
 {
   "name": "web03",
   "authors": [
-    "songjihwan <thdwis@naver.com>"
+    "KwonSeungHyeop <suhy2002@naver.com>"
   ],
   "description": "",
   "main": "",
@@ -17,7 +17,6 @@
   "dependencies": {
     "jquery": "1.12.4",
     "bootstrap": "^3.3.6",
-    "jquery-ui": "1.11.4",
     "handlebars": "^4.0.5"
   }
 }
