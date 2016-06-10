@@ -1,22 +1,13 @@
 /**
  * 
  */
-var jsonData = {
-	tr : [
-		{
-			제목:'너만을 원했다(드라마"세상 어디에도 없는 착한남자")', 가수:'손호영'
-		}, 
-		{
-			제목:'사랑은 눈꽃처럼(드라마"세상 어디에도 없는 착한남자")', 가수:'시아준수'
-		},
-		{
-			제목:'어디에도', 가수:'M.C. THE MAX'
-		},
-		{
-			제목:'정말(드라마"세상 어디에도 없는 착한남자")', 가수:'송중기'
-		}] 
-};
 
+
+<tr>
+<td rowspan="1" colspan="1"">
+<a href="#" onclick="onclickDetail(event)">{{제목}}</a></td>
+<td rowspan="1" colspan="1">{{가수}} </td>
+</tr>
 
 function runScript(tabId, tableId, data, event) {
 	if (event.keyCode == 13) {
