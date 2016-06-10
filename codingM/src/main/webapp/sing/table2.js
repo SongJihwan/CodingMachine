@@ -1,6 +1,9 @@
 /**
  * 
  */
+document.write("<script type='text/javascript' src='../bower_components/jquery-ui/jquery-ui.js' ><" + "/script>");
+document.write("<script type='text/javascript' src='../bower_components/jquery/dist/jquery.js'<" + "/script>");
+document.write("<script type='text/javascript' src='../bower_components/bootstrap/dist/js/bootstrap.min.js' ><" + "/script>");
 
 var jsonData = {
 	tr : [
@@ -18,15 +21,22 @@ var jsonData = {
 		}] 
 };
 
-function runScript(tableId, data, event) {
+function runScript(tabId, tableId, data, event) {
 	if (event.keyCode == 13) {
+		addTab(tabId)
 		addTable(tableId, data)
 	}
 };
 
+function addTab (tabId) {
+	this.body = document.getElementById(tabId)
+	this.body.innerHTML = "<div id='tabs'><ul><li><a href='#tabs-1'>제목별</a></li><li><a href='#tabs-2'>가수별</a></li> </ul>" +
+			"<div id='tabs-1'><div id='resultList'></div></div><div id='tabs-2'><p></p></div></div>"
+}
 
-function addTable (id, data) {
-	this.body = document.getElementById(id)
+
+function addTable (tableId, data) {
+	this.body = document.getElementById(tableId)
 	this.trData = data.tr
 	
 	this.clearBody = function() {
@@ -74,5 +84,4 @@ function addTable (id, data) {
 function onclickDetail(event) {
 	location.href = "sing-2.html"
 }
-
 

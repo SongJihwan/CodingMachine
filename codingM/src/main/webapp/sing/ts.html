@@ -4,193 +4,193 @@
 <meta charset="UTF-8">
 <title>Sing</title>
 <link rel="stylesheet"
-	href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet"
-	href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+  href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
 <link href='https://fonts.googleapis.com/css?family=Oswald'
-	rel='stylesheet' type='text/css'>
+  rel='stylesheet' type='text/css'>
 <link rel="stylesheet"
-	href="../bower_components/jquery-ui/themes/smoothness/jquery-ui.css">
+  href="../bower_components/jquery-ui/themes/smoothness/jquery-ui.css">
 <style>
 #container-fluid {
-	overflow: hidden;
-	width: 100%;
-	min-width: 980px;
-	height: 50px;
-	margin: 15px 60px 15px 10px;
-}
+  overflow: hidden;
+  width: 100%;
+  min-width: 980px;
+  height: 50px;
+  margin: 15px 60px 15px 10px;
+}s
 
 #container-fluid>#logo {
-	font-size: large;
-	display: inline-block;
-	color: purple;
-	padding-top: 2px;
-	margin-top: 10px;
+  font-size: large;
+  display: inline-block;
+  color: purple;
+  padding-top: 2px;
+  margin-top: 10px;
 }
 
 #container-fluid>#logo:HOVER {
-	background-color: white;
+  background-color: white;
 }
 
 #container-fluid>#menu2 {
-	float: right;
-	display: inline-block;
-	position: relative;
-	cursor: pointer
+  float: right;
+  display: inline-block;
+  position: relative;
+  cursor: pointer
 }
 
 #container-fluid>#menu2>* {
-	display: inline-block;
-	position: relative;
-	width: 130px;
-	text-align: center;
-	margin-top: 14px;
+  display: inline-block;
+  position: relative;
+  width: 130px;
+  text-align: center;
+  margin-top: 14px;
 }
 
 #container-fluid>#menu2>#logout {
-	
+  
 }
 
 #container-fluid>#menu2>*:HOVER {
-	background-color: black;
-	color: white;
+  background-color: black;
+  color: white;
 }
 
 #picture {
-	width: 100%;
-	margin-bottom: 2%;
+  width: 100%;
+  margin-bottom: 2%;
 }
 
 #picture>img {
-	width: 99.7%;
+  width: 99.7%;
 }
 
 #searchbox {
-	margin: 0 auto;
-	margin-bottom: 2%;
-	border-bottom: 1px solid gray;
-	width: 276px;
+  margin: 0 auto;
+  margin-bottom: 2%;
+  border-bottom: 1px solid gray;
+  width: 276px;
 }
 
 #searchbox>input {
-	display: inline-block;
-	border: 2px solid white;
-	width: 250px;
-	font-size: large;
-	text-align: justify;
+  display: inline-block;
+  border: 2px solid white;
+  width: 250px;
+  font-size: large;
+  text-align: justify;
 }
 
 #searchbox>input:FOCUS {
-	outline: none;
+  outline: none;
 }
 
 .success {
-	background: white url("../picture/search.PNG");
+  background: white url("../picture/search.PNG");
 }
 
 #imgbox {
-	display: inline-block;
-	width: 18px;
-	height: 20px;
-	margin: 5px 0px 0px 0px;
-	padding: 0px;
+  display: inline-block;
+  width: 18px;
+  height: 20px;
+  margin: 5px 0px 0px 0px;
+  padding: 0px;
 }
 
 .container {
-	width: 110%;
+  width: 110%;
 }
 
 #h3 {
-	font-weight: bolder;
-	font-family: 'Oswald', sans-serif;
+  font-weight: bolder;
+  font-family: 'Oswald', sans-serif;
 }
 
 #title {
-	color: red;
+  color: red;
 }
 
 a {
-	color: black;
-	text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 a:VISITED {
-	color: black;
-	text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 a:HOVER {
-	color: black;
-	text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 #tabs {
-	width: 50%;
-	margin: 0 auto;
+  width: 50%;
+  margin: 0 auto;
 }
 </style>
 
 
 </head>
 <body>
-	<div id='container-fluid'>
-		<div id='logo'>S e o k W o n S o n g</div>
-		<div id="menu2">
-			<div id='home'>HOME</div>
-			<div id='sing' onclick='location.href="../sing/ts.html"'>SING</div>
-			<div id='songs' onclick='location.href="../song/song.html"'>SONGS</div>
-			<div id='hof'>HALL OF FAME</div>
-			<div id='songs'>MY SONGS</div>
-			<div id='logout'>LOGOUT</div>
-		</div>
-	</div>
+  <div id='container-fluid'>
+    <div id='logo'>S e o k W o n S o n g</div>
+    <div id="menu2">
+      <div id='home'>HOME</div>
+      <div id='sing' onclick='location.href="../sing/ts.html"'>SING</div>
+      <div id='songs' onclick='location.href="../song/song.html"'>SONGS</div>
+      <div id='hof'>HALL OF FAME</div>
+      <div id='songs'>MY SONGS</div>
+      <div id='logout'>LOGOUT</div>
+    </div>
+  </div>
 
-	<div id='picture' class='container'>
-		<img src='../picture/sing.PNG' />
-	</div>
+  <div id='picture' class='container'>
+    <img src='../picture/sing.PNG' />
+  </div>
 
-	<div id='searchbox'>
-		<input type='text' name='search' id='search' placeholder='반주곡 검색'
-			onkeypress="runScript('tNode', jsonData, event)" />
-		<div id='imgbox'></div>
-	</div>
+  <div id='searchbox'>
+    <input type='text' name='search' id='search' placeholder='반주곡 검색'
+      onkeypress="runScript('tNode', jsonData, event)" />
+    <div id='imgbox'></div>
+  </div>
 
-	<div id="tabs">
-		<ul>
-			<li><a href="#tabs-1">제목별</a></li>
-			<li><a href="#tabs-2">가수별</a></li>
-		</ul>
-		<div id="tabs-1">
-			<div id='resultList'></div>
-			<div class="container">
-				<table id="tNode" class="table table-hover"></table>
-			</div>
+  <div id="tabs">
+    <ul>
+      <li><a href="#tabs-1">제목별</a></li>
+      <li><a href="#tabs-2">가수별</a></li>
+    </ul>
+    <div id="tabs-1">
+      <div id='resultList'></div>
+      <div class="container">
+        <table id="tNode" class="table table-hover"></table>
+      </div>
 
-		</div>
-		<div id="tabs-2">
-			<p></p>
-		</div>
-	</div>
+    </div>
+    <div id="tabs-2">
+      <p></p>
+    </div>
+  </div>
 
-	<script src="../bower_components/jquery/dist/jquery.js"></script>
-	<script src="../bower_components/jquery-ui/jquery-ui.js"></script>
-	<script>
-		$(function() {
-			$("#tabs").tabs();
-		});
-	</script>
-	<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script>
-		var t1 = document.querySelector("#search")
-		var imgbox = document.querySelector("#imgbox")
-		t1.onkeyup = function(event) {
-			if (t1.value.length == 0) {
-				imgbox.className = ""
-			} else {
-				imgbox.className = "success"
-			}
-		};
-	</script>
-	<script type="text/javascript" src="table2.js"></script>
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../bower_components/jquery-ui/jquery-ui.js"></script>
+  <script>
+    $(function() {
+      $("#tabs").tabs();
+    });
+  </script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script>
+    var t1 = document.querySelector("#search")
+    var imgbox = document.querySelector("#imgbox")
+    t1.onkeyup = function(event) {
+      if (t1.value.length == 0) {
+        imgbox.className = ""
+      } else {
+        imgbox.className = "success"
+      }
+    };
+  </script>
+  <script type="text/javascript" src="table2.js"></script>
 </body>
 </html>
