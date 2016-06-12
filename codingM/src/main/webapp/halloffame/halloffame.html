@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Hall Of Fame</title>
 <style>
 .halloffame {
   padding: 100px 0px 100px 0px;
@@ -45,7 +45,7 @@ div > p  {
   margin-top: 5px;
   text-align: center;
 }
-#no1, #no2, #no3, #no4 {
+#no1, #no2, #no3, #no4, #no5, #no6, #no7, #no8 {
   border-radius: 80%;
   margin-right: 50px;
   width: 180px;
@@ -59,12 +59,11 @@ div > p  {
   width:100%;
 }
 .Mpic div {
-   float: middle;
-   display: inline-block;
+  float: middle;
+  display: inline-block;
 }
 .halloffame img:hover {
-  -webkit-filter: grayscale(100%) blur(3px);
-  filter: grayscale(100%) blur(3px);
+  opacity: .5;
 }
 
 </style>
@@ -74,58 +73,63 @@ div > p  {
   <h1><span class="">실시간 TOP8</span></h1>
   <p id="subtitle" class="gallery-caption text">Mauris id maximus magna, vel tristique dui. Aliquam erat volutpat. Nullam feugiat sapien eget scelerisque varius.<br>  Quisque imperdiet porttitor magna, non pulvinar dui mattis ac. Suspendisse porttitor diam et odio consequat, ut porta quam porta.</p>
   
-<center>
-   <div class="Mpic">
-      <div>
-         <img id="no1" src="../picture/05.PNG" ></a>
-         <p>1위. 하루끝 - 아이유<p>
-         <p>닉네임: 아이유짱 ♡12.362</p>
-      </div>
-      <div>
-         <img id="no2" src="../picture/images01.PNG"></a>
-         <p>2위. CheerUp - 트와이스</p>
-         <p>닉네임: 우아하게 ♡12.289</p>
-      </div>
-      <div>
-         <img id="no3" src="../picture/15.PNG"></a>
-         <p>3위. 눈의꽃 - 박효신</p>
-         <p>닉네임: 감성발라드 ♡11.856</p>
-      </div>
-      <div>
-         <img id="no4" src="../picture/joo.PNG"></a>
-         <p>4위. 땡벌 - 남진</p>
-         <p>닉네임: 트로트여왕 ♡10.559</p>
-      </div>
-   </div>
-</center>
-
-<center>
-   <div class="Mpic">
-      <div>
-         <img id="no1" src="../picture/hani.PNG" ></a>
-         <p>5위. L.I.E - EXID<p>
-         <p>닉네임: 하니 ♡9.548</p>
-      </div>
-      <div>
-         <img id="no2" src="../picture/jung.PNG"></a>
-         <p>6위. 홍대에가면 - 홍대광</p>
-         <p>닉네임: 홍대얼짱 ♡8.753</p>
-      </div>
-      <div>
-         <img id="no3" src="../picture/images02.PNG"></a>
-         <p>7위. Gee - 소녀시대</p>
-         <p>닉네임: 탱구 ♡7.756</p>
-      </div>
-      <div>
-         <img id="no4" src="../picture/who.PNG"></a>
-         <p> 8위. Don't Cry - 우리동네음악대장</p>
-         <p>닉네임: 복면가왕빠 ♡6.298</p>
-      </div>
-   </div>
-</center> 
-   
-   
-  
+	<center>
+	   <div class="Mpic">
+	      <div>
+	         <img id="no1" src="../picture/05.PNG" onclick="music()"></a>
+	           <div id="welcomeplayer"></div>  
+	         <p>1위. 하루끝 - 아이유<p>
+	         <p>닉네임: 아이유짱 ♡12.362</p>
+	      </div>
+	      <div>
+	         <img id="no2" src="../picture/images01.PNG"></a>
+	         <p>2위. CheerUp - 트와이스</p>
+	         <p>닉네임: 우아하게 ♡12.289</p>
+	      </div>
+	      <div>
+	         <img id="no3" src="../picture/15.PNG"></a>
+	         <p>3위. 눈의꽃 - 박효신</p>
+	         <p>닉네임: 감성발라드 ♡11.856</p>
+	      </div>
+	      <div>
+	         <img id="no4" src="../picture/joo.PNG"></a>
+	         <p>4위. 땡벌 - 남진</p>
+	         <p>닉네임: 트로트여왕 ♡10.559</p>
+	      </div>
+	   </div>
+	</center>
+	
+	<center>
+	   <div class="Mpic">
+	      <div>
+	         <img id="no5" src="../picture/hani.PNG" ></a>
+	         <p>5위. L.I.E - EXID<p>
+	         <p>닉네임: 하니 ♡9.548</p>
+	      </div>
+	      <div>
+	         <img id="no6" src="../picture/jung.PNG"></a>
+	         <p>6위. 홍대에가면 - 홍대광</p>
+	         <p>닉네임: 홍대얼짱 ♡8.753</p>
+	      </div>
+	      <div>
+	         <img id="no7" src="../picture/images02.PNG"></a>
+	         <p>7위. Gee - 소녀시대</p>
+	         <p>닉네임: 탱구 ♡7.756</p>
+	      </div>
+	      <div>
+	         <img id="no8" src="../picture/who.PNG"></a>
+	         <p> 8위. Don't Cry - 우리동네음악대장</p>
+	         <p>닉네임: 복면가왕빠 ♡6.298</p>
+	      </div>
+	   </div>
+	</center> 
 </div>
+
+<script>
+var music_src = "하루끝-아이유.mp3";  
+function music(){  
+document.getElementById("welcomeplayer").innerHTML = '<embed src="'+music_src+'" type="application/x-mplayer2" autostart="true" volume="0"></embed>';  
+}  
+</script>
 </body>
 </html>
