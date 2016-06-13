@@ -131,7 +131,6 @@ a:HOVER {
 }
 </style>
 
-
 </head>
 <body>
   <div id='container-fluid'>
@@ -152,37 +151,26 @@ a:HOVER {
 
   <div id='searchbox'>
     <input type='text' name='search' id='search' placeholder='반주곡 검색'
-      onkeypress="runScript('tNode', jsonData, event)" />
+      onkeypress="runScript('result', 'tNode', event)" />
     <div id='imgbox'></div>
   </div>
+  <div id='result'></div>
 
-  <div id="tabs">
-    <ul>
-      <li><a href="#tabs-1">제목별</a></li>
-      <li><a href="#tabs-2">가수별</a></li>
-    </ul>
-    <div id="tabs-1">
-      <div id='resultList'></div>
-      <div class="container">
-        <table id="tNode" class="table table-hover"></table>
-      </div>
-
-    </div>
-    <div id="tabs-2">
-      <p></p>
-    </div>
-  </div>
+  <script id="temp1" type="text/x-handlebars-template">
+    {{#each tr}}
+    <tr>
+      <td><a href="#" onclick="onclickDetail(event)">{{title}}</a></td>
+      <td>{{singer}}</td>
+    </tr>
+    {{/each}}
+	</script>
 
   <script src="../bower_components/jquery/dist/jquery.js"></script>
   <script src="../bower_components/jquery-ui/jquery-ui.js"></script>
-  <script type="text/javascript" src="table2.js"></script>
+  <script type="text/javascript" src="tab_table.js"></script>
 
-  <script>
-    $(function() {
-      $("#tabs").tabs();
-    });
-  </script>
   <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../bower_components/handlebars/handlebars.min.js"></script>
   <script>
     var t1 = document.querySelector("#search")
     var imgbox = document.querySelector("#imgbox")
