@@ -1,0 +1,124 @@
+#container-fluid {
+  overflow: hidden;
+  width: 100%;
+  min-width: 980px;
+  height: 50px;
+  margin: 15px 60px 15px 10px;
+}
+
+#container-fluid > #logo {
+  font-size: large;
+  display: inline-block;
+  color: purple;
+  padding-top: 2px;
+  margin-top: 10px;
+}
+
+#container-fluid > #logo:HOVER {
+  background-color: white;
+}
+
+#container-fluid > #menu2 {
+  float: right;
+  display: inline-block;
+  position: relative;
+}
+
+#container-fluid > #menu2 > * {
+  display: inline-block;
+  position: relative;
+  width: 130px;
+  text-align: center;
+  margin-top: 14px;
+}
+
+#container-fluid > #menu2 > *:HOVER {
+  background-color: black;
+  color: white;
+}
+
+.page {
+  padding-left: 9px;
+  width: 93%;
+  height: 2300px;
+  margin: 0 75px;
+}
+
+.sect1 {
+  float: left;
+  border: 1px solid lightgray;
+  border-top: 0px;
+  border-bottom: 0px;
+  width: 350px;
+}
+.sect1:hover {
+  background-color: black;
+  opacity: 0.8;
+}
+
+.name {
+  width: 300px;
+  border: 0px solid black;
+  color: hsl(47, 96%, 28%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.disc {
+  padding: 30px;
+  width: 150px;
+  border: 0px solid black;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 13px;
+  color: gray;
+}
+.detail {
+  padding: 5px 25px;
+  color: gray;
+  background-color: white;
+  border: 1px solid lightgray;
+  width: 150px;
+  margin: 50px auto;
+}
+
+.hex {
+  margin-bottom: 70px;
+}
+
+.hex .hexagon {
+  margin: 20px auto;
+  width: 180px;
+  height: 210px;
+  position: relative;
+  overflow: hidden;
+  line-height: 200px;
+  cursor: pointer;
+  -webkit-clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  -moz-clip-path: polygon( 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25% );
+  -ms-clip-path: polygon( 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25% );
+  clip-path: polygon( 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25% );
+}
+
+.hex .hexagon img {
+  width: 200px;
+  min-height: 100%; min-width: 114%; margin-left: -7%;
+}
+
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.sec1{
+  float: left;
+  border: 1px solid lightgray;
+  border-top: 0px;
+  border-bottom: 0px;
+  width: 350px;
+}
+
+.sec1:hover {
+  background-color: black;
+  opacity: 0.8;
+}
