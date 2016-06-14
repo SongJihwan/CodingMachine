@@ -26,3 +26,9 @@ jQuery(document).ready(function() {
     }
   });
 });
+
+var wall = $('.GITheWall').GITheWall({
+  nextButtonClass: 'fa fa-arrow-right',
+  prevButtonClass: 'fa fa-arrow-left',
+  closeButtonClass: 'fa fa-times'
+});

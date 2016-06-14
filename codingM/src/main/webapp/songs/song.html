@@ -3,34 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <title>Song</title>
+  <link rel="stylesheet" href="../bower_components/jquery-gi-thewall/assets/css/style.css">
   <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="song.css">
+  <link href="http://fast.fonts.net/cssapi/4bedbdc9-7261-43be-b2e9-f34abce90975.css" media="all" type="text/css" rel="stylesheet">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js"></script>
+  <link href="http://fast.fonts.net/cssapi/4bedbdc9-7261-43be-b2e9-f34abce90975.css" media="all" type="text/css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" media="all" type="text/css" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,initial-scale=1.0">
+  <link rel="shortcut icon"  href="http://www.goldinteractive.ch/favicon.ico">
+  <link rel="apple-touch-icon" href="http://www.goldinteractive.ch/touch-icon-iphone.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="http://www.goldinteractive.ch/touch-icon-ipad.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="http://www.goldinteractive.ch/touch-icon-iphone-retina.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="http://www.goldinteractive.ch/touch-icon-ipad-retina.png" />
+
+  <link rel="shortcut icon" href="http://www.goldinteractive.ch/favicons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="64x64" href="http://www.goldinteractive.ch/favicons/favicon.png">
+  <link rel="apple-touch-icon" href="http://www.goldinteractive.ch/favicons/apple-touch-icon.png">
+  <link rel="apple-touch-icon-precomposed" href="http://www.goldinteractive.ch/favicons/apple-touch-icon-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://www.goldinteractive.ch/favicons/apple-touch-icon-72x72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="http://www.goldinteractive.ch/favicons/apple-touch-icon-76x76-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://www.goldinteractive.ch/favicons/apple-touch-icon-114x114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://www.goldinteractive.ch/favicons/apple-touch-icon-120x120-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.goldinteractive.ch/favicons/apple-touch-icon-144x144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://www.goldinteractive.ch/favicons/apple-touch-icon-152x152-precomposed.png">
+  <meta name="msapplication-TileImage" content="http://www.goldinteractive.ch/favicons/windows-tile-144x144.png">
+  <meta name="msapplication-TileColor" content="#000000">
+
 
   <script id="temp1" type="text/x-handlebars-template">
-    {{#each div}}
-    <div class="sect1">
-      <div class="hex">
-        <div class="hexagon">
-          <img src={{img}} alt={{singer}} />
+    <ul>
+      {{#each div}}
+      <li data-contenttype="image" data-href="../picture/images05.PNG">
+        <div class="sect1">
+          <div class="hex">
+            <div class="hexagon">
+              <img src={{img}} alt={{singer}}/>
+            </div>
+          </div>
+          <div class="name">
+            {{title}} - {{singer}}<br>
+          </div>
+          <div class="disc">
+            ▶<br>
+            {{nickname}} ♥{{heart}}
+          </div>
+          <div class="detail">
+            SEE DETAILS
+          </div>
         </div>
-      </div>
-      <div class="name">
-        {{title}} - {{singer}}<br>
-      </div>
-      <div class="disc">
-        ▶<br>
-        {{nickname}} {{heart}}
-      </div>
-      <div class="detail">
-        SEE DETAILS
-      </div>
-    </div>
-    {{/each}}
-  </script>
+      </li>
+      {{/each}}
+    </ul>
 
+  </script>
   <script src="../bower_components/jquery/dist/jquery.js"></script>
   <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="../bower_components/handlebars/handlebars.min.js"></script>
+  <script src="../bower_components/jquery-gi-thewall/jQuery.GI.TheWall.min.js"></script>
   <script src="song.js"></script>
 
 </head>
@@ -46,8 +77,12 @@
       <div id='logout'>LOGOUT</div>
     </div>
   </div>
-
-  <div class="page"></div>
-
+  <div role="main" class="viewport">
+    <div class="demo">
+      <div class="GITheWall">
+        <div class="page"></div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
