@@ -18,7 +18,7 @@
   min-width: 980px;
   height: 50px;
   margin: 15px 60px 15px 10px;
-}s
+}
 
 #container-fluid>#logo {
   font-size: large;
@@ -45,10 +45,6 @@
   width: 130px;
   text-align: center;
   margin-top: 14px;
-}
-
-#container-fluid>#menu2>#logout {
-  
 }
 
 #container-fluid>#menu2>*:HOVER {
@@ -100,7 +96,7 @@
   width: 90%;
 }
 
-#h3 {
+h3 {
   font-weight: bolder;
   font-family: 'Oswald', sans-serif;
 }
@@ -129,6 +125,10 @@ a:HOVER {
   margin: 0 auto;
   margin-bottom: 3%
 }
+
+td {
+  text-align: center;
+}
 </style>
 
 </head>
@@ -151,7 +151,7 @@ a:HOVER {
 
   <div id='searchbox'>
     <input type='text' name='search' id='search' placeholder='반주곡 검색'
-      onkeypress="runScript('result', 'tNode', event)" />
+      onkeypress="runScript('result', 'tNode', event, '#search')" />
     <div id='imgbox'></div>
   </div>
   <div id='result'></div>
