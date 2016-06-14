@@ -1,0 +1,95 @@
+#container-fluid {
+  overflow: hidden;
+  width: 100%;
+  min-width: 980px;
+  height: 50px;
+  margin: 15px 60px 15px 10px;
+}
+
+#container-fluid > #logo {
+  font-size: large;
+  display: inline-block;
+  color: purple;
+  padding-top: 2px;
+  margin-top: 10px;
+}
+
+#container-fluid > #logo:HOVER {
+  background-color: white;
+}
+
+#container-fluid > #menu2 {
+  float: right;
+  display: inline-block;
+  position: relative;
+}
+
+#container-fluid > #menu2 > * {
+  display: inline-block;
+  position: relative;
+  width: 130px;
+  text-align: center;
+  margin-top: 14px;
+}
+
+#container-fluid > #menu2 > *:HOVER {
+  background-color: black;
+  color: white;
+}
+.halloffame {
+  padding: 100px 0px 100px 0px;
+  background-color: transparent;
+  background-image: url(../picture/background.PNG);
+  background-repeat: repeat-y! important;
+  background-position: 50% -227.25px;
+  color: ;
+  background-size: cover;
+}
+.halloffame h1{
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.5em;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.halloffame #subtitle {
+  font-family: 'Lora', 'Nanum Gothic';
+  font-style: italic;
+  margin: 0;
+  color: #feffff;
+  font-size: 13px;
+  text-align: center;
+}
+.name {
+  font-family: 'Lora', 'Nanum Gothic';
+  font-style: italic;
+  margin: 0;
+  color: #feffff;
+  font-size: 13px;
+  margin-right: 50px;
+  margin-top: 5px;
+  text-align: center;
+}
+img {
+  border-radius: 80%;
+  margin-right: 50px;
+  width: 180px;
+  height: 180px;
+  margin-top: 50px;
+  cursor: pointer;
+}
+.Mpic {
+  overflow: hidden;
+  height: 300px;
+  width:100%;
+}
+.Mpic div {
+  float: middle;
+  display: inline-block;
+}
+img:hover {
+  opacity: .5;
+}
