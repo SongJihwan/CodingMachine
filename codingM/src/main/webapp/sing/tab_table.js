@@ -1,20 +1,22 @@
 /**
  * 
  */
-function runScript(tabId, tableId, event) {
+function runScript(tabId, tableId, event, value) {
 	if (event.keyCode == 13) {
-		addTab(tabId, tableId)
+		addTab(tabId, tableId, value)
 		addTable(tableId)
 	}
 };
 
-function addTab(tabId, tableId) {
+function addTab(tabId, tableId, search) {
 	this.body = document.getElementById(tabId)
 	this.body.innerHTML = 
 		"<div id='tabs' class='dynT'>" +
 		"<ul><li><a href='#tabs-1'>제목별</a></li><li><a href='#tabs-2'>가수별</a></li></ul>" +
 		"<div id=class='#tabs-1'><div id='resultList'></div><div class='container'>" +
-		"<table id='" + tableId + "' class='table table-hover'><tbody></tbody></table></div></div>" +
+		"<table id='" + tableId + "' class='table table-hover'>" +
+		"<h3><span id=title>\""+document.querySelector(search).value+"\"</span>에 대한 제목별 검색 결과</h3>" +
+		"<tbody></tbody></table></div></div>" +
 		"<div class='#tabs-2'></div></div>"
 	$("#tabs").tabs();
 }
