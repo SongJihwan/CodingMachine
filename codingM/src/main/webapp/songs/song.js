@@ -13,7 +13,7 @@ window.onload = function loadDate() {
     var html = template(result)
     $(".page").append(html)
     imageWall();
-  });
+  }); 
 }
 
 function getImage() {
