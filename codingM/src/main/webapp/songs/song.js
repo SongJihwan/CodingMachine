@@ -1,17 +1,27 @@
+function imageWall() {
+  var wall = $('.GITheWall').GITheWall({
+    nextButtonClass: 'fa fa-arrow-right',
+    prevButtonClass: 'fa fa-arrow-left',
+    closeButtonClass: 'fa fa-times'
+  });
+}
+
 window.onload = function loadDate() {
   $.getJSON("data.json", function(result) {
     var templateData = $('#temp1').html()
     var template = Handlebars.compile(templateData)
     var html = template(result)
     $(".page").append(html)
+    imageWall();
   });
 }
 
 function getImage() {
   var newdiv = document.createElement("div");
-  var add = $(".sect1").clone();
+  var add = $(".demo").clone();
   $(newdiv).html(add);
-  jQuery(".page").append(newdiv);
+  jQuery(".viewport").append(newdiv);
+
 }
 jQuery(document).ready(function() {
 
