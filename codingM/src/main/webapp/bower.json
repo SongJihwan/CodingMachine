@@ -22,7 +22,6 @@
     "jquery-gi-thewall": "^1.0.2",
     "jquery-infinite-scroll": "^2.1.0",
     "highlight-js": "^9.4.0",
-    "jquery-gi-thewall": "^1.0.2"
-    
+    "jquery-ui": "^1.11.4"
   }
 }
