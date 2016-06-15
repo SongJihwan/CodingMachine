@@ -3,6 +3,6 @@ window.onload = function loadDate() {
     var templateData = $('#temp1').html()
     var template = Handlebars.compile(templateData)
     var html = template(result)
-    $(".page").append(html)
+    $(".halloffame").append(html)
   });
 }

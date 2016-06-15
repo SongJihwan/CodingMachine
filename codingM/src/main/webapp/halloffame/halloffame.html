@@ -8,12 +8,11 @@
   <script id="temp1" type="text/x-handlebars-template">
     {{#each div}}
   <center>
-    <div class="Mpic">
-      <img src={{img}} alt={{singer}} /><br>
-      <div class="name">
-        {{title}} - {{singer}}<br>
-        {{nickname}} {{heart}}
-      </div>
+    <div class="ranker">
+      <div><img src={{img}} alt={{singer}} /></div><br>
+    <div class="name">
+      {{no}} {{title}} - {{singer}}<br>
+      {{nickname}} {{heart}}
     </div>
   </center>
     {{/each}}
@@ -40,7 +39,6 @@
 <div class="halloffame" data-parallax="true">
   <h1><span class="">실시간 TOP8</span></h1>
   <p id="subtitle" class="gallery-caption text">Mauris id maximus magna, vel tristique dui. Aliquam erat volutpat. Nullam feugiat sapien eget scelerisque varius.<br>  Quisque imperdiet porttitor magna, non pulvinar dui mattis ac. Suspendisse porttitor diam et odio consequat, ut porta quam porta.</p>
-  <div class="page"></div>
 </div>
 
 
