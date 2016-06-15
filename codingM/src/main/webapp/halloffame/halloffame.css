@@ -70,6 +70,7 @@ img {
   height: 180px;
   margin-top: 50px;
   cursor: pointer;
+  text-align: center
 }
 img:hover {
   opacity: .5;
