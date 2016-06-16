@@ -7,7 +7,6 @@ function i(){
    });
 }
 
-
 var a = 0;
 function runScript(tabId, tableId, event, value) {
 	if (event.keyCode == 13) {
