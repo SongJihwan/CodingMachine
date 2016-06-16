@@ -41,5 +41,6 @@ function addTable (tableId) {
 }
 
 function onclickDetail(event) {
-	location.href = "sing-2.html"
+  imageWall();
+	// location.href = "sing-2.html"
 }
