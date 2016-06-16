@@ -42,8 +42,8 @@
   background-image: url(../picture/background.PNG);
   background-repeat: repeat-y! important;
   background-position: 50% -227.25px;
-  height: 750px;
-  color: ;
+  background-size: cover;
+  overflow: hidden;
 }
 .halloffame h1{
   font-size: 40px;
@@ -68,24 +68,37 @@ img {
   margin-right: 30px;
   width: 180px;
   height: 180px;
-  margin-top: 50px;
+  margin-top: 0px;
   cursor: pointer;
-  text-align: center
+  text-align: center;
 }
 img:hover {
   opacity: .5;
 }
-.ranker {
+.content {
+	height: 600px;
+	width: 1000px;
+	margin: 0 auto ;
+	padding-top: 22px;
+	padding-left: 22px;
+
+}
+.circle {
   float: left;
-  margin-left: 215px;
-  width: 200px;
+  margin: 30px;
+  margin-top: 50px;
+  width: 180px;
+  height: 180px;
+  -webkit-border-radius:100px;
+  -moz-border-radius: 100px;
 }
 .name {
   font-family: 'Lora', 'Nanum Gothic';
   font-style: italic;
-  margin: 0;
   color: #feffff;
-  font-size: 13px;
+  font-size: 12px;
   margin-right: 25px;
+  margin-left: 20px;
   margin-top: 5px; 
+  text-align: center;
 }

@@ -3,43 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <title>Hall Of Fame</title>
-  <link rel="stylesheet" type="text/css" href="halloffame.css">
+<link rel="stylesheet" type="text/css" href="halloffame.css">
 
-  <script id="temp1" type="text/x-handlebars-template">
-    {{#each div}}
-  <center>
-    <div class="ranker">
-      <div><img src={{img}} alt={{singer}} /></div><br>
-    <div class="name">
-      {{no}} {{title}} - {{singer}}<br>
-      닉네임: {{nickname}} {{heart}}
-    </div>
-  </center>
-    {{/each}}
-  </script>
 
-  <script src="../bower_components/jquery/dist/jquery.js"></script>
-  <script src="../bower_components/handlebars/handlebars.min.js"></script>
-  <script src="halloffame.js"></script>
+
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/handlebars/handlebars.min.js"></script>
+<script src="halloffame.js"></script>
 </head>
 <body>
 
-<div id='container-fluid'>
-  <div id='logo'>S e o k W o n S o n g</div>
-  <div id="menu2">
-    <div id='home'>HOME</div>
-    <div id='sing' onclick='location.href="../sing/ts.html"'>SING</div>
-    <div id='songs' onclick='location.href="../songs/song.html"'>SONGS</div>
-    <div id='hof' onclick='location.href="../halloffame/halloffame.html"'>HALL OF FAME</div>
-    <div id='songs'>MY SONGS</div>
-    <div id='logout'>LOGOUT</div>
+	<div id='container-fluid'>
+		<div id='logo'>S e o k W o n S o n g</div>
+		<div id="menu2">
+			<div id='home'>HOME</div>
+			<div id='sing' onclick='location.href="../sing/ts.html"'>SING</div>
+			<div id='songs' onclick='location.href="../songs/song.html"'>SONGS</div>
+			<div id='hof' onclick='location.href="../halloffame/halloffame.html"'>HALL
+				OF FAME</div>
+			<div id='songs'>MY SONGS</div>
+			<div id='logout'>LOGOUT</div>
+		</div>
+	</div>
+
+	<div class="halloffame" data-parallax="true">
+		<h1>
+			<span class="">실시간 TOP8</span>
+		</h1>
+		<p id="subtitle" class="gallery-caption text">
+			Mauris id maximus magna, vel tristique dui. Aliquam erat volutpat.
+			Nullam feugiat sapien eget scelerisque varius.<br> Quisque
+			imperdiet porttitor magna, non pulvinar dui mattis ac. Suspendisse
+			porttitor diam et odio consequat, ut porta quam porta.
+		</p>
+
+		<script id="temp1" type="text/x-handlebars-template">
+  <div class="content">
+{{#each div}}
+  <div class="circle">
+    <img src={{img}} alt={{singer}} />
+  <div class="name">
+    {{no}} {{title}} - {{singer}}<br>
+    닉네임: {{nickname}}<br>
+    ♥ {{heart}}
   </div>
-</div>
- 
-<div class="halloffame" data-parallax="true">
-  <h1><span class="">실시간 TOP8</span></h1>
-  <p id="subtitle" class="gallery-caption text">Mauris id maximus magna, vel tristique dui. Aliquam erat volutpat. Nullam feugiat sapien eget scelerisque varius.<br>  Quisque imperdiet porttitor magna, non pulvinar dui mattis ac. Suspendisse porttitor diam et odio consequat, ut porta quam porta.</p>
-</div>
+  </div>
+{{/each}}
+  </div>
+  </script>
+	</div>
 
 </body>
 </html>
