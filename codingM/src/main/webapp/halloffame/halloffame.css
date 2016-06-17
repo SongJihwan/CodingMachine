@@ -67,11 +67,11 @@ img:hover {
   opacity: .5;
 }
 .content {
-	height: 600px;
+	height: 650px;
 	width: 1000px;
 	margin: 0 auto ;
 	padding-top: 30px;
-	padding-left: 73px;
+	padding-left: 35px;
 }
 .line {
   float: left;
