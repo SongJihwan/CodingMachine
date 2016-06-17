@@ -139,7 +139,8 @@ td {
       <div id='home'>HOME</div>
       <div id='sing' onclick='location.href="../sing/ts.html"'>SING</div>
       <div id='songs' onclick='location.href="../songs/song.html"'>SONGS</div>
-      <div id='hof'>HALL OF FAME</div>
+      <div id='hof' onclick='location.href="../halloffame/halloffame.html"'>HALL
+        OF FAME</div>
       <div id='songs'>MY SONGS</div>
       <div id='logout'>LOGOUT</div>
     </div>
@@ -159,7 +160,7 @@ td {
   <script id="temp1" type="text/x-handlebars-template">
     {{#each tr}}
     <tr>
-      <td><a href="#" onclick="onclickDetail(event)">{{title}}</a></td>
+      <td><a href="#" onclick="onclickDetail(event, '{{url}}')">{{title}}</a></td>
       <td>{{singer}}</td>
     </tr>
     {{/each}}
