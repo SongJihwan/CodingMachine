@@ -37,24 +37,28 @@
       porttitor diam et odio consequat, ut porta quam porta.
     </p>
 
-
-    <div role="main" class="viewport">
+<div class="content">
+  <div class="GITheWall">
+    <ul class="page">
       <script id="temp1" type="text/x-handlebars-template">
-          <div class="content">
           {{#each div}}
-            <ul class="circle">
-              <li class="lili" data-contenttype="image" data-href={{img}}>
-              <img src={{img}} alt={{singer}} />
-            <div class="name">
+          <li class="lili" data-contenttype="image" data-href={{img}}>
+            <div class="line">
+              <div class="circle">
+               <img src={{img}} alt={{singer}} />
+              </div>
+              <div class="name">
               {{no}} {{title}} - {{singer}}<br>
               닉네임: {{nickname}}<br>
               ♥ {{heart}}
+              </div>
             </div>
-          </ul>
+          </li>
           {{/each}}
-          </div>
       </script>
-    </div>
+    </ul>
+  </div>
+</div>
 
   </div>
 
