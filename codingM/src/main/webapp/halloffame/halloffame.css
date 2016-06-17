@@ -65,6 +65,7 @@
 }
 img:hover {
   opacity: .5;
+  cursor: pointer;
 }
 .content {
 	height: 650px;
