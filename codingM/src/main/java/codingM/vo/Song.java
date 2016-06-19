@@ -2,13 +2,13 @@ package codingM.vo;
 
 import java.sql.Date;
 
-public class Sing {
+public class Song {
   private int sno;
   private int mno;
   private String title;
   private String singer;
   private Date recordDate;
-  private char pCheck;
+  private String pCheck;
   private String fileName;
   private String filePath;
   private int wLike;
@@ -17,12 +17,12 @@ public class Sing {
   private int cLike;
   private int tLike;
 
-  public Sing() {
+  public Song() {
     super();
     // TODO Auto-generated constructor stub
   }
 
-  public Sing(int sno, int mno, String title, String singer, Date recordDate, char pCheck, String fileName,
+  public Song(int sno, int mno, String title, String singer, Date recordDate, String pCheck, String fileName,
       String filePath, int wLike, int mLike, int yLike, int cLike, int tLike) {
     super();
     this.sno = sno;
@@ -80,11 +80,11 @@ public class Sing {
     this.recordDate = recordDate;
   }
 
-  public char getpCheck() {
+  public String getpCheck() {
     return pCheck;
   }
 
-  public void setpCheck(char pCheck) {
+  public void setpCheck(String pCheck) {
     this.pCheck = pCheck;
   }
 
