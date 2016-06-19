@@ -14,7 +14,7 @@
     <div id='logo'>S e o k W o n S o n g</div>
     <div id="menu2">
       <div id='home'>HOME</div>
-      <div id='sing' onclick='location.href="../sing/ts.html"'>SING</div>
+      <div id='sing' onclick='location.href="../sing/sing.html"'>SING</div>
       <div id='songs' onclick='location.href="../songs/song.html"'>SONGS</div>
       <div id='hof'>HALL OF FAME</div>
       <div id='songs'>MY SONGS</div>
@@ -54,30 +54,17 @@
     </div>
   </div>
 
-<!--
-<script id="temp2" type="text/x-handlebars-template">
-  {{#each div2}}
-    <table class="table table-hover" type="text/x-handlebars-template">
-      <tr>
-        <th>번호</th><th>내용</th><th>작성자</th>
-      </tr><tbody>
-        <tr><td>{{no}}</td><td>{{cont}}</td><td>{{nickname}}</td></tr></tbody>
-    </table>
-    <input type="text" class="form-control" placeholder="Text input">
-  {{/each}}
-</script>
--->
 
-<script id="temp2" type="text/x-handlebars-template">
-  {{#each div2}}
-  <tr><td>{{no}}</td><td>{{conts}}</td><td>{{nickname}}</td></tr>
-  {{/each}}
+ <script id="temp2" type="text/x-handlebars-template">
+    {{#each div2}}
+      <tr><td>{{no}}</td><td>{{conts}}</td><td>{{nickname}}</td></tr>
+    {{/each}}
 </script>
 
 
-<script src="../bower_components/jquery/dist/jquery.min.js"></script>
-<script src="../bower_components/jquery-gi-thewall/jQuery.GI.TheWall.js"></script>
-<script src="../bower_components/handlebars/handlebars.min.js"></script>
-<script src="song.js"></script>
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../bower_components/jquery-gi-thewall/jQuery.GI.TheWall.js"></script>
+  <script src="../bower_components/handlebars/handlebars.min.js"></script>
+  <script src="song.js"></script>
 </body>
 </html>
