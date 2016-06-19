@@ -6,6 +6,8 @@ function imageWall() {
   });
 }
 
+
+
 window.onload = function loadDate() {
   $.getJSON("data.json", function(result) {
     var templateData = $('#temp1').html()
@@ -37,6 +39,3 @@ jQuery(document).ready(function() {
   });
 });
 
-function test() {
-  alert("테스트");
-}
