@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="codingM.dao.MemberDao">
+  <resultMap type="Member" id="MemberMap">
+  </resultMap>
+  
+  <insert id="insert" parameterType="Member">
+    insert into member(email, password) values (#{email}, #{password})
+  </insert>
+  
+  <update id="update" parameterType="Member">
+  </update>
+  
+  <delete id="delete" parameterType="int">
+  </delete>
+
+  <select id="selectList" resultMap="MemberMap" parameterType="map">
+    <include refid="select01"/>
+  </select>
+  
+  <select id="selectOne" parameterType="map" resultMap="MemberMap">
+  </select>
+  
+  <select id="isMember" parameterType="map" resultType="int">
+  </select>
+  
+  <select id="countAll" resultType="int">
+  </select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

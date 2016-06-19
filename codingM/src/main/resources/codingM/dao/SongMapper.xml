@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="codingM.dao.SongDao">
+  <resultMap type="Song" id="SongMap">
+  </resultMap>
+  
+  <insert id="insert" parameterType="Song">
+  </insert>
+  
+  <update id="update" parameterType="Song">
+  </update>
+  
+  <delete id="delete" parameterType="int">
+  </delete>
+
+  <select id="selectList" resultMap="SongMap" parameterType="map">
+  </select>
+  
+  <select id="selectOne" parameterType="int" resultMap="SongMap">
+  </select>
+  
+  <select id="countAll" resultType="int">
+    select count(*) from song
+  </select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
