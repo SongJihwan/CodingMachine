@@ -28,7 +28,7 @@
         <ul class="page">
           <script id="temp1" type="text/x-handlebars-template">
             {{#each div}}
-            <li class="lili" data-contenttype="image">
+            <li class="lili" data-contenttype="image" data-href="{{img}}">
               <div class="sect1">
                 <div class="hex">
                   <div class="hexagon">
@@ -54,18 +54,26 @@
     </div>
   </div>
 
+<!-- 
 <script id="temp2" type="text/x-handlebars-template">
   {{#each div2}}
     <table class="table table-hover" type="text/x-handlebars-template">
       <tr>
         <th>번호</th><th>내용</th><th>작성자</th>
-      </tr>
-        <tr><td>{{no}}</td><td>{{cont}}</td><td>{{nickname}}</td></tr>
+      </tr><tbody>
+        <tr><td>{{no}}</td><td>{{cont}}</td><td>{{nickname}}</td></tr></tbody>
     </table>
     <input type="text" class="form-control" placeholder="Text input">
-    );
   {{/each}}
 </script>
+ -->
+ 
+ <script id="temp2" type="text/x-handlebars-template">
+  {{#each div2}}
+      <tr><td>{{no}}</td><td>{{conts}}</td><td>{{nickname}}</td></tr>
+  {{/each}}
+</script>
+
 
   <script src="../bower_components/jquery/dist/jquery.min.js"></script>
   <script src="../bower_components/jquery-gi-thewall/jQuery.GI.TheWall.js"></script>

@@ -3,9 +3,7 @@ function imageWall() {
     nextButtonClass: 'fa fa-arrow-right',
     prevButtonClass: 'fa fa-arrow-left',
     closeButtonClass: 'fa fa-times'
-
   });
-
 }
 
 window.onload = function loadDate() {
@@ -16,17 +14,6 @@ window.onload = function loadDate() {
     $(".page").append(html)
     imageWall();
   });
-}
-
-function loadDate2() {
-  $.getJSON("data2.json", function(result2) {
-    var templateData2 = $('#temp2').html()
-    var template2 = Handlebars.compile(templateData2)
-    var html2 = template2(result2)
-    $(".table table-hover").append(html2)
-    imageWall();
-  });
-  alert("실행")
 }
 
 function getImage() {
