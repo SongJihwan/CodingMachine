@@ -79,7 +79,12 @@
 }
 
 .container {
-  width: 90%;
+  width: 50%;
+}
+
+.GITheWall {
+	margin: 0 auto;
+	margin-bottom: 1%;
 }
 
 h3 {
