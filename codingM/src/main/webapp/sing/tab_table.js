@@ -7,7 +7,7 @@ function i(){
    });
 }
 
-function runScript(tableId, event, value) {
+function runScript(tableId, event, value) { 
 	if (event.keyCode == 13) {
 		addTable(tableId, value)
 	}
