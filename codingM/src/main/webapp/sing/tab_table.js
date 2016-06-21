@@ -18,14 +18,18 @@ function addTable (tableId, search) {
 	this.body = document.getElementsByClassName("viewprot")
 	loadingstart()
 	$.getJSON("http://localhost:3000/parsing", "search=" + escape($("#search").val()), function(result) {
-		this.body = document.getElementsByClassName("viewprot")
-		var templateData = $('#temp1').html()
-		var template = Handlebars.compile(templateData)
-		var html = template(result)
-		$(".page").append(html)
+		if (result.tr == "") {
+			alert("검색결과가 없습니다.")
+		} else {
+			this.body = document.getElementsByClassName("viewprot")
+			var templateData = $('#temp1').html()
+			var template = Handlebars.compile(templateData)
+			var html = template(result)
+			$(".page").append(html)
+		}
 		loadingend()
-        i()
-        imageWall()
+		i()
+		imageWall()
     });
 }
 
