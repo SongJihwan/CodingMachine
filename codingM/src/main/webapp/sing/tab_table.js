@@ -46,7 +46,7 @@ function wrapWindowByMask() {
     var maskWidth = window.document.body.clientWidth;
     var loadingImg = '';
      
-    loadingImg += "<div id='loadingImg' style='position:absolute; left:50%; top:75%; display:none; z-index:10000;'>";
+    loadingImg += "<div id='loadingImg' style='position:absolute; left:50%; top:90%; display:none; z-index:10000;'>";
     loadingImg += "<img src='../picture/loading.gif'/>"; 
     loadingImg += "</div>";   
  
