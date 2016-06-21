@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Sing</title>
-<link rel="stylesheet" href="../bower_components/jquery-gi-thewall/assets/css/style.css">
+<link rel="stylesheet" href="../bower_components/jquery-gi-thewall/assets/css/style2.css">
 <link rel="stylesheet"
   href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -40,18 +40,30 @@
   <div id='result'></div>  
    <div id='loadinglocation'></div>  
      
-  <script id="temp1" type="text/x-handlebars-template">
-    {{#each tr}}
-    <tr class='dynT'>
-      <td><a href="#" onclick="onclickDetail(event, '{{url}}')">{{title}}</a></td>
-      <td>{{singer}}</td>
-    </tr>
-    {{/each}}
-	</script>
+  <div role='main' class='viewport'>
+      <div class='demo'>
+        <div class='GITheWall'>
+          <ul class='page'>
+            <script id="temp1" type="text/x-handlebars-template">
+              {{#each tr}}
+              <li class="lili" data-contenttype="image" data-href="../picture/images01.PNG">
+                <table table class="table table-hover" >
+                  <tr class='dynT' onclick='onclickDetail(event, "{{url}}")'>
+                    <td>{{title}}</td>
+                    <td>{{singer}}</td>
+                  </tr>
+                </table>
+              </li>
+              {{/each}}
+            </script>
+          </ul>
+        </div>
+      </div>
+    </div>
 
   <script src="../bower_components/jquery/dist/jquery.js"></script>
   <script src="../bower_components/jquery-ui/jquery-ui.js"></script>
-  <script src="../bower_components/jquery-gi-thewall/jQuery.GI.TheWall.js"></script>
+  <script src="../bower_components/jquery-gi-thewall/jQuery.GI.TheWall2.js"></script>
   <script type="text/javascript" src="tab_table.js"></script>
 
   <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
