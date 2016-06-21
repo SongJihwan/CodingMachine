@@ -21,7 +21,9 @@
     "p5.js": "p5js#^0.5.1",
     "jquery-gi-thewall": "^1.0.2",
     "jquery-infinite-scroll": "^2.1.0",
-    "highlight-js": "^9.4.0",
-    "jquery-ui": "^1.11.4"
+    "jquery-ui": "^1.11.4",
+    "jquery-session-plugin": "^0.0.1",
+    "recorder-js": "*",
+    "recordmp3js": "^0.5.0"
   }
 }
