@@ -80,7 +80,7 @@
 		<div id='logo'>S e o k W o n S o n g</div>
 		<div id="menu2">
 			<div id='home'>HOME</div>
-			<div id='sing' onclick='location.href="../sing/ts.html"'>SING</div>
+			<div id='sing' onclick='location.href="../sing/sing.html"'>SING</div>
 			<div id='songs' onclick='location.href="../songs/song.html"'>SONGS</div>
 			<div id='hof' onclick='location.href="../halloffame/halloffame.html"'>HALL
         OF FAME</div>
@@ -136,7 +136,7 @@
 				document.querySelector("#desc").removeChild(
 						document.querySelector("#img1"))
 				d2.innerHTML = "<p align='center'><iframe id='playing' width='854' height='480' "
-						+ "src='https://www.youtube.com/embed/wiSBrh1Dif4?autoplay=1&controls=0&disablekb=1&rel=0&showinfo=0&modestbranding=1'"
+						+ "src='https://www.youtube.com/embed/" + sessionStorage.getItem('youtube') + "?autoplay=1&controls=0&disablekb=1&rel=0&showinfo=0&modestbranding=1'"
 						+ " frameborder='0'></iframe>"
 	        recorder.record(soundFile);
 	        state = 1;
@@ -168,7 +168,7 @@
 		
 		btn4.addEventListener("click", function(event) {
 			if (state === 2) {
-        saveSound(soundFile, today());
+        saveSound(soundFile, fileName());
         alert(title)
         state = 0;
       } else {
@@ -177,18 +177,30 @@
 		});
 		
 		
-		function today() {
+		function fileName() {
 			var today = new Date();
 			var dd = today.getDate();
 			var mm = today.getMonth()+1;
 			var yyyy = today.getFullYear();
+			var hh = today.getHours();
+			var MM = today.getMinutes();
+			var ss = today.getSeconds();
 			if(dd<10) {
 			    dd='0'+dd
 			} 
 			if(mm<10) {
 			    mm='0'+mm
 			} 
-			today = yyyy+mm+dd;
+			if(hh<10) {
+				hh='0'+hh
+			}
+			if(MM<10) {
+				MM='0'+MM
+			}
+			if(ss<ss) {
+				ss='0'+ss
+			}
+			today = yyyy+mm+dd+hh+MM+ss;
 			return today.toString()
 		}
 	</script>
