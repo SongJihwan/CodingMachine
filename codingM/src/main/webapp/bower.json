@@ -24,6 +24,7 @@
     "jquery-ui": "^1.11.4",
     "jquery-session-plugin": "^0.0.1",
     "recorder-js": "*",
-    "recordmp3js": "^0.5.0"
+    "recordmp3js": "^0.5.0",
+    "skrollr": "^0.6.30"
   }
 }
