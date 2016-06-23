@@ -1,3 +1,12 @@
+$('#loginBtn').click(function() {
+	var wall = $('.GITheWall').GITheWall({
+		nextButtonClass: 'fa fa-arrow-right',
+		prevButtonClass: 'fa fa-arrow-left',
+		closeButtonClass: 'fa fa-times'
+	})
+})
+
+
 // Toggle Function
 $('.toggle').click(function(){
   // Switches the Icon
@@ -10,3 +19,4 @@ $('.toggle').click(function(){
     opacity: "toggle"
   }, "slow");
 });
+
