@@ -15,22 +15,21 @@
 };
 
 function addTable (tableId, search) {
-	this.body = document.getElementsByClassName("viewprot")
-	loadingstart()
-	$.getJSON("http://localhost:3000/parsing", "search=" + escape($("#search").val()), function(result) {
-		if (result.tr == "") {
-			document.getElementById("loadinglocation").innerHTML = "\"<span id='title'>"+document.querySelector(search).value+"</span>\" 에 대한 검색결과가 없습니다!"
-		} else {
-			this.body = document.getElementsByClassName("viewprot")
-			var templateData = $('#temp1').html()
-			var template = Handlebars.compile(templateData)
-			var html = template(result)
-			$(".page").append(html)
-		}
-		loadingend()
-		i()
-		imageWall()
-    });
+  $("."+tableId).html("<div class='demo'><div class='GITheWall'><ul class='page'><div id='loadinglocation'></div></ul></div></div>");
+
+  loadingstart()
+  $.getJSON("http://192.168.0.47:3000/parsing", "search=" + escape($("#search").val()), function(result) {
+    if (result.tr == "") {
+    } else {
+      var templateData = $('#temp1').html()
+      var template = Handlebars.compile(templateData)
+      var html = template(result)
+      $(".page").append(html)
+    }
+    loadingend()
+    i()
+    imageWall()
+  });
   $("."+tableId).html("<div class='demo'><div class='GITheWall'><ul class='page'><div id='loadinglocation'></div></ul></div></div>");
 
   loadingstart()
