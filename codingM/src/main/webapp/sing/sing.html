@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Sing</title>
 	<link rel="stylesheet"
-	href="../bower_components/jquery-gi-thewall/assets/css/style2.css">
+	href="../bower_components/jquery-gi-thewall/assets/css/style2-1.css">
 	<link rel="stylesheet"
 	href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet"
@@ -39,11 +39,10 @@
 			<div id='imgbox'></div>
 		</div>
 
-		<div role='main' class='viewport'>
-
-		</div>
-
-		<script id="temp1" type="text/x-handlebars-template">
+<div class="line">
+	<div role='main' class='viewport'></div>
+	<script id="temp1" type="text/x-handlebars-template">
+<div class="imgboxtest"><img src="../picture/마이크설명.jpg" /></div>
 			{{#each tr}}
 			<li class="lili" data-contenttype="image" data-href="../picture/images01.PNG">
 				<table table class="table table-hover" >
@@ -53,9 +52,11 @@
 					</tr>
 				</table>
 			</li>
+      </div>
 			{{/each}}
-		</script>
-
+	</script>
+</div>
+		
 		<script src="../bower_components/jquery/dist/jquery.js"></script>
 		<script src="../bower_components/jquery-ui/jquery-ui.js"></script>
 		<script

@@ -15,30 +15,22 @@
 };
 
 function addTable (tableId, search) {
-  $("."+tableId).html("<div class='demo'><div class='GITheWall'><ul class='page'><div id='loadinglocation'></div></ul></div></div>");
-
-  loadingstart()
-  $.getJSON("http://192.168.0.47:3000/parsing", "search=" + escape($("#search").val()), function(result) {
-    if (result.tr == "") {
-    } else {
-      var templateData = $('#temp1').html()
-      var template = Handlebars.compile(templateData)
-      var html = template(result)
-      $(".page").append(html)
-    }
-    loadingend()
-    i()
-    imageWall()
-  });
-  $("."+tableId).html("<div class='demo'><div class='GITheWall'><ul class='page'><div id='loadinglocation'></div></ul></div></div>");
-
+  $("."+tableId).html("<div class='demo'>" +
+  		"<div class='GITheWall'>" +
+  		"<ul class='page'>" +
+  		"<div id='loadinglocation'>" +
+  		"</div>" +
+  		"</ul>" +
+  		"</div>" +
+  		"</div>");
   loadingstart()
   $.getJSON("http://localhost:3000/parsing", "search=" + escape($("#search").val()), function(result) {
     if (result.tr == "") {
-      alert("검색결과가 없습니다.")
+    	alert("검색결과가 없습니다.")
     } else {
       var templateData = $('#temp1').html()
       var template = Handlebars.compile(templateData)
+      
       var html = template(result)
       $(".page").append(html)
     }
@@ -46,7 +38,6 @@ function addTable (tableId, search) {
     i()
     imageWall()
   });
-
 }
 
 
@@ -84,5 +75,3 @@ function loadingend() {
   $('#loadingImg').hide();
   $('#loadingImg').remove();
 }
-
-
