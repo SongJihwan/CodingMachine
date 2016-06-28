@@ -1,3 +1,16 @@
+body {
+  display: inline-block;
+}
+
+/*div {
+  display: inline-block;
+}*/
+
+main div {
+  display: inline-block;
+  border: 1px solid red;
+}
+
 #container-fluid {
   overflow: hidden;
   width: 100%;
@@ -116,4 +129,11 @@ a:visited {
 .sec1:hover {
   background-color: black;
   opacity: 0.8;
+}
+
+.codingMsample {
+  width: 50%;
+  position: relative;
+  left: 800px;
+  display: inline-block;
 }
