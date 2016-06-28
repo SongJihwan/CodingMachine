@@ -15,13 +15,8 @@
 };
 
 function addTable (tableId, search) {
-  $("."+tableId).html("<div class='demo'>" +
-  		"<div class='GITheWall'>");
-  loadingstart()
-  $("."+tableId).html("<ul class='page'>" +
-  		"</ul>" +
-  		"</div>" +
-  		"</div>");
+	loadingstart()
+  $("."+tableId).html("<div class='demo'><div class='GITheWall'><ul class='page'></ul></div></div>");
   $.getJSON("http://localhost:3000/parsing", "search=" + escape($("#search").val()), function(result) {
     if (result.tr == "") {
     	alert("검색결과가 없습니다.")
