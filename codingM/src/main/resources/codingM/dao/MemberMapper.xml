@@ -27,8 +27,6 @@
   <select id="isMember" parameterType="map" resultType="int">
   </select>
   
-  <select id="countAll" resultType="int">
-  </select>
 </mapper>
 
 

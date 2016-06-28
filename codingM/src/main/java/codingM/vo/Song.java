@@ -1,6 +1,7 @@
 package codingM.vo;
 
 import java.sql.Date;
+import java.util.List;
 
 public class Song {
   private int sno;
@@ -8,36 +9,34 @@ public class Song {
   private String title;
   private String singer;
   private Date recordDate;
-  private String pCheck;
   private String fileName;
-  private String filePath;
-  private int wLike;
-  private int mLike;
-  private int yLike;
-  private int cLike;
-  private int tLike;
+  private int wListen;
+  private int mListen;
+  private int yListen;
+  private int listen;
+  private int like;
+  private List<Reply> replys;
 
   public Song() {
     super();
     // TODO Auto-generated constructor stub
   }
 
-  public Song(int sno, int mno, String title, String singer, Date recordDate, String pCheck, String fileName,
-      String filePath, int wLike, int mLike, int yLike, int cLike, int tLike) {
+  public Song(int sno, int mno, String title, String singer, Date recordDate, String fileName,
+      int wListen, int mListen, int yListen, int listen, int like, List<Reply> replys) {
     super();
     this.sno = sno;
     this.mno = mno;
     this.title = title;
     this.singer = singer;
     this.recordDate = recordDate;
-    this.pCheck = pCheck;
     this.fileName = fileName;
-    this.filePath = filePath;
-    this.wLike = wLike;
-    this.mLike = mLike;
-    this.yLike = yLike;
-    this.cLike = cLike;
-    this.tLike = tLike;
+    this.wListen = wListen;
+    this.mListen = mListen;
+    this.yListen = yListen;
+    this.listen = listen;
+    this.like = like;
+    this.replys = replys;
   }
 
   public int getSno() {
@@ -80,14 +79,6 @@ public class Song {
     this.recordDate = recordDate;
   }
 
-  public String getpCheck() {
-    return pCheck;
-  }
-
-  public void setpCheck(String pCheck) {
-    this.pCheck = pCheck;
-  }
-
   public String getFileName() {
     return fileName;
   }
@@ -96,51 +87,51 @@ public class Song {
     this.fileName = fileName;
   }
 
-  public String getFilePath() {
-    return filePath;
+  public int getwListen() {
+    return wListen;
   }
 
-  public void setFilePath(String filePath) {
-    this.filePath = filePath;
+  public void setwListen(int wListen) {
+    this.wListen = wListen;
   }
 
-  public int getwLike() {
-    return wLike;
+  public int getmListen() {
+    return mListen;
   }
 
-  public void setwLike(int wLike) {
-    this.wLike = wLike;
+  public void setmListen(int mListen) {
+    this.mListen = mListen;
   }
 
-  public int getmLike() {
-    return mLike;
+  public int getyListen() {
+    return yListen;
   }
 
-  public void setmLike(int mLike) {
-    this.mLike = mLike;
+  public void setyListen(int yListen) {
+    this.yListen = yListen;
   }
 
-  public int getyLike() {
-    return yLike;
+  public int getListen() {
+    return listen;
   }
 
-  public void setyLike(int yLike) {
-    this.yLike = yLike;
+  public void setListen(int listen) {
+    this.listen = listen;
+  }
+  
+  public int getLike() {
+    return like;
   }
 
-  public int getcLike() {
-    return cLike;
+  public void setLike(int like) {
+    this.like = like;
   }
 
-  public void setcLike(int cLike) {
-    this.cLike = cLike;
+  public List<Reply> getReplys() {
+    return replys;
   }
 
-  public int gettLike() {
-    return tLike;
-  }
-
-  public void settLike(int tLike) {
-    this.tLike = tLike;
+  public void setReplys(List<Reply> replys) {
+    this.replys = replys;
   }
 }

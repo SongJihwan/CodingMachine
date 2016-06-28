@@ -8,23 +8,23 @@
   </resultMap>
   
   <insert id="insert" parameterType="Song">
+    insert into sing(sno, mno, title, singer, recordDate, fileName) values(#{sno}, #{mno}, #{title}, #{singer}, #{recordDate}, #{fileName}); 
   </insert>
-  
-  <update id="update" parameterType="Song">
-  </update>
+
+  <update id="update" parameterType=""></update>
   
   <delete id="delete" parameterType="int">
+    delete from sing where mno=#{mno};
   </delete>
-
-  <select id="selectList" resultMap="SongMap" parameterType="map">
+  
+  <select id="selectList" resultMap="SongMap">
+    select * from sing
   </select>
   
   <select id="selectOne" parameterType="int" resultMap="SongMap">
+    select * from sing where mno=#{mno}
   </select>
   
-  <select id="countAll" resultType="int">
-    select count(*) from song
-  </select>
 </mapper>
 
 
