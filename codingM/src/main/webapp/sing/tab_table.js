@@ -16,14 +16,12 @@
 
 function addTable (tableId, search) {
   $("."+tableId).html("<div class='demo'>" +
-  		"<div class='GITheWall'>" +
-  		"<ul class='page'>" +
-  		"<div id='loadinglocation'>" +
-  		"</div>" +
+  		"<div class='GITheWall'>");
+  loadingstart()
+  $("."+tableId).html("<ul class='page'>" +
   		"</ul>" +
   		"</div>" +
   		"</div>");
-  loadingstart()
   $.getJSON("http://localhost:3000/parsing", "search=" + escape($("#search").val()), function(result) {
     if (result.tr == "") {
     	alert("검색결과가 없습니다.")
@@ -64,7 +62,7 @@ function loadingstart() {
   loadingImg += "</div>";
 
   //화면에 레이어 추가
-  $('body #loadinglocation')
+  $('body .line')
   .append(loadingImg)
 
   //로딩중 이미지 표시
