@@ -8,11 +8,16 @@
  * Copyright 2016, Codrops
  * http://www.codrops.com
  */
-;(function(window) {
+(function(window) {
 
 	'use strict';
 
 	// Helper vars and functions.
+	function test() {
+		alert("오호라");
+	}
+
+
 	function extend( a, b ) {
 		for( var key in b ) {
 			if( b.hasOwnProperty( key ) ) {
@@ -1401,7 +1406,9 @@
 		});
 	}
 
-	init();
+
+ init();
+
 
 	window.AudioContext = window.AudioContext||window.webkitAudioContext;
 

@@ -33,6 +33,7 @@ svg, main {
 .reco {
 	border: 1px solid;
 	height: 450px;
+    /*width: 400px;*/
 }
 
 a {
@@ -1086,7 +1087,7 @@ we use margins because transforms will be applied dynamically */
 		transform: none;
 		background: none;
 	}
-	.song, .visualizer, .effects, .player__controls {
+	.song, .visualizer, .effects, {
 		display: none;
 	}
 

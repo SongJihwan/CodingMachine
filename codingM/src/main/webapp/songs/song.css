@@ -5,6 +5,11 @@ body {
 /*div {
   display: inline-block;
 }*/
+.test {
+  width: 300px;
+  border: 1px solid blue;
+  float: right;
+}
 
 main div {
   display: inline-block;
@@ -131,7 +136,7 @@ a:visited {
   opacity: 0.8;
 }
 
-.codingMsample {
+.hand2 {
   width: 50%;
   position: relative;
   left: 800px;
