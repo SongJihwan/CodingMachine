@@ -33,8 +33,6 @@ function addTable (tableId, search) {
   });
 }
 
-
-
 function imageWall() {
   var wall = $('.GITheWall').GITheWall({
     nextButtonClass: 'fa fa-arrow-right',
@@ -43,10 +41,10 @@ function imageWall() {
   });
 }
 
-function onclickDetail(event, url) {
-  var inkey = "key";
-  var invalue = url;
-  sessionStorage.setItem(inkey, url);
+function onclickDetail(event, title, singer, url) {
+  sessionStorage.setItem("title", title);
+  sessionStorage.setItem("singer", singer);
+  sessionStorage.setItem("key", url);
 };
 
 function loadingstart() {

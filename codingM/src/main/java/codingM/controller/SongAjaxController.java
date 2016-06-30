@@ -5,35 +5,32 @@ import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.google.gson.Gson;
 
 import codingM.service.SongService;
-import codingM.vo.Member;
 import codingM.vo.Song;
 
 @Controller
 @RequestMapping("/songs/")
-@SessionAttributes("loginUser")
+//@SessionAttributes("loginUser")
 public class SongAjaxController {
   @Autowired
   SongService songService;
   
   @RequestMapping(value="add", produces="application/json;charset=utf-8")
   @ResponseBody
-  public String add(String title, String singer, String fileName, HttpSession session) {
+  public String add(String title, String singer, String mp3Name) {
     Song song = new Song();
-    song.setMno(((Member) session.getAttribute("loginUser")).getMno());
+    song.setMno(1);
     song.setTitle(title);
     song.setSinger(singer);
-    song.setFileName(fileName);
+    song.setFileName(mp3Name);
     
     HashMap<String, Object> result = new HashMap<>();
     try {

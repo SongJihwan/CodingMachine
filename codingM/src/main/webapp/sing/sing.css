@@ -82,9 +82,20 @@
   width: 50%;
 }
 
-.GITheWall {
-	margin-bottom: 1%;
-	float: left;
+.recordContain {
+	width: 100%;
+}
+
+.recordT{
+	display: inline-block;
+}
+
+.recordT#T1{
+	width: 60%;
+}
+
+.recordT#T2{
+  width: 40%;
 }
 
 h3 {

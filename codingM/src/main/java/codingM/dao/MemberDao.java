@@ -14,7 +14,6 @@ public interface MemberDao {
   int delete(int no);
   int isMember(Map<String, Object> paramMap);
   int countAll();
-
 }
 
 

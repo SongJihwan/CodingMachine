@@ -4,8 +4,6 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="codingM.dao.MemberDao">
-  <resultMap type="Member" id="MemberMap">
-  </resultMap>
   
   <insert id="insert" parameterType="Member">
     insert into member(email, password) values (#{email}, #{password})
@@ -17,11 +15,10 @@
   <delete id="delete" parameterType="int">
   </delete>
 
-  <select id="selectList" resultMap="MemberMap" parameterType="map">
-    <include refid="select01"/>
+  <select id="selectList" parameterType="map" resultType="Member" >
   </select>
   
-  <select id="selectOne" parameterType="map" resultMap="MemberMap">
+  <select id="selectOne" parameterType="map" resultType="Member">
   </select>
   
   <select id="isMember" parameterType="map" resultType="int">

@@ -134,4 +134,13 @@ public class Song {
   public void setReplys(List<Reply> replys) {
     this.replys = replys;
   }
+
+  @Override
+  public String toString() {
+    return "Song [sno=" + sno + ", mno=" + mno + ", title=" + title + ", singer=" + singer + ", recordDate="
+        + recordDate + ", fileName=" + fileName + ", wListen=" + wListen + ", mListen=" + mListen + ", yListen="
+        + yListen + ", listen=" + listen + ", like=" + like + ", replys=" + replys + "]";
+  }
+  
+  
 }
