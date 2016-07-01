@@ -11,9 +11,9 @@ body {
   float: right;
 }
 
-main div {
-  display: inline-block;
-  border: 1px solid red;
+div {
+  /*display: inline-block;*/
+  /*border: 1px solid red;*/
 }
 
 #container-fluid {
@@ -139,6 +139,6 @@ a:visited {
 .hand2 {
   width: 50%;
   position: relative;
-  left: 800px;
+  left: 38%;
   display: inline-block;
 }
