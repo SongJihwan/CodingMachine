@@ -9,19 +9,6 @@ public class Reply {
   private String content;
   private Date writeDate;
 
-  public Reply() {
-    super();
-    // TODO Auto-generated constructor stub
-  }
-
-  public Reply(int rno, int mno, int sno, String content, Date writeDate) {
-    this.rno = rno;
-    this.mno = mno;
-    this.sno = sno;
-    this.content = content;
-    this.writeDate = writeDate;
-  }
-
   public int getRno() {
     return rno;
   }
@@ -60,6 +47,12 @@ public class Reply {
 
   public void setWriteDate(Date writeDate) {
     this.writeDate = writeDate;
+  }
+
+  @Override
+  public String toString() {
+    return "Reply [rno=" + rno + ", mno=" + mno + ", sno=" + sno + ", content=" + content + ", writeDate=" + writeDate
+        + "]";
   }
 
 }

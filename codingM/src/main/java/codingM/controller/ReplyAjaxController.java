@@ -1,46 +1,60 @@
 package codingM.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 
-import codingM.service.SongService;
-import codingM.vo.Song;
-import codingM.vo.SongMember;
+import codingM.service.ReplyService;
+import codingM.vo.Reply;
+import codingM.vo.ReplyMember;
 
 @Controller
-@RequestMapping("/songs/")
+@RequestMapping("/replys/")
 
 //@SessionAttributes("loginUser")
-public class SongAjaxController {
+public class ReplyAjaxController {
   @Autowired
-  SongService songService;
+  ReplyService replyService;
   
   @RequestMapping(value="add", produces="application/json;charset=utf-8")
   @ResponseBody
-  public String add(String title, String singer, String mp3Name) {
-    Song song = new Song();
-    song.setMno(1);
-    song.setTitle(title);
-    song.setSinger(singer);
-    song.setFileName(mp3Name);
+  public String add(String content, HttpSession session) {
+    Reply reply = new Reply();
+    reply.setContent(content);
     
     HashMap<String, Object> result = new HashMap<>();
     try {
-      songService.add(song);
+      replyService.add(reply);
       result.put("status", "success");
     } catch (Exception e) {
       e.printStackTrace();
+      result.put("status", "failure");
+    }
+    return new Gson().toJson(result);
+  }
+  
+  @RequestMapping(value="update", method=RequestMethod.POST, produces="application/json;charset=utf-8")
+  @ResponseBody
+  public String update(String content, int no) throws ServletException, IOException {
+    Reply reply = replyService.retrieveByNo(no);
+    reply.setContent(content);
+    
+    HashMap<String, Object> result = new HashMap<>();
+    try {
+      replyService.change(reply);
+      result.put("status", "success");
+    } catch (Exception e) {
       result.put("status", "failure");
     }
     return new Gson().toJson(result);
@@ -52,7 +66,7 @@ public class SongAjaxController {
     HashMap<String, Object> result = new HashMap<>();
     
     try {
-      songService.delete(sno);
+      replyService.delete(sno);
       result.put("status", "success");
     } catch (Exception e) {
       result.put("status", "failure");
@@ -60,26 +74,14 @@ public class SongAjaxController {
     return new Gson().toJson(result);
   }
   
-  @RequestMapping(value="detail", produces="application/json;charset=utf-8")
-  @ResponseBody
-  public String detail(int sno) throws ServletException ,IOException {
-    List<SongMember> list = new ArrayList<>();
-    list.add(songService.retrieve(sno));
-    HashMap<String, Object> result = new HashMap<>();
-    result.put("song", list);
-    
-    return new Gson().toJson(result);
-  }
-  
   @RequestMapping(value="list", produces="application/json;charset=utf-8")
   @ResponseBody
-  public String list() throws ServletException, IOException {
-    List<SongMember> list = songService.list();
+  public String list(int sno) throws ServletException, IOException {
+    List<ReplyMember> list = replyService.list(sno);
     
     HashMap<String, Object> result = new HashMap<>();
     result.put("list", list);
     
     return new Gson().toJson(result);
   }
-  
 }

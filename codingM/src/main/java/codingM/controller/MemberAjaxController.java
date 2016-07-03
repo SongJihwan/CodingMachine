@@ -17,7 +17,7 @@ import codingM.service.MemberService;
 import codingM.vo.Member;
 
 @Controller
-@RequestMapping("/ajax/member/")
+@RequestMapping("/members/")
 
 public class MemberAjaxController {
   @Autowired

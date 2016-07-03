@@ -1,5 +1,8 @@
 package codingM.vo;
 
+import lombok.Data;
+
+@Data
 public class Member {
   private int mno;
   private String email;
@@ -10,15 +13,6 @@ public class Member {
   public Member() {
     super();
     // TODO Auto-generated constructor stub
-  }
-
-  public Member(int mno, String email, String password, String profilePic, String nickname) {
-    super();
-    this.mno = mno;
-    this.email = email;
-    this.password = password;
-    this.profilePic = profilePic;
-    this.nickname = nickname;
   }
 
   public int getMno() {
@@ -59,6 +53,12 @@ public class Member {
 
   public void setNickname(String nickname) {
     this.nickname = nickname;
+  }
+
+  @Override
+  public String toString() {
+    return "Member [mno=" + mno + ", email=" + email + ", password=" + password + ", profilePic=" + profilePic
+        + ", nickname=" + nickname + "]";
   }
 
 }

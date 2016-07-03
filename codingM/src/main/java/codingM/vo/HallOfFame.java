@@ -10,25 +10,19 @@ public class HallOfFame {
     // TODO Auto-generated constructor stub
   }
 
-  public HallOfFame(String code, int rank, int sno) {
-    this.code = code;
-    this.rank = rank;
-    this.sno = sno;
-  }
-
-  public String getcode() {
+  public String getCode() {
     return code;
   }
 
-  public void setcode(String code) {
+  public void setCode(String code) {
     this.code = code;
   }
 
-  public int getrank() {
+  public int getRank() {
     return rank;
   }
 
-  public void setrank(int rank) {
+  public void setRank(int rank) {
     this.rank = rank;
   }
 
@@ -38,6 +32,11 @@ public class HallOfFame {
 
   public void setSno(int sno) {
     this.sno = sno;
+  }
+
+  @Override
+  public String toString() {
+    return "HallOfFame [code=" + code + ", rank=" + rank + ", sno=" + sno + "]";
   }
 
 }

@@ -30,5 +30,7 @@ dependencies {
   compile 'javax.servlet:jstl:1.2'
   compile 'com.google.code.gson:gson:2.6.2'
   compile 'commons-codec:commons-codec:1.10'
+  compile 'org.springframework:spring-orm:4.3.0.RELEASE'
+  compile 'org.projectlombok:lombok:1.16.8'
   providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
 }

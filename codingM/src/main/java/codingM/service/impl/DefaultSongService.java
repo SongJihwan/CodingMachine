@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import codingM.dao.SongDao;
 import codingM.service.SongService;
 import codingM.vo.Song;
+import codingM.vo.SongMember;
 
 @Service
 public class DefaultSongService implements SongService {
@@ -21,11 +22,11 @@ public class DefaultSongService implements SongService {
     songDao.delete(sno);
   }
 
-  public Song retrieve(int sno) {
+  public SongMember retrieve(int sno) {
     return songDao.selectOne(sno);
   }
 
-  public List<Song> list() {
+  public List<SongMember> list() {
     return songDao.selectList();
   }
 }
