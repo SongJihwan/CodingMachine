@@ -1,232 +1,303 @@
 <!DOCTYPE html>
 <html>
-<head lang="ko">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<head>
+<meta charset="UTF-8">
 
-    <title>main</title>
+<title>main</title>
 
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Droid+Serif'
+  rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Cookie'
+  rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
 
-    <link href="../bower_components/skrollr/src/demo.css" rel="stylesheet">
-    <link href="../bower_components/skrollr/src/header.css" rel="stylesheet">
+<link href="../bower_components/skrollr/src/demo.css" rel="stylesheet">
+<link href="../bower_components/skrollr/src/header.css" rel="stylesheet">
+<link rel="stylesheet" href="mylogin.css">
 
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+    var jbOffset = $('.jbMenu').offset();
+    $(window).scroll(function() {
+      if ($(document).scrollTop() > jbOffset.top) {
+        $('.jbMenu').addClass('jbFixed');
+      } else {
+        $('.jbMenu').removeClass('jbFixed');
+      }
+    });
+  });
+</script>
+  
+  <script src="jquery.boxroll-slider.js"></script> 
+  <script>
+  $('.slider').boxRollSlider();
+  </script>
 </head>
 <body>
 
-    <div
-    class="parallax-image-wrapper"
-    data-anchor-target="#page-intro"
+  <div class="jbMenu">
+    <div class="slider">
+
+      <!-- 로그인,회원가입 -->
+      <div class="item" style="background: white;">
+        <div id="btn">
+          <button id="loginBtn">Login</button>
+          <button id="signupBtn">Signup</button>
+        </div>
+      </div>
+
+      <!-- 로그인클릭시 이메일,비밀번호,로그인 -->
+      <div class="item" style="background: white;">
+        <div id="form">
+          <form>
+            <input type="email" placeholder="Email Address" /> <input
+              type="password" placeholder="Password" />
+            <button id="loginBtn">Login</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- 회원가입클릭시 이메일,비밀번호,비밀번호,회원가입 -->
+      <div class="item" style="background: white;">
+        <div id="form2">
+          <form>
+            <input type="email" placeholder="Email Address" /> <input
+              type="password" placeholder="Password" /> <input type="password"
+              placeholder="Password" />
+            <button id="signupBtn">Signup</button>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+  <div class="jbContent"></div>
+
+  <div class="parallax-image-wrapper" data-anchor-target="#page-intro"
     data-bottom-top="transform:translateY(200%)"
     data-top-bottom="transform:translateY(0)">
 
-    <div
-    class="parallax-image"
-    style="background-image:url(../picture/main01.jpg)"
-    data-anchor-target="#page-intro"
-    data-bottom-top="transform: translateY(-80%);"
-    data-top-bottom="transform: translateY(80%);"
-    >
+    <div class="parallax-image"
+      style="background-image: url(../picture/main01.jpg)"
+      data-anchor-target="#page-intro"
+      data-bottom-top="transform: translateY(-80%);"
+      data-top-bottom="transform: translateY(80%);"></div>
+  </div>
+  <div class="parallax-image-wrapper"
+    data-anchor-target=".body-text + .gap"
+    data-bottom-top="transform:translateY(200%)"
+    data-top-bottom="transform:translateY(0)">
 
-</div>
-</div>
-<div
-class="parallax-image-wrapper"
-data-anchor-target=".body-text + .gap"
-data-bottom-top="transform:translateY(200%)"
-data-top-bottom="transform:translateY(0)">
+    <div class="parallax-image"
+      style="background-image: url(../picture/main02.jpg)"
+      data-anchor-target=".body-text + .gap"
+      data-bottom-top="transform: translateY(-80%);"
+      data-top-bottom="transform: translateY(80%);"></div>
+  </div>
+  <div class="parallax-image-wrapper"
+    data-anchor-target=".features-list + .gap"
+    data-bottom-top="transform:translateY(200%)"
+    data-top-bottom="transform:translateY(0)">
 
-<div
-class="parallax-image"
-style="background-image:url(../picture/main02.jpg)"
-data-anchor-target=".body-text + .gap"
-data-bottom-top="transform: translateY(-80%);"
-data-top-bottom="transform: translateY(80%);"
->
+    <div class="parallax-image"
+      style="background-image: url(../picture/main03.jpg)"
+      data-anchor-target=".features-list + .gap"
+      data-bottom-top="transform: translateY(-80%);"
+      data-top-bottom="transform: translateY(80%);"></div>
+  </div>
+  <div class="parallax-image-wrapper"
+    data-anchor-target=".about-us + .gap"
+    data-bottom-top="transform:translateY(200%)"
+    data-top-bottom="transform:translateY(0)">
 
-</div>
-</div>
-<div
-class="parallax-image-wrapper"
-data-anchor-target=".features-list + .gap"
-data-bottom-top="transform:translateY(200%)"
-data-top-bottom="transform:translateY(0)">
+    <div class="parallax-image"
+      style="background-image: url(../picture/main04.jpg)"
+      data-anchor-target=".about-us + .gap"
+      data-bottom-top="transform: translateY(-80%);"
+      data-top-bottom="transform: translateY(80%);"></div>
+  </div>
 
-<div
-class="parallax-image"
-style="background-image:url(../picture/main03.jpg)"
-data-anchor-target=".features-list + .gap"
-data-bottom-top="transform: translateY(-80%);"
-data-top-bottom="transform: translateY(80%);"
->
+  <div id="skrollr-body">
 
-</div>
-</div>
-<div
-class="parallax-image-wrapper"
-data-anchor-target=".about-us + .gap"
-data-bottom-top="transform:translateY(200%)"
-data-top-bottom="transform:translateY(0)">
-
-<div
-class="parallax-image"
-style="background-image:url(../picture/main04.jpg)"
-data-anchor-target=".about-us + .gap"
-data-bottom-top="transform: translateY(-80%);"
-data-top-bottom="transform: translateY(80%);"
->
-
-</div>
-</div>
-
-<div id="skrollr-body">
-
-    <div id="page-intro" class="gap" style="background-image:url(../picture/main01.jpg); ">
-        <h1>SeokWonSong!</h1>
-        <a href="http://tutorialzine.com/2015/09/6-practical-examples-for-building-parallax-websites/" class="btn">SIGN UP FREE</a>
+    <div id="page-intro" class="gap"
+      style="background-image: url(../picture/main01.jpg);">
+      <h1>SeokWonSong!</h1>
     </div>
 
     <div class="body-text content">
 
-        <h2>Sing your favourite hits</h2>
+      <h2>Sing your favourite hits</h2>
 
-        <p data-300-center-top="transform: scale(0.8); opacity: 0" data-300-center-center="transform: scale(1); opacity: 1">
-            Enjoy thousands of songs ranging from evergreen classics to the latest billboard hits! You will always have new songs to sing from
-            the weekly updated catalogue.
-        </p>
+      <p data-300-center-top="transform: scale(0.8); opacity: 0"
+        data-300-center-center="transform: scale(1); opacity: 1">Enjoy
+        thousands of songs ranging from evergreen classics to the latest
+        billboard hits! You will always have new songs to sing from the
+        weekly updated catalogue.</p>
 
 
-        <p data-200-center-top="transform: scale(0.8); opacity: 0" data-200-center-center="transform: scale(1); opacity: 1">
-            Forget the expensive karaoke devices and discs, now you have it on your web browser. Just log into Karaokegame from any computer and you can turn your living room into a karaoke party.
-        </p>
+      <p data-200-center-top="transform: scale(0.8); opacity: 0"
+        data-200-center-center="transform: scale(1); opacity: 1">Forget
+        the expensive karaoke devices and discs, now you have it on your web
+        browser. Just log into Karaokegame from any computer and you can
+        turn your living room into a karaoke party.</p>
 
-        <p data-100-center-top="transform: scale(0.8); opacity: 0" data-100-center-center="transform: scale(1); opacity: 1">
-            Karaoke is meant to be sociable. Record and share your performance on Facebook, challenge your friends, and rate the best recordings.
-        </p>
+      <p data-100-center-top="transform: scale(0.8); opacity: 0"
+        data-100-center-center="transform: scale(1); opacity: 1">
+        Karaoke is meant to be sociable. Record and share your performance
+        on Facebook, challenge your friends, and rate the best recordings.</p>
 
     </div>
 
-    <div class="gap" style="background-image:url(../picture/main02.jpg); "></div>
+    <div class="gap" style="background-image: url(../picture/main02.jpg);"></div>
 
     <div class="features-list">
 
-        <h2>Features</h2>
+      <h2>Features</h2>
 
-        <div data-100-bottom-top="transform: translateX(-200px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">
-            <i class="material-icons">cloud_done</i>
-            <h4>Sing <b>favourite hits</b></h4>
-        </div>
+      <div data-100-bottom-top="transform: translateX(-200px); opacity: 0"
+        data-center-top="transform: translateX(0px); opacity: 1">
+        <i class="material-icons">cloud_done</i>
+        <h4>
+          Sing <b>favourite hits</b>
+        </h4>
+      </div>
 
-        <div data-100-bottom-top="transform: translateY(200px); opacity: 0" data-center-top="transform: translateY(0px); opacity: 1">
-            <i class="material-icons">public</i>
-            <h4><b>Easy</b> access</h4>
-        </div>
+      <div data-100-bottom-top="transform: translateY(200px); opacity: 0"
+        data-center-top="transform: translateY(0px); opacity: 1">
+        <i class="material-icons">public</i>
+        <h4>
+          <b>Easy</b> access
+        </h4>
+      </div>
 
-        <div data-100-bottom-top="transform: translateX(200px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">
-            <i class="material-icons">security</i>
-            <h4><b>Share</b> the fun</h4>
-        </div>
+      <div data-100-bottom-top="transform: translateX(200px); opacity: 0"
+        data-center-top="transform: translateX(0px); opacity: 1">
+        <i class="material-icons">security</i>
+        <h4>
+          <b>Share</b> the fun
+        </h4>
+      </div>
 
     </div>
 
-    <div class="gap" style="background-image:url(../picture/main03.jpg); "></div>
+    <div class="gap" style="background-image: url(../picture/main03.jpg);"></div>
 
 
     <div class="about-us">
 
-        <h2>About us</h2>
+      <h2>About us</h2>
 
-        <div data-150-bottom-center="transform: rotate(-90deg); opacity: 0" data-150-center-center="transform: rotate(0); opacity: 1">
-            <img src="../picture/avatars/1.jpg" alt="avatar">
-        </div>
+      <div data-150-bottom-center="transform: rotate(-90deg); opacity: 0"
+        data-150-center-center="transform: rotate(0); opacity: 1">
+        <img src="../picture/avatars/1.jpg" alt="avatar">
+      </div>
 
-        <div data-100-bottom-center="transform: rotate(-90deg); opacity: 0" data-100-center-center="transform: rotate(0); opacity: 1">
-            <img src="../picture/avatars/2.jpg" alt="avatar">
-        </div>
+      <div data-100-bottom-center="transform: rotate(-90deg); opacity: 0"
+        data-100-center-center="transform: rotate(0); opacity: 1">
+        <img src="../picture/avatars/2.jpg" alt="avatar">
+      </div>
 
-        <div data-50-bottom-center="transform: rotate(-90deg); opacity: 0" data-50-center-center="transform: rotate(0); opacity: 1">
-            <img src="../picture/avatars/3.jpg" alt="avatar">
-        </div>
+      <div data-50-bottom-center="transform: rotate(-90deg); opacity: 0"
+        data-50-center-center="transform: rotate(0); opacity: 1">
+        <img src="../picture/avatars/3.jpg" alt="avatar">
+      </div>
 
-        <div data-150-bottom-center="transform: rotateY(-90deg); opacity: 0" data-150-center-center="transform: rotate(0); opacity: 1">
-            <img src="../picture/avatars/4.jpg" alt="avatar">
-        </div>
+      <div data-150-bottom-center="transform: rotateY(-90deg); opacity: 0"
+        data-150-center-center="transform: rotate(0); opacity: 1">
+        <img src="../picture/avatars/4.jpg" alt="avatar">
+      </div>
 
-        <div data-100-bottom-center="transform: rotateY(-90deg); opacity: 0" data-100-center-center="transform: rotate(0); opacity: 1">
-            <img src="../picture/avatars/5.jpg" alt="avatar">
-        </div>
+      <div data-100-bottom-center="transform: rotateY(-90deg); opacity: 0"
+        data-100-center-center="transform: rotate(0); opacity: 1">
+        <img src="../picture/avatars/5.jpg" alt="avatar">
+      </div>
 
-        <div data-50-bottom-center="transform: rotateY(-90deg); opacity: 0" data-50-center-center="transform: rotate(0); opacity: 1">
-            <img src="../picture/avatars/6.jpg" alt="avatar">
-        </div>
+      <div data-50-bottom-center="transform: rotateY(-90deg); opacity: 0"
+        data-50-center-center="transform: rotate(0); opacity: 1">
+        <img src="../picture/avatars/6.jpg" alt="avatar">
+      </div>
 
-        <a class="attribution" href="http://www.freepik.com/free-photos-vectors/icon">Icon vectors designed by Freepik</a>
+      <a class="attribution"
+        href="http://www.freepik.com/free-photos-vectors/icon">Icon
+        vectors designed by Freepik</a>
 
     </div>
 
-    <div class="gap" style="background-image:url(../picture/main04.jpg);"></div>
+    <div class="gap" style="background-image: url(../picture/main04.jpg);"></div>
 
     <div class="gallery"></div>
 
-</div>
+  </div>
 
 
 
 
-<div class="scroll-pause" data-anchor-target=".gallery" data-100p-top-top="transform:translateY(100%);" data-top-top="transform:translateY(0%)" data--150p-top-top="" data--300p-top-top="transform:translateY(-100%)">
+  <div class="scroll-pause" data-anchor-target=".gallery"
+    data-100p-top-top="transform:translateY(100%);"
+    data-top-top="transform:translateY(0%)" data--150p-top-top=""
+    data--300p-top-top="transform:translateY(-100%)">
 
-    <div class="row" data-anchor-target=".gallery" data-top-top="transform: translateX(0%);" data--150p-top-top="transform: translateX(-50%);">
-        <div style="background-image:url(../picture/small/coast.jpg);" ></div>
+    <div class="row" data-anchor-target=".gallery"
+      data-top-top="transform: translateX(0%);"
+      data--150p-top-top="transform: translateX(-50%);">
+      <div style="background-image: url(../picture/small/coast.jpg);"></div>
 
-        <div style="background-image:url(../picture/small/palmtrees.jpg);" ></div>
+      <div style="background-image: url(../picture/small/palmtrees.jpg);"></div>
 
-        <div style="background-image:url(../picture/small/bay.jpg);" ></div>
+      <div style="background-image: url(../picture/small/bay.jpg);"></div>
 
-        <div style="background-image:url(../picture/small/sea.jpg);" ></div>
+      <div style="background-image: url(../picture/small/sea.jpg);"></div>
 
-        <div style="background-image:url(../picture/small/coast.jpg);" ></div>
+      <div style="background-image: url(../picture/small/coast.jpg);"></div>
 
-        <div style="background-image:url(../picture/small/palmtrees.jpg);" ></div>
+      <div style="background-image: url(../picture/small/palmtrees.jpg);"></div>
 
-        <div style="background-image:url(../picture/small/bay.jpg);" ></div>
+      <div style="background-image: url(../picture/small/bay.jpg);"></div>
 
-        <div style="background-image:url(../picture/small/sea.jpg);" ></div>
+      <div style="background-image: url(../picture/small/sea.jpg);"></div>
     </div>
 
 
-    <div class="row" data-anchor-target=".gallery" data-top-top="transform: translateX(-50%);" data--150p-top-top="transform: translateX(0);">
+    <div class="row" data-anchor-target=".gallery"
+      data-top-top="transform: translateX(-50%);"
+      data--150p-top-top="transform: translateX(0);">
 
-        <div style="background-image:url(../picture/small/sea.jpg);" ></div>
+      <div style="background-image: url(../picture/small/sea.jpg);"></div>
 
-        <div style="background-image:url(../picture/small/bay.jpg);" ></div>
+      <div style="background-image: url(../picture/small/bay.jpg);"></div>
 
-        <div style="background-image:url(../picture/small/palmtrees.jpg);" ></div>
+      <div style="background-image: url(../picture/small/palmtrees.jpg);"></div>
 
-        <div style="background-image:url(../picture/small/coast.jpg);" ></div>
+      <div style="background-image: url(../picture/small/coast.jpg);"></div>
 
-        <div style="background-image:url(../picture/small/sea.jpg);" ></div>
+      <div style="background-image: url(../picture/small/sea.jpg);"></div>
 
-        <div style="background-image:url(../picture/small/bay.jpg);" ></div>
+      <div style="background-image: url(../picture/small/bay.jpg);"></div>
 
-        <div style="background-image:url(../picture/small/palmtrees.jpg);" ></div>
+      <div style="background-image: url(../picture/small/palmtrees.jpg);"></div>
 
-        <div style="background-image:url(../picture/small/coast.jpg);" ></div>
+      <div style="background-image: url(../picture/small/coast.jpg);"></div>
 
     </div>
 
-</div>
+  </div>
 
 
 
-<script src="../bower_components/skrollr/src/skrollr.js"></script>
-
-<script>
+  <script src="../bower_components/skrollr/src/skrollr.js"></script>
+  <script>
     skrollr.init();
-</script>
+  </script>
 
-<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../bower_components/handlebars/handlebars.min.js"></script>
 
+  <script src="boxroll-slider.js"></script> 
+  <script>
+  $('.slider').boxRollSlider();
+  </script>
 </body>
 </html>
