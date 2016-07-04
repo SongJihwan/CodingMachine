@@ -16,7 +16,7 @@ window.onload = function loadDate() {
   });
 }
 
-/*function getSong() {
+function getSong() {
   var newdiv = document.createElement("div");
   var add = $(".demo").clone();
   $(newdiv).html(add);
@@ -33,4 +33,4 @@ jQuery(document).ready(function() {
       getSong();
     }
   });
-});*/
+});
