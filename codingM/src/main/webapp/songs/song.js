@@ -7,7 +7,7 @@ function imageWall() {
 }
 
 window.onload = function loadDate() {
-  $.getJSON("http://192.168.0.47:8080/codingM/songs/list.do", function(result) {
+  $.getJSON(contextRoot + "/songs/list.do", function(result) {
     var templateData = $('#temp1').html()
     var template = Handlebars.compile(templateData)
     var html = template(result)
