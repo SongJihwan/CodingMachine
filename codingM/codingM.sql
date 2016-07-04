@@ -1,4 +1,4 @@
-create databases karaoke;
+create database karaoke;
 use karaoke;
 DROP TABLE Member;
 DROP TABLE Sing;
