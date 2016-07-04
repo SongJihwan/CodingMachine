@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Record Player | Codrops</title>
+    <title>S e o k W o n S o n g</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="author" content="Codrops" />
@@ -142,14 +142,14 @@
 
 
 <script id="temp2" type="text/x-handlebars-template">
-  {{#each div2}}
-  <tr><td>{{no}}</td><td>{{conts}}</td><td>{{nickname}}</td></tr>
+  {{#each list}}
+  <tr><td>{{content}}</td><td>{{nickname}}</td><td>{{writeDate}}</td></tr>
   {{/each}}
 </script>
 
 <script id="temp3" type="text/x-handlebars-template">
-  {{#each div3}}
-  <div class='single single--current' id='album-1' data-side1={{songfile}} data-side2={{songfile}}> <div class='img-wrap img-wrap--single' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'><img class='img img--single' src={{img}}></div><span class='number' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'><span class='number__total'></span></span> <h2 class='artist artist--single' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'></h2> <h3 class='title title--single' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'></h3> <span class='year year--single' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'></span> </div>
+  {{#each song}}
+  <div class='single single--current' id='album-1' data-side1={{fileName}} data-side2={{fileName}}> <div class='img-wrap img-wrap--single' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'><img class='img img--single' src={{profilePic}}></div><span class='number' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'><span class='number__total'></span></span> <h2 class='artist artist--single' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'></h2> <h3 class='title title--single' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'></h3> <span class='year year--single' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'></span> </div>
   {{/each}}
 </script>
 
@@ -160,11 +160,11 @@
     <div class="GITheWall">
       <ul class="page">
         <script id="temp1" type="text/x-handlebars-template">
-          {{#each div}}
-          <li class="lili" data-contenttype="image" data-href="{{img}}">
+          {{#each list}}
+          <li class="lili" data-contenttype="image" data-href="{{profilePic}}" onclick="sessionStorage.setItem('sno', {{sno}})">
             <div class="sect1">
               <div class="hex">
-                <div class="hexagon"><img src={{img}} alt={{singer}}/></div>
+                <div class="hexagon"><img src="{{profilePic}}" alt="{{singer}}"/></div>
               </div>
               <div class="name">
                 {{title}} - {{singer}}<br>
@@ -186,7 +186,7 @@
 </div>
 
 
-
+<script src="../common.js"></script>
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 <script src="js/imagesloaded.pkgd.min.js"></script>
 <script src="js/masonry.pkgd.min.js"></script>
@@ -194,7 +194,7 @@
 <script src="js/dynamics.js"></script>
 <script src="js/abbey-load.js"></script>
 
-<script src="../bower_components/jquery-gi-thewall/jQuery.GI.TheWall.Song"></script>
+<script src="../bower_components/jquery-gi-thewall/jQuery.GI.TheWall.Song.js"></script>
 <script src="../bower_components/handlebars/handlebars.min.js"></script>
 <script src="song.js"></script>
 <script src="js/main.js"></script>

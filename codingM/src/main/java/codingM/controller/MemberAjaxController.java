@@ -25,10 +25,12 @@ public class MemberAjaxController {
   
   @RequestMapping(value="add", produces="application/json;charset=utf-8")
   @ResponseBody
-  public String add(String name, String email, String password, String tel) throws ServletException, IOException {
+  public String add(String email, String password) throws ServletException, IOException {
     Member member = new Member();
     member.setEmail(email);
     member.setPassword(password);
+    member.setNickname(email);
+    member.setProfilePic("../picture/default.png");
     HashMap<String, Object> result = new HashMap<>();
     try {
       memberService.add(member);
