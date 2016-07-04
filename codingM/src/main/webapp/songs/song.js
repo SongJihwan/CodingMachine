@@ -7,7 +7,7 @@ function imageWall() {
 }
 
 window.onload = function loadDate() {
-  $.getJSON(contextRoot+"/songs/list.do", function(result) {
+  $.getJSON("data.json", function(result) {
     var templateData = $('#temp1').html()
     var template = Handlebars.compile(templateData)
     var html = template(result)
