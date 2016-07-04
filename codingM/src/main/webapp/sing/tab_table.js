@@ -17,7 +17,7 @@
 function addTable (tableId, search) {
 	loadingstart()
   $("."+tableId).html("<div class='demo'><div class='GITheWall'><ul class='page'></ul></div></div>");
-  $.getJSON("http://192.168.0.47:3000/parsing", "search=" + escape($("#search").val()), function(result) {
+  $.getJSON(ipadd+":3000/parsing", "search=" + escape($("#search").val()), function(result) {
     if (result.tr == "") {
     	alert("검색결과가 없습니다.")
     } else {
