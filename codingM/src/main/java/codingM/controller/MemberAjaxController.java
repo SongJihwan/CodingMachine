@@ -18,7 +18,6 @@ import codingM.vo.Member;
 
 @Controller
 @RequestMapping("/members/")
-
 public class MemberAjaxController {
   @Autowired
   MemberService memberService;
@@ -29,7 +28,7 @@ public class MemberAjaxController {
     Member member = new Member();
     member.setEmail(email);
     member.setPassword(password);
-    member.setNickname(email);
+    member.setNickname(email.split("@")[0]);
     member.setProfilePic("../picture/default.png");
     HashMap<String, Object> result = new HashMap<>();
     try {

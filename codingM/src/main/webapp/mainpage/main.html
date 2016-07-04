@@ -29,11 +29,6 @@
     });
   });
 </script>
-  
-  <script src="jquery.boxroll-slider.js"></script> 
-  <script>
-  $('.slider').boxRollSlider();
-  </script>
 </head>
 <body>
 
@@ -43,31 +38,27 @@
       <!-- 로그인,회원가입 -->
       <div class="item" style="background: white;">
         <div id="btn">
-          <button id="loginBtn">Login</button>
-          <button id="signupBtn">Signup</button>
+          <button id="loginBtn" type="button">Login</button>
+          <button id="signupBtn" type="button">SignUp</button>
         </div>
       </div>
 
       <!-- 로그인클릭시 이메일,비밀번호,로그인 -->
       <div class="item" style="background: white;">
         <div id="form">
-          <form>
-            <input type="email" placeholder="Email Address" /> <input
-              type="password" placeholder="Password" />
-            <button id="loginBtn">Login</button>
-          </form>
+          <input type="email" class="email" placeholder="Email Address" /> 
+          <input type="password" class="pw" placeholder="Password" />
+          <button id="loginBtn2" type="button" onclick="login()">Login</button>
         </div>
       </div>
 
       <!-- 회원가입클릭시 이메일,비밀번호,비밀번호,회원가입 -->
       <div class="item" style="background: white;">
         <div id="form2">
-          <form>
-            <input type="email" placeholder="Email Address" /> <input
-              type="password" placeholder="Password" /> <input type="password"
-              placeholder="Password" />
-            <button id="signupBtn">Signup</button>
-          </form>
+          <input type="email" class="email" placeholder="Email Address" />
+          <input type="password" class="pw" placeholder="Password" /> 
+          <input type="password" class="pw2" placeholder="Password Confirm" />
+          <button id="signupBtn2" type="button">SignUp</button>
         </div>
       </div>
       
@@ -297,7 +288,21 @@
 
   <script src="boxroll-slider.js"></script> 
   <script>
-  $('.slider').boxRollSlider();
+  $('.slider').boxRollSlider() 
+
+  function login () {
+     $.post("http://localhost:8080/codingM/auth/login.do", {
+    	 email: $(".email").val(),
+       password : $(".pw").val()
+     }, function(result) {
+     if (result.status == "success") {
+      location.href = "../sing/sing.html"
+     } else {
+      window.alert("로그인 실패입니다!")
+     }
+     }, "json");
+   }  
+ 
   </script>
 </body>
 </html>

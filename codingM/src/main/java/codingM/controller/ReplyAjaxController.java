@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.google.gson.Gson;
 
@@ -21,8 +22,7 @@ import codingM.vo.ReplyMember;
 
 @Controller
 @RequestMapping("/replys/")
-
-//@SessionAttributes("loginUser")
+@SessionAttributes("loginUser")
 public class ReplyAjaxController {
   @Autowired
   ReplyService replyService;

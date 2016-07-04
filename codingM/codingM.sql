@@ -167,55 +167,25 @@ ALTER TABLE YHOF ADD CONSTRAINT UK_YHOF UNIQUE (
 
 -- 좋아요
 CREATE TABLE LikeSong (
+  lno    INTEGER PRIMARY KEY auto_increment,
   mno    INTEGER NOT NULL, -- 회원번호
   Sno    INTEGER NOT NULL, -- 노래번호
   status INTEGER NOT NULL DEFAULT 0 -- 상태
 );
 
-
--- 노래
-ALTER TABLE Song
-  ADD
-    CONSTRAINT FK_Member_TO_Song -- 회원 -> 노래
-    FOREIGN KEY (
-      mno -- 회원번호
-    )
-    REFERENCES Member ( -- 회원
-      mno -- 회원번호
-    );
+CREATE UNIQUE INDEX PK_LikeSong
+  ON LikeSong ( -- 댓글
+    lno ASC -- 댓글번호
+  );
 
 -- 댓글
-ALTER TABLE Reply
+ALTER TABLE LikeSong
   ADD
-    CONSTRAINT FK_Song_TO_Reply -- 노래 -> 댓글
-    FOREIGN KEY (
-      Sno -- 노래번호
-    )
-    REFERENCES Song ( -- 노래
-      Sno -- 노래번호
+    CONSTRAINT PK_LikeSong -- 댓글 기본키
+    PRIMARY KEY (
+      lno -- 댓글번호
     );
 
--- 댓글
-ALTER TABLE Reply
-  ADD
-    CONSTRAINT FK_Member_TO_Reply -- 회원 -> 댓글
-    FOREIGN KEY (
-      mno -- 회원번호
-    )
-    REFERENCES Member ( -- 회원
-      mno -- 회원번호
-    );
-
--- 주간명예의전당
-ALTER TABLE WHOF
-  ADD
-    CONSTRAINT FK_Song_TO_WHOF -- 노래 -> 주간명예의전당
-    FOREIGN KEY (
-      Sno -- 노래번호
-    )
-    REFERENCES Song ( -- 노래
-      Sno -- 노래번호
-    );
 
 -- 월간명예의전당
 ALTER TABLE MHOF
@@ -228,39 +198,6 @@ ALTER TABLE MHOF
       Sno -- 노래번호
     );
 
--- 연간명예의전당
-ALTER TABLE YHOF
-  ADD
-    CONSTRAINT FK_Song_TO_YHOF -- 노래 -> 연간명예의전당
-    FOREIGN KEY (
-      Sno -- 노래번호
-    )
-    REFERENCES Song ( -- 노래
-      Sno -- 노래번호
-    );
-
--- 좋아요
-ALTER TABLE LikeSong
-  ADD
-    CONSTRAINT FK_Member_TO_LikeSong -- 회원 -> 좋아요
-    FOREIGN KEY (
-      mno -- 회원번호
-    )
-    REFERENCES Member ( -- 회원
-      mno -- 회원번호
-    );
-
--- 좋아요
-ALTER TABLE LikeSong
-  ADD
-    CONSTRAINT FK_Song_TO_LikeSong -- 노래 -> 좋아요
-    FOREIGN KEY (
-      Sno -- 노래번호
-    )
-    REFERENCES Song ( -- 노래
-      Sno -- 노래번호
-    );
-    
 alter table song add foreign key (mno) references karaoke.member (mno) on delete cascade on update cascade;
 alter table reply add foreign key (mno) references karaoke.member (mno) on delete cascade on update cascade;
 alter table reply add foreign key (sno) references karaoke.song (sno) on delete cascade on update cascade;
@@ -269,3 +206,5 @@ alter table likesong add foreign key (sno) references karaoke.song (sno) on dele
 alter table whof add foreign key (sno) references karaoke.song (sno) on delete cascade on update cascade;
 alter table mhof add foreign key (sno) references karaoke.song (sno) on delete cascade on update cascade;
 alter table whof add foreign key (sno) references karaoke.song (sno) on delete cascade on update cascade;
+
+insert into member(email, password, profilePic, nickname) values('test@test.com', '1111', '../picture/default.png', 'test계정');

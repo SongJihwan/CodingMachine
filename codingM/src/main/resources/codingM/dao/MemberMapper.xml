@@ -15,13 +15,21 @@
   <delete id="delete" parameterType="int">
   </delete>
 
-  <select id="selectList" parameterType="map" resultType="Member" >
-  </select>
-  
   <select id="selectOne" parameterType="map" resultType="Member">
+    select * from member
+    where 
+    <if test="no != null">
+      mno=#{mno}
+    </if>
+    <if test="email != null">
+      email=#{email}
+    </if>
   </select>
   
-  <select id="isMember" parameterType="map" resultType="int">
+    <select id="isMember" parameterType="map" resultType="int">
+    select count(*) 
+    from member
+    where email=#{email} and password=#{password}
   </select>
   
 </mapper>
