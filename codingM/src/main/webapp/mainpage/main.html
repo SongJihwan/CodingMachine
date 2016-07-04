@@ -296,6 +296,7 @@
        password : $(".pw").val()
      }, function(result) {
      if (result.status == "success") {
+    	sessionStorage.setItem("loginValid", "1")
       location.href = "../sing/sing.html"
      } else {
       window.alert("로그인 실패입니다!")
