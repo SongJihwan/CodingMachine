@@ -69,7 +69,7 @@ div {
 }
 
 .name {
-  width: 300px;
+  width: 90%;
   border: 0px solid black;
   color: hsl(47, 96%, 28%);
   margin: 0 auto;
