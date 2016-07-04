@@ -161,7 +161,6 @@
       <ul class="page">
         <script id="temp1" type="text/x-handlebars-template">
           {{#each list}}
-          {{#if @index "<=" 6 }}
           <li class="lili" data-contenttype="image" data-href="{{profilePic}}" onclick="sessionStorage.setItem('sno', {{sno}})">
             <div class="sect1">
               <div class="hex">
@@ -179,7 +178,6 @@
               </div>
             </div>
            </li>
-           {{/if}}
           {{/each}}
         </script>
       </ul>
