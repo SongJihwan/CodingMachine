@@ -1,64 +1,94 @@
 create database karaoke;
 use karaoke;
 DROP TABLE Member;
-DROP TABLE Sing;
+DROP TABLE Song;
 DROP TABLE Reply;
 DROP TABLE WHOF;
 DROP TABLE MHOF;
 DROP TABLE YHOF;
+DROP TABLE LikeSong;
 CREATE TABLE Member (
 	mno        INTEGER     PRIMARY KEY auto_increment,
 	email      VARCHAR(40) NOT NULL,
 	password   VARCHAR(50) NOT NULL,
-	profilePic VARCHAR(50) NULL,    
+	profilePic VARCHAR(70) NULL,    
 	nickname   VARCHAR(50) NULL 
 );
-CREATE UNIQUE INDEX PK_Member ON Member (
-	mno ASC 
+-- 회원 기본키2
+CREATE UNIQUE INDEX PK_Member
+  ON Member ( -- 회원
+    mno ASC -- 회원번호
+  );
+
+-- 회원 유니크 인덱스
+CREATE UNIQUE INDEX UIX_Member
+  ON Member ( -- 회원
+    email ASC -- Email
+  );
+
+-- 회원 인덱스
+CREATE INDEX IX_Member
+  ON Member( -- 회원
+    nickname ASC -- 닉네임
+  );
+
+-- 회원
+ALTER TABLE Member
+  ADD
+    CONSTRAINT PK_Member -- 회원 기본키2
+    PRIMARY KEY (
+      mno -- 회원번호
+    );
+
+-- 회원
+ALTER TABLE Member
+  ADD
+    CONSTRAINT UK_Member -- 회원 유니크 제약
+    UNIQUE (
+      email -- Email
+    );
+    
+-- 노래
+CREATE TABLE Song (
+  Sno        INTEGER      PRIMARY KEY auto_increment, -- 노래번호
+  mno        INTEGER      NOT NULL, -- 회원번호
+  title      VARCHAR(50)  NOT NULL, -- 제목
+  songer     VARCHAR(255) NOT NULL, -- 가수
+  recordDate DATE         NOT NULL, -- 녹음일자
+  fileName   VARCHAR(50)  NOT NULL, -- 파일이름
+  listen     INTEGER      NOT NULL DEFAULT 0, -- 청취수
+  ylisten    INTEGER      NOT NULL DEFAULT 0, -- 연간청취수
+  mlisten    INTEGER      NOT NULL DEFAULT 0, -- 월간청취수
+  wlisten    INTEGER      NOT NULL DEFAULT 0 -- 주간청취수
 );
-CREATE UNIQUE INDEX UIX_Member ON Member (
-	email ASC
-);
-CREATE INDEX IX_Member ON Member(
-	nickname ASC 
-);
-ALTER TABLE Member ADD CONSTRAINT PK_Member PRIMARY KEY (
-	mno
-);
-ALTER TABLE Member ADD CONSTRAINT UK_Member UNIQUE (
-	email
-);
-CREATE TABLE Sing (
-	Sno        INTEGER      PRIMARY KEY auto_increment,
-	mno        INTEGER      NOT NULL,
-	title      VARCHAR(50)  NOT NULL,
-	singer     VARCHAR(255) NOT NULL,
-	recordDate DATE         NOT NULL,
-	pCheck     VARCHAR(10)  NOT NULL,
-	fileName   VARCHAR(50)  NOT NULL,
-	filePath   VARCHAR(255) NOT NULL,
-	wLike      INTEGER      NULL,    
-	mLike      INTEGER      NULL,    
-	yLike      INTEGER      NULL,    
-	cLike      INTEGER      NULL,     
-	tLike      INTEGER      NULL      
-);
-CREATE UNIQUE INDEX PK_Sing ON Sing (
-	Sno ASC
-);
-CREATE UNIQUE INDEX UIX_Sing ON Sing (
-	fileName ASC,
-	filePath ASC 
-);
-CREATE INDEX IX_Sing ON Sing(
-);
-ALTER TABLE Sing ADD CONSTRAINT PK_Sing PRIMARY KEY (
-	Sno 
-);
-ALTER TABLE Sing ADD CONSTRAINT UK_Sing UNIQUE (
-	fileName,
-	filePath 
-);
+-- 노래 기본키
+CREATE UNIQUE INDEX PK_Song
+  ON Song ( -- 노래
+    Sno ASC -- 노래번호
+  );
+
+-- 노래 유니크 인덱스
+CREATE UNIQUE INDEX UIX_Song
+  ON Song ( -- 노래
+    fileName ASC -- 파일이름
+  );
+
+-- 노래
+ALTER TABLE Song
+  ADD
+    CONSTRAINT PK_Song -- 노래 기본키
+    PRIMARY KEY (
+      Sno -- 노래번호
+    );
+
+-- 노래
+ALTER TABLE Song
+  ADD
+    CONSTRAINT UK_Song -- 노래 유니크 제약
+    UNIQUE (
+      fileName -- 파일이름
+    );
+    
 CREATE TABLE Reply (
 	rno       INTEGER PRIMARY KEY auto_increment,
 	mno       INTEGER NOT NULL,
@@ -66,16 +96,21 @@ CREATE TABLE Reply (
 	content   TEXT    NOT NULL,
 	writeDate DATE    NOT NULL 
 );
-CREATE UNIQUE INDEX PK_Reply ON Reply (
-	rno ASC
-);
-CREATE UNIQUE INDEX UIX_Reply ON Reply (
-);
-ALTER TABLE Reply ADD CONSTRAINT PK_Reply PRIMARY KEY (
-	rno
-);
-ALTER TABLE Reply ADD CONSTRAINT UK_Reply UNIQUE (
-);
+-- 댓글 기본키
+CREATE UNIQUE INDEX PK_Reply
+  ON Reply ( -- 댓글
+    rno ASC -- 댓글번호
+  );
+
+-- 댓글
+ALTER TABLE Reply
+  ADD
+    CONSTRAINT PK_Reply -- 댓글 기본키
+    PRIMARY KEY (
+      rno -- 댓글번호
+    );
+
+
 CREATE TABLE WHOF (
 	wCode VARCHAR(255) NOT NULL, 
 	wRank INTEGER      NOT NULL, 
@@ -129,21 +164,108 @@ ALTER TABLE YHOF ADD CONSTRAINT PK_YHOF PRIMARY KEY (
 ALTER TABLE YHOF ADD CONSTRAINT UK_YHOF UNIQUE (
 	yRank
 );
-ALTER TABLE Sing ADD CONSTRAINT FK_Member_TO_Sing FOREIGN KEY (mno) 
-REFERENCES Member (mno);
-ALTER TABLE Reply ADD CONSTRAINT FK_Sing_TO_Reply FOREIGN KEY (Sno)
-REFERENCES Sing (Sno);
-ALTER TABLE Reply ADD CONSTRAINT FK_Member_TO_Reply FOREIGN KEY (mno)
-REFERENCES Member (mno);
-ALTER TABLE WHOF ADD CONSTRAINT FK_Sing_TO_WHOF FOREIGN KEY (Sno)
-REFERENCES Sing (Sno);
-ALTER TABLE MHOF ADD CONSTRAINT FK_Sing_TO_MHOF FOREIGN KEY (Sno)
-REFERENCES Sing (Sno);
-ALTER TABLE YHOF ADD CONSTRAINT FK_Sing_TO_YHOF FOREIGN KEY (Sno)
-REFERENCES Sing (Sno);
-alter table sing add foreign key (mno) references karaoke.member (mno) on delete cascade on update cascade;
+
+-- 좋아요
+CREATE TABLE LikeSong (
+  mno    INTEGER NOT NULL, -- 회원번호
+  Sno    INTEGER NOT NULL, -- 노래번호
+  status INTEGER NOT NULL DEFAULT 0 -- 상태
+);
+
+
+-- 노래
+ALTER TABLE Song
+  ADD
+    CONSTRAINT FK_Member_TO_Song -- 회원 -> 노래
+    FOREIGN KEY (
+      mno -- 회원번호
+    )
+    REFERENCES Member ( -- 회원
+      mno -- 회원번호
+    );
+
+-- 댓글
+ALTER TABLE Reply
+  ADD
+    CONSTRAINT FK_Song_TO_Reply -- 노래 -> 댓글
+    FOREIGN KEY (
+      Sno -- 노래번호
+    )
+    REFERENCES Song ( -- 노래
+      Sno -- 노래번호
+    );
+
+-- 댓글
+ALTER TABLE Reply
+  ADD
+    CONSTRAINT FK_Member_TO_Reply -- 회원 -> 댓글
+    FOREIGN KEY (
+      mno -- 회원번호
+    )
+    REFERENCES Member ( -- 회원
+      mno -- 회원번호
+    );
+
+-- 주간명예의전당
+ALTER TABLE WHOF
+  ADD
+    CONSTRAINT FK_Song_TO_WHOF -- 노래 -> 주간명예의전당
+    FOREIGN KEY (
+      Sno -- 노래번호
+    )
+    REFERENCES Song ( -- 노래
+      Sno -- 노래번호
+    );
+
+-- 월간명예의전당
+ALTER TABLE MHOF
+  ADD
+    CONSTRAINT FK_Song_TO_MHOF -- 노래 -> 월간명예의전당
+    FOREIGN KEY (
+      Sno -- 노래번호
+    )
+    REFERENCES Song ( -- 노래
+      Sno -- 노래번호
+    );
+
+-- 연간명예의전당
+ALTER TABLE YHOF
+  ADD
+    CONSTRAINT FK_Song_TO_YHOF -- 노래 -> 연간명예의전당
+    FOREIGN KEY (
+      Sno -- 노래번호
+    )
+    REFERENCES Song ( -- 노래
+      Sno -- 노래번호
+    );
+
+-- 좋아요
+ALTER TABLE LikeSong
+  ADD
+    CONSTRAINT FK_Member_TO_LikeSong -- 회원 -> 좋아요
+    FOREIGN KEY (
+      mno -- 회원번호
+    )
+    REFERENCES Member ( -- 회원
+      mno -- 회원번호
+    );
+
+-- 좋아요
+ALTER TABLE LikeSong
+  ADD
+    CONSTRAINT FK_Song_TO_LikeSong -- 노래 -> 좋아요
+    FOREIGN KEY (
+      Sno -- 노래번호
+    )
+    REFERENCES Song ( -- 노래
+      Sno -- 노래번호
+    );
+    
+alter table song add foreign key (mno) references karaoke.member (mno) on delete cascade on update cascade;
 alter table reply add foreign key (mno) references karaoke.member (mno) on delete cascade on update cascade;
-alter table reply add foreign key (sno) references karaoke.sing (sno) on delete cascade on update cascade;
-alter table whof add foreign key (sno) references karaoke.sing (sno) on delete cascade on update cascade;
-alter table mhof add foreign key (sno) references karaoke.sing (sno) on delete cascade on update cascade;
-alter table whof add foreign key (sno) references karaoke.sing (sno) on delete cascade on update cascade;
+alter table reply add foreign key (sno) references karaoke.song (sno) on delete cascade on update cascade;
+alter table likesong add foreign key (mno) references karaoke.member (mno) on delete cascade on update cascade;
+alter table likesong add foreign key (sno) references karaoke.song (sno) on delete cascade on update cascade;
+alter table whof add foreign key (sno) references karaoke.song (sno) on delete cascade on update cascade;
+alter table mhof add foreign key (sno) references karaoke.song (sno) on delete cascade on update cascade;
+alter table whof add foreign key (sno) references karaoke.song (sno) on delete cascade on update cascade;
