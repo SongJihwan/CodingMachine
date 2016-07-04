@@ -18,11 +18,11 @@
     "jquery": "1.12.4",
     "bootstrap": "^3.3.6",
     "handlebars": "^4.0.5",
-    "p5.js": "p5js#^0.5.1",
     "jquery-gi-thewall": "^1.0.2",
     "jquery-infinite-scroll": "^2.1.0",
     "jquery-ui": "^1.11.4",
     "jquery-session-plugin": "^0.0.1",
     "skrollr": "^0.6.30",
+    "jquery.paging": "^0.2.0"
   }
 }

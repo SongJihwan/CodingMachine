@@ -6,17 +6,6 @@ function imageWall() {
   });
 }
 
-// Handlebars.registerHelper('isVowel', function(options) {
-//   var regexp = 6;
-//   console.log(this.sno)
-//   for (var i = 0 : )
-//   if (regexp >= this.sno) {
-//     return true;
-//   } else {
-//     return false;
-//   }
-// });
-
 window.onload = function loadDate() {
   $.getJSON("http://localhost:8080/codingM/songs/list.do", function(result) {
     var templateData = $('#temp1').html()
@@ -27,7 +16,7 @@ window.onload = function loadDate() {
   });
 }
 
-function getSong() {
+/*function getSong() {
   var newdiv = document.createElement("div");
   var add = $(".demo").clone();
   $(newdiv).html(add);
@@ -44,4 +33,4 @@ jQuery(document).ready(function() {
       getSong();
     }
   });
-});
+});*/
