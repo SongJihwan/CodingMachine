@@ -53,7 +53,7 @@ CREATE TABLE Song (
   Sno        INTEGER      PRIMARY KEY auto_increment, -- 노래번호
   mno        INTEGER      NOT NULL, -- 회원번호
   title      VARCHAR(50)  NOT NULL, -- 제목
-  songer     VARCHAR(255) NOT NULL, -- 가수
+  singer     VARCHAR(255) NOT NULL, -- 가수
   recordDate DATE         NOT NULL, -- 녹음일자
   fileName   VARCHAR(50)  NOT NULL, -- 파일이름
   listen     INTEGER      NOT NULL DEFAULT 0, -- 청취수
