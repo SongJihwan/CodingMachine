@@ -67,12 +67,6 @@ CREATE UNIQUE INDEX PK_Song
     Sno ASC -- 노래번호
   );
 
--- 노래 유니크 인덱스
-CREATE UNIQUE INDEX UIX_Song
-  ON Song ( -- 노래
-    fileName ASC -- 파일이름
-  );
-
 -- 노래
 ALTER TABLE Song
   ADD
@@ -81,14 +75,6 @@ ALTER TABLE Song
       Sno -- 노래번호
     );
 
--- 노래
-ALTER TABLE Song
-  ADD
-    CONSTRAINT UK_Song -- 노래 유니크 제약
-    UNIQUE (
-      fileName -- 파일이름
-    );
-    
 CREATE TABLE Reply (
 	rno       INTEGER PRIMARY KEY auto_increment,
 	mno       INTEGER NOT NULL,
@@ -208,3 +194,65 @@ alter table mhof add foreign key (sno) references karaoke.song (sno) on delete c
 alter table whof add foreign key (sno) references karaoke.song (sno) on delete cascade on update cascade;
 
 insert into member(email, password, profilePic, nickname) values('test@test.com', '1111', '../picture/default.png', 'test계정');
+
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)17', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)18', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)19', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)20', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)21', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)22', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)23', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)24', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)25', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)26', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)27', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)28', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)29', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)30', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)31', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)32', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)33', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)34', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)35', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)36', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)37', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)38', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)39', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)40', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)41', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)42', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)43', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)44', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)45', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)46', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)47', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)48', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)49', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)50', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)51', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)52', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)53', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)54', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)55', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
+

@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../bower_components/jquery-gi-thewall/assets/css/style.css">
     <link href="http://fast.fonts.net/cssapi/4bedbdc9-7261-43be-b2e9-f34abce90975.css" media="all" type="text/css" rel="stylesheet">
     <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/jquery.paging/jquery.paging.js"></script>
     <script src="../login.js"></script>
 </head>
 <body>
@@ -34,7 +35,7 @@
 </div>
 
 
-<svg class="hidden"> 
+<svg class="hidden">
     <!-- made with Icomoon.io, Icons from http://www.entypo.com/ and https://icomoon.io/ -->
     <defs>
         <symbol id="icon-ir-acoustic" viewBox="0 0 30 30">
@@ -141,17 +142,19 @@
     </defs>
 </svg><!-- SVGs -->
 
+<div class="abc"></div>
+
+<div class="paging"></div>
+
 <div role="main" class="viewport">
   <div class="demo">
     <div class="GITheWall">
       <ul class="page">
-        
+
       </ul>
     </div>
   </div>
 </div>
-
-
 
 <script id="temp1" type="text/x-handlebars-template">
   {{#each list}}
@@ -174,7 +177,7 @@
     </li>
   {{/each}}
 </script>
-        
+
 <script id="temp2" type="text/x-handlebars-template">
   {{#each list}}
     <tr><td>{{content}}</td><td>{{nickname}}</td><td>{{writeDate}}</td></tr>
@@ -186,12 +189,14 @@
     <div class='single single--current' id='album-1' data-side1={{fileName}} data-side2={{fileName}}> <div class='img-wrap img-wrap--single' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'><img class='img img--single' src={{profilePic}}></div><span class='number' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'><span class='number__total'></span></span> <h2 class='artist artist--single' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'></h2> <h3 class='title title--single' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'></h3> <span class='year year--single' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'></span> </div>
   {{/each}}
 </script>
-<script>
-    jQuery(document).ready(function () {
-        console.log("abcd");
-     });
-    // $(".viewport").paging({current:5,max:50});
-</script>
+<!-- <script>
+    $('.paging').paging({
+  current:1,max:10,
+  onclick:function(e,page){
+    alert('going to page '+page);
+  }
+});
+</script> -->
 <script src="../common.js"></script>
 <script src="js/imagesloaded.pkgd.min.js"></script>
 <script src="js/masonry.pkgd.min.js"></script>
@@ -202,6 +207,6 @@
 <script src="../bower_components/handlebars/handlebars.min.js"></script>
 <script src="song.js"></script>
 <script src="js/main.js"></script>
-<script src="../bower_components/jquery.paging/jquery.paging.js"></script>
+
 </body>
 </html>

@@ -10,7 +10,9 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
@@ -73,8 +75,31 @@ public class SongAjaxController {
   
   @RequestMapping(value="list", produces="application/json;charset=utf-8")
   @ResponseBody
-  public String list() throws ServletException, IOException {
-    List<SongMember> list = songService.list();
+  public String list(
+      @RequestParam(defaultValue="1") int pageNo, 
+      @RequestParam(defaultValue="18") int pageSize, Model model) 
+       throws ServletException, IOException {
+    
+    // 페이지 번호와 페이지 당 출력 개수의 유효성 검사
+    if (pageNo < 0) { // 1페이지 부터 시작
+      pageNo = 1;
+    }
+    
+    int totalPage = songService.countPage(pageSize);
+    if (pageNo > totalPage) { // 가장 큰 페이지 번호를 넘지 않게 한다.
+      pageNo = totalPage;
+    }
+
+    if (pageSize < 3) { // 최소 3개
+      pageSize = 3; 
+    } else if (pageSize > 50) { // 최대 50개 
+      pageSize = 50;
+    }
+    List<SongMember> list = songService.list(pageNo, pageSize);
+    model.addAttribute("pageNo", pageNo);
+    model.addAttribute("pageSize", pageSize);
+    model.addAttribute("totalPage", totalPage);
+    model.addAttribute("list", list);
     
     HashMap<String, Object> result = new HashMap<>();
     result.put("list", list);

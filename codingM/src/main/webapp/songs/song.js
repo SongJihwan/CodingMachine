@@ -16,12 +16,12 @@ window.onload = function loadDate() {
   });
 }
 
-function getSong() {
-  var newdiv = document.createElement("div");
-  var add = $(".demo").clone();
-  $(newdiv).html(add);
-  jQuery(".viewport").append(newdiv);
-}
+// function getSong() {
+//   var newdiv = document.createElement("div");
+//   var add = $(".demo").clone();
+//   $(newdiv).html(add);
+//   jQuery(".viewport").append(newdiv);
+// }
 
 jQuery(document).ready(function() {
 
@@ -30,7 +30,6 @@ jQuery(document).ready(function() {
     var docH=$(document).height();
     var scrollH = jQuery(window).height() + jQuery(window).scrollTop();
     if(scrollH>=docH) {
-      getSong();
     }
   });
 });

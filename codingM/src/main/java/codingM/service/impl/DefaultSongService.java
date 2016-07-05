@@ -1,5 +1,6 @@
 package codingM.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,20 @@ public class DefaultSongService implements SongService {
     return songDao.selectOne(sno);
   }
 
-  public List<SongMember> list() {
-    return songDao.selectList();
+  public List<SongMember> list(int pageNo, int pageSize) {
+    HashMap<String,Object> paramMap = new HashMap<>();
+    paramMap.put("startIndex", (pageNo - 1) * pageSize);
+    paramMap.put("length", pageSize);
+    
+    return songDao.selectList(paramMap);
+  }
+
+  @Override
+  public int countPage(int pageSize) {
+    int count = songDao.countAll();
+    int pages = count / pageSize;
+    if ((count % pageSize) > 0)
+      pages++;
+    return pages;
   }
 }
