@@ -12,12 +12,12 @@
     delete from song where mno=#{mno};
   </delete>
   
-  <select id="selectList" parameterType="map" resultType="SongMember">
+  <select id="selectList" parameterType="int" resultType="SongMember">
     select s.sno, m.mno, s.title, s.singer, m.nickname, 
     (select count(*) from likesong ls where s.sno=ls.sno) as heart, 
     m.profilePic, s.fileName 
     from song s right outer join member m on s.mno=m.mno order by s.sno desc
-    limit #{startIndex}, #{length};
+    limit #{sno}, 18;
   </select>
   
   <select id="selectOne" parameterType="int" resultType="SongMember">

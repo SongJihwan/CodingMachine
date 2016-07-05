@@ -7,7 +7,9 @@ function imageWall() {
 }
 
 window.onload = function loadDate() {
-  $.getJSON("http://localhost:8080/codingM/songs/list.do", function(result) {
+	sessionStorage.setItem("scrollCount", 0)
+//	alert(sessionStorage.getItem("scrollCount"))
+  $.getJSON("http://localhost:8080/codingM/songs/list.do?sno=" + sessionStorage.getItem("scrollCount"), function(result) {
     var templateData = $('#temp1').html()
     var template = Handlebars.compile(templateData)
     var html = template(result)
@@ -30,6 +32,16 @@ jQuery(document).ready(function() {
     var docH=$(document).height();
     var scrollH = jQuery(window).height() + jQuery(window).scrollTop();
     if(scrollH>=docH) {
+    	var count = parseInt(sessionStorage.getItem("scrollCount")) + 18;
+    	console.log(count);
+    	sessionStorage.setItem("scrollCount", count)
+    	$.getJSON("http://localhost:8080/codingM/songs/list.do?sno=" + sessionStorage.getItem("scrollCount"), function(result) {
+    	    var templateData = $('#temp1').html()
+    	    var template = Handlebars.compile(templateData)
+    	    var html = template(result)
+    	    $(".page").append(html)
+    	    imageWall();
+    	  });
     }
   });
 });
