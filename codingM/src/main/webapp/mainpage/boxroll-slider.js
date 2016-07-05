@@ -46,21 +46,10 @@
       
       $(document).ready(function(){
     	  $("#loginBtn").click(function() { brains(1) })
-//    	  $("#loginBtn2").click(function() { 
-////    		  brains(0)
-//    		  $.post("http://locahost:8080/codingM/auth/login.do", {
-//    			  email : $(".email").val()
-//    			  password : $(".pw").val()
-//    		  }, function(result) {
-//				  if (result.status == "success") {
-//					location.href = "../sing/sing.html"
-//				  } else {
-//					window.alert("로그인 실패입니다!")
-//				  }
-//    		  }, "json");
-//    	  });
     	  $("#signupBtn").click(function() { brains(2) })
-    	  $("#signupBtn2").click(function() { brains(0) })
+    	  $("#signupBtn2").click(function() { 
+    		  brains(0)
+		   });
         // bind window focus and blur events to stop the ticker and reinitialize it when the tab loses and gains focus
         $(window).on("focus",function(){
           int = window.setInterval(function(){

@@ -6,7 +6,7 @@
 <mapper namespace="codingM.dao.MemberDao">
   
   <insert id="insert" parameterType="Member">
-    insert into member(email, password) values (#{email}, #{password})
+    insert into member(email, password, profilePic, nickname) values (#{email}, #{password}, #{profilePic}, #{nickname})
   </insert>
   
   <update id="update" parameterType="Member">

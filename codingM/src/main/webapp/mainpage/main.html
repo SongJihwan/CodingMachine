@@ -34,7 +34,6 @@
 
   <div class="jbMenu">
     <div class="slider">
-
       <!-- 로그인,회원가입 -->
       <div class="item" style="background: white;">
         <div id="btn">
@@ -57,11 +56,12 @@
         <div id="form2">
           <input type="email" class="email" placeholder="Email Address" />
           <input type="password" class="pw" placeholder="Password" /> 
-          <input type="password" class="pw2" placeholder="Password Confirm" />
-          <button id="signupBtn2" type="button">SignUp</button>
+          <input type="password" class="pwc" placeholder="Password Confirm" />
+          <button id="signupBtn2" type="button" onclick="signUp()">SignUp</button>
+          <br><span id="emailCheck"></span>
+          
         </div>
       </div>
-      
     </div>
   </div>
 
@@ -292,18 +292,52 @@
 
   function login () {
      $.post("http://localhost:8080/codingM/auth/login.do", {
-    	 email: $(".email").val(),
+       email: $(".email").val(),
        password : $(".pw").val()
      }, function(result) {
      if (result.status == "success") {
-    	sessionStorage.setItem("loginValid", "1")
+      sessionStorage.setItem("loginValid", "1")
       location.href = "../sing/sing.html"
      } else {
       window.alert("로그인 실패입니다!")
      }
      }, "json");
    }  
+  
+  $("#form2 .email").keypress(function() {
+	    var regExp = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+      if( !$(".form2 email").val() ){ 
+         $('#emailCheck').html("값이 없습니다."); 
+         $(".form2 email").focus(); 
+         return false; 
+      } else { 
+         if(!regExp.test($(".form2 email").val())) { 
+        	 $('#emailCheck').html("gd"); 
+            $(".form2 email").focus(); 
+            return false; 
+         }
+      }
+  }); 
  
+  function signUp() {
+    if ($('#form2 .pw').val()&&($('#form2 .pw').val() == $('#form2 .pwc').val())) {
+      $.post("http://localhost:8080/codingM/member/add.do", {
+        email: $("#form2 .email").val(),
+        password : $("#form2 .pw").val()
+      }, function(result) {
+       if (result.status == "success") {
+         sessionStorage.setItem("loginValid", "1")
+         window.alert("가입 성공했습니다.\n서비스를 이용하시려면 로그인해주세요.")
+         $("#form2 .email").val("")
+         $("#form2 .pw").val("")
+         $("#form2 .pwc").val("")
+      } else {
+         window.alert("회원가입 실패입니다!")
+         $("#form2 .email").val("")
+         $("#form2 .pw").val("") 
+         $("#form2 .pwc").val("")
+      }}, "json");}
+  }  
   </script>
 </body>
 </html>
