@@ -15,6 +15,7 @@ window.onload = function loadDate() {
     var html = template(result)
     $(".page").append(html)
     imageWall();
+
   });
 }
 
@@ -26,22 +27,25 @@ window.onload = function loadDate() {
 // }
 
 jQuery(document).ready(function() {
-
   //scroll : 스크롤 사용시 발생되는 이벤트
   jQuery(window).scroll(function(){
     var docH=$(document).height();
     var scrollH = jQuery(window).height() + jQuery(window).scrollTop();
     if(scrollH>=docH) {
     	var count = parseInt(sessionStorage.getItem("scrollCount")) + 18;
-    	console.log(count);
     	sessionStorage.setItem("scrollCount", count)
-    	$.getJSON("http://localhost:8080/codingM/songs/list.do?sno=" + sessionStorage.getItem("scrollCount"), function(result) {
-    	    var templateData = $('#temp1').html()
-    	    var template = Handlebars.compile(templateData)
-    	    var html = template(result)
-    	    $(".page").append(html)
-    	    imageWall();
-    	  });
+      $.getJSON("http://localhost:8080/codingM/songs/list.do?sno=" + sessionStorage.getItem("scrollCount"), function(result) {
+          var templateData = $('#temp1').html()
+          var template = Handlebars.compile(templateData)
+          var html = template(result)
+          $(".page").append(html)
+          imageWall()
+
+        });
     }
   });
 });
+
+// $(".sect1").on("click", function (event) {
+//   imageWall();
+// })
