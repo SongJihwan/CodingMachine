@@ -153,10 +153,9 @@
 </div>
 
 
-
 <script id="temp1" type="text/x-handlebars-template">
   {{#each list}}
-    <li class="lili" data-contenttype="image" data-href="{{profilePic}}" onclick="sessionStorage.setItem('sno', {{sno}})">
+    <li class="lili" data-contenttype="image" data-href="{{profilePic}}" data-sno="{{sno}}" onclick="sessionStorage.setItem('sno', {{sno}})">
       <div class="sect1">
         <div class="hex">
           <div class="hexagon"><img src="{{profilePic}}" alt="{{singer}}"/></div>
@@ -166,7 +165,7 @@
           </div>
           <div class="disc">
             ▶<br>
-            {{nickname}} ♡{{heart}}
+            {{nickname}} <span id=heart></span>{{heart}}
           </div>
           <div class="detail">
             SEE DETAILS
@@ -184,7 +183,7 @@
 
 <script id="temp3" type="text/x-handlebars-template">
   {{#each song}}
-    <div class='single single--current' id='album-1' data-side1={{fileName}} data-side2={{fileName}}> <div class='img-wrap img-wrap--single' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'><img class='img img--single' src={{profilePic}}></div><span class='number' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'><span class='number__total'></span></span> <h2 class='artist artist--single' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'></h2> <h3 class='title title--single' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'></h3> <span class='year year--single' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'></span> </div>
+    <div class='single single--current' id='album-1' data-side1='{{fileName}}' data-side2='{{fileName}}'> <div class='img-wrap img-wrap--single' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'><img class='img img--single' src='{{profilePic}}'></div><span class='number' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'><span class='number__total'></span></span> <h2 class='artist artist--single' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'></h2> <h3 class='title title--single' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'></h3> <span class='year year--single' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'></span> </div>
   {{/each}}
 </script>
 
@@ -197,7 +196,6 @@
 <script src="../bower_components/jquery-gi-thewall/jQuery.GI.TheWall.Song.js"></script>
 <script src="../bower_components/handlebars/handlebars.min.js"></script>
 <script src="song.js"></script>
-<script src="js/main.js"></script>
 
 
 </body>

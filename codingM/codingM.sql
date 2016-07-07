@@ -11,7 +11,7 @@ CREATE TABLE Member (
 	mno        INTEGER     PRIMARY KEY auto_increment,
 	email      VARCHAR(40) NOT NULL,
 	password   VARCHAR(50) NOT NULL,
-	profilePic VARCHAR(70) NULL,    
+	profilePic VARCHAR(70) NULL DEFAULT '../picture/default.png',    
 	nickname   VARCHAR(50) NULL 
 );
 -- 회원 기본키2
@@ -193,7 +193,13 @@ alter table whof add foreign key (sno) references karaoke.song (sno) on delete c
 alter table mhof add foreign key (sno) references karaoke.song (sno) on delete cascade on update cascade;
 alter table whof add foreign key (sno) references karaoke.song (sno) on delete cascade on update cascade;
 
-insert into member(email, password, profilePic, nickname) values('test@test.com', '1111', '../picture/default.png', 'test계정');
+insert into member(email, password, nickname) values('test@test.com', '1111', '../picture/default.png', 'test계정');
+insert into member(email, password, nickname) values('test2@test.com', '1111', '../picture/default.png', 'test계정2');
+insert into member(email, password, nickname) values('test3@test.net', '1111', 'test계정3');
+insert into member(email, password, nickname) values('test4@test.co.kr', '1111', 'test계정4');
+insert into member(email, password, nickname) values('test5@naver.com', '1111', 'test계정5');
+insert into member(email, password, nickname) values('test6', '1111', 'test계정6');
+
 
 insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)17', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
 insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)18', '임재범', now(), '../upload/audio_recording_1467698467242.wav');

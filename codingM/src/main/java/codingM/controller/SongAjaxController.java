@@ -73,14 +73,13 @@ public class SongAjaxController {
   
   @RequestMapping(value="list", produces="application/json;charset=utf-8")
   @ResponseBody
-  public String list(int sno) 
+  public String list() 
        throws ServletException, IOException {
-    List<SongMember> list = songService.list(sno);
+    List<SongMember> list = songService.list();
 
     HashMap<String, Object> result = new HashMap<>();
     result.put("list", list);
     
     return new Gson().toJson(result);
   }
-  
 }

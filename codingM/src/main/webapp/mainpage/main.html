@@ -304,20 +304,34 @@
      }, "json");
    }  
   
-  $("#form2 .email").keypress(function() {
+  $("#form2 .email").keyup(function(event) {
 	    var regExp = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-      if( !$(".form2 email").val() ){ 
-         $('#emailCheck').html("값이 없습니다."); 
-         $(".form2 email").focus(); 
+      if( !$("#form2 .email").val()){ 
+         $('#emailCheck').html(""); 
+         $("#form2 .email").focus(); 
          return false; 
-      } else { 
-         if(!regExp.test($(".form2 email").val())) { 
-        	 $('#emailCheck').html("gd"); 
-            $(".form2 email").focus(); 
-            return false; 
-         }
+      } else {
+    	  if (!regExp.test($("#form2 .email").val())) {
+    		  $('#emailCheck').html("이메일 형식으로 입력해주세요.");
+    		  return false;
+    	  }
+    	  
+      	var email = $("#form2 .email").val();
+    	  
+        if(regExp.test(email)) {
+          $.getJSON("http://localhost:3200/valid?email="+email, function(result) {
+        		  console.log(result)
+        	  if (result == "false") {
+		          $('#emailCheck').html("중복된 이메일입니다."); 
+		          $("#form2 .email").focus(); 
+		          return false; 
+        		} else {
+        			$('#emailCheck').html("사용가능한 이메일입니다.");
+        		}
+          });
+        }
       }
-  }); 
+  });
  
   function signUp() {
     if ($('#form2 .pw').val()&&($('#form2 .pw').val() == $('#form2 .pwc').val())) {

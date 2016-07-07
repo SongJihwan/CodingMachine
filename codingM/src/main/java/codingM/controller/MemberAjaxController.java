@@ -29,7 +29,6 @@ public class MemberAjaxController {
     member.setEmail(email);
     member.setPassword(password);
     member.setNickname(email.split("@")[0]);
-    member.setProfilePic("../picture/default.png");
     HashMap<String, Object> result = new HashMap<>();
     try {
       memberService.add(member);
