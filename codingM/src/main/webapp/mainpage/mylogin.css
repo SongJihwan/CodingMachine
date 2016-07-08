@@ -54,8 +54,9 @@ input:focus {
 }
 #form {
   height: 70px;
-  width: 760px;
+  width: 950px;
   margin: 0 auto;
+  padding-left: 50px;
 }
 #form2 {
   height: 70px;
@@ -80,6 +81,14 @@ button {
   margin-right: 20px;
   margin-left: 20px;
   background: #33b5e5;
+  height: 40px;
+}
+#backBtn {
+  float: right;
+  margin-top: 20px;
+  margin-right: 110px;
+  margin-left: 0px;
+  width: 40px;
   height: 40px;
 }
 

@@ -46,6 +46,7 @@
       
       $(document).ready(function(){
     	  $("#loginBtn").click(function() { brains(1) })
+    	  $("#backBtn").click(function() { brains(0) })
     	  $("#signupBtn").click(function() { brains(2) })
     	  $("#signupBtn2").click(function() { 
     		  brains(0)
