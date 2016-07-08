@@ -15,7 +15,7 @@ CREATE TABLE Member (
 	nickname   VARCHAR(50) NULL 
 );
 -- 회원 기본키2
-CREATE UNIQUE INDEX PK_Member닏ㅊ
+CREATE UNIQUE INDEX PK_Member
   ON Member ( -- 회원
     mno ASC -- 회원번호
   );
