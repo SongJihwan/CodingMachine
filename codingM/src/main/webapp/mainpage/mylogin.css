@@ -40,8 +40,8 @@ input {
   border: 1px solid #d9d9d9;
   padding: 10px 15px;
   margin-top: 22px;
-  margin-left: 25px;
-  margin-right: 25px;
+  margin-left: 21px;
+  margin-right: 17px;
   box-sizing: border-box;
   font-wieght: 400;
   -webkit-transition: 0.3s ease;
@@ -52,46 +52,78 @@ input:focus {
   border: 1px solid #33b5e5;
   color: #333333;
 }
+
+
 #form {
   height: 70px;
-  width: 950px;
+  width: 1000px;
   margin: 0 auto;
-  padding-left: 50px;
 }
 #form2 {
   height: 70px;
   width: 1000px;
   margin: 0 auto;
 }
+#sound {
+  margin-right: 30px;
+  float: right;
+}
+#back{
+  margin-top: 10px;
+  float: right;
+}
+#back2{
+  margin-top: 20px;
+  float: right;
+}
+
+
 #btn {
   height: 70px;
   width: 490px;
   margin: 0 auto;
 }
-
 button {
-	cursor: pointer;
-	font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 37px;
   text-align: center;
   width: 200px;
   color: #ffffff;
   margin-top: 20px;
-  margin-right: 20px;
+  margin-right: 10px;
   margin-left: 20px;
   background: #33b5e5;
   height: 40px;
+  border: 0;
+  outline: 0;
+}
+#soundcloud {
+  background:URL('../picture/soundcloud.png'); 
+  width:170px; 
+  height:40px; 
+  cursor:pointer;
+  border: 0;
+  outline: 0;
 }
 #backBtn {
-  float: right;
-  margin-top: 20px;
-  margin-right: 110px;
-  margin-left: 0px;
-  width: 40px;
-  height: 40px;
+  background:URL('../picture/backBtn.png'); 
+  width:20px; 
+  height:20px;
+  cursor:pointer;
+  border: 0;
+  outline: 0;
 }
-
+#backBtn2 {
+  background:URL('../picture/backBtn.png'); 
+  width:20px; 
+  height:20px; 
+  cursor:pointer;
+  border: 0;
+  outline: 0;
+  margin-top: 10px;
+}
 #emailCheck {
 	margin-left: 30px;
 	color: lightblue;
