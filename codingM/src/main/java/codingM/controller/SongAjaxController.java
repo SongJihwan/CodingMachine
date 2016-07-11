@@ -73,13 +73,30 @@ public class SongAjaxController {
   
   @RequestMapping(value="list", produces="application/json;charset=utf-8")
   @ResponseBody
-  public String list() 
+  public String list(HttpSession session) 
        throws ServletException, IOException {
-    List<SongMember> list = songService.list();
+    List<SongMember> list = songService.list(((Member)session.getAttribute("loginUser")).getMno());
 
     HashMap<String, Object> result = new HashMap<>();
     result.put("list", list);
     
+    return new Gson().toJson(result);
+  }
+  
+  @RequestMapping(value="listen", produces="application/json;charset=utf-8")
+  @ResponseBody
+  public String listen(int sno, HttpSession session) throws ServletException, IOException {
+    HashMap<String, Object> result = new HashMap<>();
+    if (((Member)session.getAttribute("loginUser")).getMno() != songService.getMno(sno)) {
+      try {
+        songService.plusListen(sno);
+        result.put("status", "success");
+      } catch (Exception e) {
+        result.put("status", "failure");
+      }
+    } else {
+      result.put("status", "success");
+    }
     return new Gson().toJson(result);
   }
 }

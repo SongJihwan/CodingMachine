@@ -17,7 +17,7 @@ div {
   margin: 15px 60px 15px 10px;
 }
 
-#container-fluid>#logo {
+#container-fluid > #logo {
   font-size: large;
   display: inline-block;
   color: purple;
@@ -25,7 +25,7 @@ div {
   margin-top: 10px;
 }
 
-#container-fluid>#logo:HOVER {
+#container-fluid > #logo:HOVER {
   background-color: white;
 }
 
@@ -37,7 +37,8 @@ div {
   margin-top: 5px;
   z-index: 1000
 }
-#container-fluid>#menu>* {
+
+#container-fluid > #menu2 > * {
   display: inline-block;
   position: relative;
   width: 130px;
@@ -125,10 +126,6 @@ li.menuhover a, li.menuhover li.menuhover a {
   border-bottom: 0px;
   width: 270px;
 }
-.sect1:hover {
-  background-color: black;
-  opacity: 0.8;
-}
 
 .name {
   width: 90%;
@@ -181,7 +178,7 @@ li.menuhover a, li.menuhover li.menuhover a {
 }
 
 a:visited {
-  color: black;
+  color: white;
   text-decoration: none;
 }
 
@@ -191,11 +188,6 @@ a:visited {
   border-top: 0px;
   border-bottom: 0px;
   width: 250px;
-}
-
-.sec1:hover {
-  background-color: black;
-  opacity: 0.8;
 }
 
 .hand2 {

@@ -23,7 +23,7 @@
     <script src="../tinydropdown.js"></script>
 </head>
 <body>
-   <div id='container-fluid'>
+  <div id='container-fluid'>
     <div id='logo'>S e o k W o n S o n g</div>
     <div class="nav">
       <ul id="menu" class="menu">
@@ -172,11 +172,15 @@
             {{title}} - {{singer}}<br>
           </div>
           <div class="disc">
-            ▶<br>
-            {{nickname}} <span id=heart></span>{{heart}}
+            {{nickname}} 
+            {{#statusBool}}
+              <div class="glyphicon glyphicon-heart-empty" data-status={{status}} aria-hidden="true" onclick="event.stopPropagation(); sessionStorage.setItem('sno', {{sno}}); changeHeart()"></div> <span id="heartCount">{{heart}}</span>
+            {{else}}
+              <div class="glyphicon glyphicon-heart" data-status={{status}} aria-hidden="true" onclick="event.stopPropagation(); sessionStorage.setItem('sno', {{sno}}); changeHeart()"></div> <span id="heartCount">{{heart}}</span>
+            {{/statusBool}}
           </div>
           <div class="detail">
-            SEE DETAILS
+            LISTEN MUSIC
           </div>
       </div>
     </li>
@@ -196,10 +200,7 @@
 </script>
 
 <script type="text/javascript">
-  var dropdown = new TINY.dropdown.init("dropdown", {
-    id : 'menu',
-    active : 'menuhover'
-  });
+  
 </script>
 
 <script src="../common.js"></script>
@@ -208,10 +209,9 @@
 <script src="js/classie.js"></script>
 <script src="js/dynamics.js"></script>
 <script src="js/abbey-load.js"></script>
-<script src="../bower_components/jquery-gi-thewall/jQuery.GI.TheWall.Song.js"></script>
 <script src="../bower_components/handlebars/handlebars.min.js"></script>
+<script src="../bower_components/jquery-gi-thewall/jQuery.GI.TheWall.Song.js"></script>
 <script src="song.js"></script>
-
 
 </body>
 </html>

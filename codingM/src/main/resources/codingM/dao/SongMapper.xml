@@ -13,10 +13,12 @@
   </delete>
   
   <select id="selectList" resultType="SongMember">
-    select s.sno, m.mno, s.title, s.singer, m.nickname, 
-    (select count(*) from likesong ls where s.sno=ls.sno) as heart, 
-    m.profilePic, s.fileName 
-    from song s left outer join member m on s.mno=m.mno order by s.sno desc
+    select s.sno, s.mno, s.title, s.singer, m.nickname, 
+    (select count(*) from likesong ls where s.sno=ls.sno and status%2=1) as heart, 
+    ls.status, m.profilePic, s.fileName 
+    from member m right outer join song s on s.mno=m.mno 
+    left outer join likesong ls on ls.sno=s.sno and ls.mno=#{mno}
+    order by s.sno desc;
   </select>
   
   <select id="selectOne" parameterType="int" resultType="SongMember">
@@ -28,6 +30,14 @@
     select count(*) 
     from SONG
   </select>
+  
+  <update id="plusListen" parameterType="int">
+    update song set listen=listen+1, ylisten=ylisten+1, mlisten=mlisten+1, wlisten=wlisten+1  where sno=#{sno}
+  </update>
+
+  <select id="selectMno" parameterType="int" resultType="int">
+    select mno from song where sno=#{sno} 
+  </select>  
 </mapper>
 
 

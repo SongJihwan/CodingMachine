@@ -7,6 +7,7 @@ public class SongMember {
   private String singer;
   private String nickname;
   private int heart;
+  private int status;
   private String profilePic;
   private String fileName;
 }

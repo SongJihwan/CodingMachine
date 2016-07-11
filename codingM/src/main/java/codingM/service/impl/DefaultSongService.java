@@ -26,7 +26,15 @@ public class DefaultSongService implements SongService {
     return songDao.selectOne(sno);
   }
 
-  public List<SongMember> list() {
-    return songDao.selectList();
+  public List<SongMember> list(int mno) {
+    return songDao.selectList(mno);
+  }
+
+  public void plusListen(int sno) {
+    songDao.plusListen(sno);
+  }
+
+  public int getMno(int sno) {
+    return songDao.selectMno(sno);
   }
 }
