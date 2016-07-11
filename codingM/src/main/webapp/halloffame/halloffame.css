@@ -1,12 +1,12 @@
 #container-fluid {
-  overflow: hidden;
-  width: 100%;
+  overflow: none;
+  width: 98%;
   min-width: 980px;
   height: 50px;
   margin: 15px 60px 15px 10px;
 }
 
-#container-fluid > #logo {
+#container-fluid>#logo {
   font-size: large;
   display: inline-block;
   color: purple;
@@ -14,28 +14,100 @@
   margin-top: 10px;
 }
 
-#container-fluid > #logo:HOVER {
+#container-fluid>#logo:HOVER {
   background-color: white;
 }
 
-#container-fluid > #menu2 {
+#container-fluid > .nav {
   float: right;
   display: inline-block;
   position: relative;
+  cursor: pointer;
+  margin-top: 5px;
+  z-index: 1000
 }
-
-#container-fluid > #menu2 > * {
+#container-fluid>#menu>* {
   display: inline-block;
   position: relative;
   width: 130px;
   text-align: center;
   margin-top: 14px;
 }
-
-#container-fluid > #menu2 > *:HOVER {
-  background-color: black;
-  color: white;
+#home, #sing, #song, #hof, #mypage {
+  padding-top: 11px;
+} 
+#home, #sing, #song {
+  width: 80px;
 }
+#song {
+  margin-right: 15px;
+}
+
+/* 드롭다운 간격 */
+#mypage {
+  margin-top: 15px;   
+}
+#mysong {
+  margin-top: 13px;
+  margin-bottom: 5px;
+}
+#profile {
+  width: 80px;
+}
+#profile2 {
+  border: 1px solid White;
+  width: 37px; height : 37px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+}
+.menu a {
+  float: left;
+  text-decoration: none;
+  width: 120px;
+  height: 28px;
+  text-align: center;
+}
+.menu a:hover {
+  color: blue;
+}
+.menu {
+  list-style: none;
+  font: 16px Arial, Verdana;
+  text-align: center;
+  width: 500px;
+  margin: 0 auto
+}
+.menu li {
+  position: relative;
+  float: left;
+  z-index: 1000
+}
+.menu ul {
+  display: none;
+  position: absolute;
+  font: normal 16px Arial, Verdana;
+  top: 36px;
+  background: none;
+  list-style: none
+}
+ul {
+  padding-left: 0; /* 드롭다운 */
+}
+.menu ul li a, li.menuhover li a, li.menuhover li.menuhover li a {
+  float: none;
+  display: block;
+  background: none;
+  height: 22px;
+  padding-top: 5px
+}
+.menu li a:hover, li.menuhover li a:hover, li.menuhover li.menuhover li a:hover{
+  color: red; /* 메뉴글씨 hover */
+}
+li.menuhover a, li.menuhover li.menuhover a {
+  color: white;
+  background: none;
+}
+
 .halloffame {
   padding: 100px 0px 100px 0px;
   background-color: transparent;
@@ -68,11 +140,11 @@ img:hover {
   cursor: pointer;
 }
 .content {
-	height: 650px;
-	width: 1000px;
-	margin: 0 auto ;
-	padding-top: 30px;
-	padding-left: 35px;
+  height: 650px;
+  width: 1000px;
+  margin: 0 auto ;
+  padding-top: 30px;
+  padding-left: 35px;
 }
 .line {
   float: left;
@@ -81,6 +153,7 @@ img:hover {
   width: 202px;
 }
 .circle {
+  float: left;
   width: 200px;
   height: 200px;
   -webkit-border-radius:100px;
@@ -88,7 +161,7 @@ img:hover {
   overflow: hidden;
 }
 .line > .circle {
-	position: relative;	
+  position: relative; 
   width: 200px;
   height: 200px;
   overflow: hidden;

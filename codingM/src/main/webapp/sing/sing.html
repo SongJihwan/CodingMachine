@@ -1,95 +1,107 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>S e o k W o n S o n g</title>
-	<link rel="stylesheet"
-	href="../bower_components/jquery-gi-thewall/assets/css/style2.css">
-	<link rel="stylesheet"
-	href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet"
-	href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
-	<link href='https://fonts.googleapis.com/css?family=Oswald'
-	rel='stylesheet' type='text/css'>
-	<link rel="stylesheet"
-	href="../bower_components/jquery-ui/themes/smoothness/jquery-ui.css">
-	<link rel="stylesheet" href="sing.css">
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>S e o k W o n S o n g</title>
+  <link rel="stylesheet"
+  href="../bower_components/jquery-gi-thewall/assets/css/style2.css">
+  <link rel="stylesheet"
+  href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet"
+  href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Oswald'
+  rel='stylesheet' type='text/css'>
+  <link rel="stylesheet"
+  href="../bower_components/jquery-ui/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="sing2.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="../bower_components/record/css/style.css" rel="stylesheet">
-  <script src="../bower_components/jquery/dist/jquery.js"></script>
-  <script src="../login.js"></script>
 </head>
 <body>
-	<div id='container-fluid'>
-		<div id='logo'>S e o k W o n S o n g</div>
-		<div id="menu2">
-			<div id='home'>HOME</div>
-			<div id='sing' onclick='location.href="../sing/sing.html"'>SING</div>
-			<div id='songs' onclick='location.href="../songs/song.html"'>SONGS</div>
-			<div id='hof' onclick='location.href="../halloffame/halloffame.html"'>HALL
-				OF FAME</div>
-				<div id='songs'>MY SONGS</div>
-				<div id='logout'>LOGOUT</div>
-			</div>
-		</div>
+   <div id='container-fluid'>
+    <div id='logo'>S e o k W o n S o n g</div>
+    <div class="nav">
+      <ul id="menu" class="menu">
+        <li class="nodiv"><a href="#" id="home">HOME</a></li>
+        <li><a href="#" id="sing" onclick='location.href="../sing/sing.html"'>SING</a></li>
+        <li><a href="#" id="song" onclick='location.href="../songs/song.html"'>SONG</a></li>
+        <li><a href="#" id="hof" onclick='location.href="../halloffame/halloffame.html"'>HALL OF FAME</a></li>
+        <li><a href="#" id="profile"><img id="profile2" src="../picture/default.png" align="right" /></a>
+          <ul>
+            <li><a href="#" id="mypage">MY PAGE</a></li>
+            <li><a href="#" id="mysong">MY SONG</a></li>
+            <li><a href="#" id="logout" onclick='location.href="../mainpage/main.html"'>LOGOUT</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-		<div id='picture' class='container'>
-			<img src='../picture/sing.PNG' />
-		</div>
+    <div id='picture' class='container'>
+      <img src='../picture/sing.PNG' />
+    </div>
 
-		<div id='searchbox'>
-			<input type='text' name='search' id='search' placeholder='반주곡(제목) 검색'
-			onkeypress="runScript('viewport', event, '#search')" />
-			<div id='imgbox'></div>
-		</div>
+    <div id='searchbox'>
+      <input type='text' name='search' id='search' placeholder='반주곡(제목) 검색'
+      onkeypress="runScript('viewport', event, '#search')" />
+      <div id='imgbox'></div>
+    </div>
 
 <div class="line">
-	<div role='main' class='viewport'></div>
-	<script id="temp1" type="text/x-handlebars-template">
+  <div role='main' class='viewport'></div>
+  <script id="temp1" type="text/x-handlebars-template">
       <div class="imgboxtest"><img src="../picture/마이크설명.jpg" /></div>
-		{{#each tr}}
-		  <li class="lili" data-contenttype="image" data-href="../picture/images01.PNG"> 
-			<table table class="table table-hover" >
-				<tr class='dynT' onclick='onclickDetail(event, "{{title}}", "{{singer}}", "{{url}}")'>
-					<td class='title'>{{title}}</td>
-					<td class='singer'>{{singer}}</td>
-				</tr>
-			</table>
-	  	</li>
+    {{#each tr}}
+      <li class="lili" data-contenttype="image" data-href="../picture/images01.PNG"> 
+      <table table class="table table-hover" >
+        <tr class='dynT' onclick='onclickDetail(event, "{{title}}", "{{singer}}", "{{url}}")'>
+          <td class='title'>{{title}}</td>
+          <td class='singer'>{{singer}}</td>
+        </tr>
+      </table>
+      </li>
      </div>
-		{{/each}}
-	</script>
+    {{/each}}
+  </script>
 </div>
-		
-		<script src="../common.js"></script>
-		<script src="../bower_components/jquery-ui/jquery-ui.js"></script>
-		<script src="../bower_components/jquery-gi-thewall/jQuery.GI.TheWall2.js"></script>
-		<script src="../bower_components/videocontroller/dist/jquery.videoController.js"></script>
-		<script src="tab_table.js"></script>
-		<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="../bower_components/handlebars/handlebars.min.js"></script>
-		<script src="../bower_components/yui/build/yui/yui-min.js"></script>
+    
+    <script src="../common.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="../bower_components/jquery-gi-thewall/jQuery.GI.TheWall2.js"></script>
+    <script src="../bower_components/videocontroller/dist/jquery.videoController.js"></script>
+    <script src="tab_table.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bower_components/handlebars/handlebars.min.js"></script>
+    <script src="../bower_components/yui/build/yui/yui-min.js"></script>
     <script src="../bower_components/record/js/audiorecorder.js"></script>
-		<script>
-			var t1 = document.querySelector("#search")
-			var imgbox = document.querySelector("#imgbox")
-			t1.onkeyup = function(event) {
-				if (t1.value.length == 0) {
-					imgbox.className = ""
-				} else {
-					imgbox.className = "success"
-				}
-			};
-			
-			function playVideo() {
-		    $('#playing').videoController('play');
-		  }
+    <script type="text/javascript" src="../tinydropdown.js"></script>
+    <script>
+      var t1 = document.querySelector("#search")
+      var imgbox = document.querySelector("#imgbox")
+      t1.onkeyup = function(event) {
+        if (t1.value.length == 0) {
+          imgbox.className = ""
+        } else {
+          imgbox.className = "success"
+        }
+      };
+      
+      function playVideo() {
+        $('#playing').videoController('play');
+      }
 
-		  function stopVideo() {
-		    $('#playing').videoController('stop');
-		  }
-		</script>
+      function stopVideo() {
+        $('#playing').videoController('stop');
+      }
+    </script>
+    <script type="text/javascript">
+    var dropdown = new TINY.dropdown.init("dropdown", {
+      id : 'menu',
+      active : 'menuhover'
+    });
+    </script>
 
 
-	</body>
-	</html>
+  </body>
+  </html>

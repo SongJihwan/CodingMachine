@@ -3,48 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <title>Hall Of Fame</title>
-<link rel="stylesheet" type="text/css" href="halloffame.css">
+<link rel="stylesheet" type="text/css" href="halloffame2.css">
 <link rel="stylesheet"
-	href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet"
-	href="../bower_components/jquery-gi-thewall/assets/css/style.css">
+  href="../bower_components/jquery-gi-thewall/assets/css/style.css">
 <link
-	href="http://fast.fonts.net/cssapi/4bedbdc9-7261-43be-b2e9-f34abce90975.css"
-	media="all" type="text/css" rel="stylesheet">
+  href="http://fast.fonts.net/cssapi/4bedbdc9-7261-43be-b2e9-f34abce90975.css"
+  media="all" type="text/css" rel="stylesheet">
 
 </head>
 
 <body>
-	<div id='container-fluid'>
-		<div id='logo'>S e o k W o n S o n g</div>
-		<div id="menu2">
-			<div id='home'>HOME</div>
-			<div id='sing' onclick='location.href="../sing/ts.html"'>SING</div>
-			<div id='songs' onclick='location.href="../songs/song.html"'>SONGS</div>
-			<div id='hof' onclick='location.href="../halloffame/halloffame.html"'>HALL
-				OF FAME</div>
-			<div id='songs'>MY SONGS</div>
-			<div id='logout'>LOGOUT</div>
-		</div>
-	</div>
+   <div id='container-fluid'>
+    <div id='logo'>S e o k W o n S o n g</div>
+    <div class="nav">
+      <ul id="menu" class="menu">
+        <li class="nodiv"><a href="#" id="home">HOME</a></li>
+        <li><a href="#" id="sing" onclick='location.href="../sing/sing.html"'>SING</a></li>
+        <li><a href="#" id="song" onclick='location.href="../songs/song.html"'>SONG</a></li>
+        <li><a href="#" id="hof" onclick='location.href="../halloffame/halloffame.html"'>HALL OF FAME</a></li>
+        <li><a href="#" id="profile"><img id="profile2" src="../picture/default.png" align="right" /></a>
+          <ul>
+            <li><a href="#" id="mypage">MY PAGE</a></li>
+            <li><a href="#" id="mysong">MY SONG</a></li>
+            <li><a href="#" id="logout" onclick='location.href="../mainpage/main.html"'>LOGOUT</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-	<div class="halloffame" data-parallax="true">
-		<h1>
-			<span class="">실시간 TOP8</span>
-		</h1>
-		<p id="subtitle" class="gallery-caption text">
-			Mauris id maximus magna, vel tristique dui. Aliquam erat volutpat.
-			Nullam feugiat sapien eget scelerisque varius.<br> Quisque
-			imperdiet porttitor magna, non pulvinar dui mattis ac. Suspendisse
-			porttitor diam et odio consequat, ut porta quam porta.
-		</p>
+  <div class="halloffame" data-parallax="true">
+    <h1>
+      <span class="">실시간 TOP8</span>
+    </h1>
+    <p id="subtitle" class="gallery-caption text">
+      Mauris id maximus magna, vel tristique dui. Aliquam erat volutpat.
+      Nullam feugiat sapien eget scelerisque varius.<br> Quisque
+      imperdiet porttitor magna, non pulvinar dui mattis ac. Suspendisse
+      porttitor diam et odio consequat, ut porta quam porta.
+    </p>
 
-		<div role="main" class="viewport">
-			<div class="demo">
-				<div class="content">
-					<div class="GITheWall backimg">
-						<ul class="start">
-							<script id="temp1" type="text/x-handlebars-template">
+    <div role="main" class="viewport">
+      <div class="demo">
+        <div class="content">
+          <div class="GITheWall backimg">
+            <ul class="start">
+              <script id="temp1" type="text/x-handlebars-template">
           {{#each div}}
           <li class="lili" data-contenttype="image" data-href={{img}}>
             <div class="line">
@@ -60,18 +66,25 @@
           </li>
           {{/each}}
       </script>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 
-	</div>
+  </div>
 
-	<script src="../bower_components/jquery/dist/jquery.js"></script>
-	<script
-		src="../bower_components/jquery-gi-thewall/jQuery.GI.TheWall.js"></script>
-	<script src="../bower_components/handlebars/handlebars.min.js"></script>
-	<script src="halloffame.js"></script>
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script
+    src="../bower_components/jquery-gi-thewall/jQuery.GI.TheWall.js"></script>
+  <script src="../bower_components/handlebars/handlebars.min.js"></script>
+  <script src="halloffame.js"></script>
+  <script type="text/javascript" src="../tinydropdown.js"></script>
+  <script type="text/javascript">
+    var dropdown = new TINY.dropdown.init("dropdown", {
+      id : 'menu',
+      active : 'menuhover'
+    });
+  </script>
 </body>
 </html>

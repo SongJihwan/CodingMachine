@@ -14,25 +14,33 @@
     <script src="js/modernizr.custom.js"></script>
 
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="song.css">
+    <link rel="stylesheet" type="text/css" href="song2.css">
     <link rel="stylesheet" href="../bower_components/jquery-gi-thewall/assets/css/style.css">
     <link href="http://fast.fonts.net/cssapi/4bedbdc9-7261-43be-b2e9-f34abce90975.css" media="all" type="text/css" rel="stylesheet">
     <script src="../bower_components/jquery/dist/jquery.js"></script>
 
     <script src="../login.js"></script>
+    <script src="../tinydropdown.js"></script>
 </head>
 <body>
-  <div id='container-fluid'>
+   <div id='container-fluid'>
     <div id='logo'>S e o k W o n S o n g</div>
-    <div id="menu2">
-      <div id='home'>HOME</div>
-      <div id='sing' onclick='location.href="../sing/sing.html"'>SING</div>
-      <div id='songs' onclick='location.href="../songs/song.html"'>SONGS</div>
-      <div id='hof'>HALL OF FAME</div>
-      <div id='mysong'>MY SONGS</div>
-      <div id='logout'>LOGOUT</div>
+    <div class="nav">
+      <ul id="menu" class="menu">
+        <li class="nodiv"><a href="#" id="home">HOME</a></li>
+        <li><a href="#" id="sing" onclick='location.href="../sing/sing.html"'>SING</a></li>
+        <li><a href="#" id="song" onclick='location.href="../songs/song.html"'>SONG</a></li>
+        <li><a href="#" id="hof" onclick='location.href="../halloffame/halloffame.html"'>HALL OF FAME</a></li>
+        <li><a href="#" id="profile"><img id="profile2" src="../picture/default.png" align="right" /></a>
+          <ul>
+            <li><a href="#" id="mypage">MY PAGE</a></li>
+            <li><a href="#" id="mysong">MY SONG</a></li>
+            <li><a href="#" id="logout" onclick='location.href="../mainpage/main.html"'>LOGOUT</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
 
 
 <svg class="hidden">
@@ -185,6 +193,13 @@
   {{#each song}}
     <div class='single single--current' id='album-1' data-side1='{{fileName}}' data-side2='{{fileName}}'> <div class='img-wrap img-wrap--single' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'><img class='img img--single' src='{{profilePic}}'></div><span class='number' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'><span class='number__total'></span></span> <h2 class='artist artist--single' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'></h2> <h3 class='title title--single' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'></h3> <span class='year year--single' style='opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);'></span> </div>
   {{/each}}
+</script>
+
+<script type="text/javascript">
+  var dropdown = new TINY.dropdown.init("dropdown", {
+    id : 'menu',
+    active : 'menuhover'
+  });
 </script>
 
 <script src="../common.js"></script>
