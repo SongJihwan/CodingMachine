@@ -113,7 +113,7 @@ a:focus {
 }
 
 .js .view--current {
-
+	border: 1px solid green;
 	position: absolute;
 	margin: 0;
 	pointer-events: auto;
@@ -748,11 +748,12 @@ a:focus {
 }
 
 .player-stand {
+	border: 1px solid #FD9BED;
 	position: absolute;
-	top: 50%;
-	left: 50%;
+	top: 106%;
+	left: 5%;
 	width: calc(90vmin + (0.2 * 80vmin));
-	height: 90vmin;
+	height: 31vmin;
 	border-radius: 0.15em;
 	/*background: #45bd94;*/
 	-webkit-transform: translate3d(-50%, -50%, 0) translate3d(calc(0.06 * 80vmin), 0, 0);
@@ -771,6 +772,7 @@ a:focus {
 }
 
 .song {
+	display: none;
 	font-size: 0.7em;
 	position: absolute;
 	top: calc(38px + 2.5vmin);
@@ -819,8 +821,9 @@ a:focus {
 }
 
 .player {
+	border: 1px solid #AFFDEF;
 	position: relative;
-	width: 100%;
+	width: 0%;
 	height: 100%;
 	pointer-events: none;
 }
@@ -953,8 +956,8 @@ we use margins because transforms will be applied dynamically */
 
 .player__controls {
 	position: absolute;
-	bottom: 234px;
-	left: 410px;
+	bottom: 174px;
+	left: 395px;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
