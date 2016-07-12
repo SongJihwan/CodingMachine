@@ -17,17 +17,23 @@ div {
   margin: 15px 60px 15px 10px;
 }
 
-#container-fluid > #logo {
+#container-fluid {
+  overflow: none;
+  width: 98%;
+  min-width: 980px;
+  height: 50px;
+  margin: 15px 60px 15px 10px;
+}
+
+#container-fluid>#logo {
   font-size: large;
   display: inline-block;
   color: purple;
   padding-top: 2px;
   margin-top: 10px;
+  cursor: pointer;
 }
 
-#container-fluid > #logo:HOVER {
-  background-color: white;
-}
 
 #container-fluid > .nav {
   float: right;
@@ -72,18 +78,19 @@ div {
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
 }
-.menu a {
+.menu div {
   /* border: 1px solid red; */
   float: left;
   text-decoration: none;
-  color: black;
   width: 120px;
   height: 28px;
   text-align: center;
 }
+.menu div:hover {
+  color: blue;
+}
 .menu {
   list-style: none;
-  font: 16px Arial, Verdana;
   text-align: center;
   width: 500px;
   margin: 0 auto
@@ -96,7 +103,6 @@ div {
 .menu ul {
   display: none;
   position: absolute;
-  font: normal 16px Arial, Verdana;
   top: 36px;
   background: none;
   list-style: none
@@ -104,20 +110,21 @@ div {
 ul {
   padding-left: 0; /* 드롭다운 */
 }
-.menu ul li a, li.menuhover li a, li.menuhover li.menuhover li a {
+.menu ul li div, li.menuhover li div, li.menuhover li.menuhover li div {
   float: none;
   display: block;
   background: none;
   height: 22px;
   padding-top: 5px
 }
-.menu li a:hover, li.menuhover li a:hover, li.menuhover li.menuhover li a:hover{
+.menu li div:hover, li.menuhover li a:hover, li.menuhover li.menuhover li div:hover{
   color: red; /* 메뉴글씨 hover */
 }
-li.menuhover a, li.menuhover li.menuhover a {
+li.menuhover div, li.menuhover li.menuhover div {
   color: black;
   background: none;
 }
+
 
 .sect1 {
   float: left;

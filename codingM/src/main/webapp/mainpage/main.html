@@ -1,4 +1,5 @@
-  <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -14,7 +15,7 @@
 
 <link href="../bower_components/skrollr/src/demo.css" rel="stylesheet">
 <link href="../bower_components/skrollr/src/header.css" rel="stylesheet">
-<link rel="stylesheet" href="mylogin.css">
+<link rel="stylesheet" href="mylogin2.css">
 
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 <script>
@@ -31,6 +32,8 @@
 </script>
 </head>
 <body>
+  <div id="fb-root"></div>
+
 
   <div class="jbMenu">
     <div class="slider">
@@ -44,33 +47,41 @@
 
       <!-- 로그인클릭시 이메일,비밀번호,로그인 -->
       <div class="item" style="background: white;">
-        <div id="form"> 
-          <input type="email" class="email" placeholder="Email Address" /> 
-          <input type="password" class="pw" placeholder="Password" />
-          <button id="loginBtn2" type="button" onclick="login()">Login</button>
-        <div id="sound">
-          <button id="soundcloud" type="button"></button>
-          <div id="back">
-          <button id="backBtn" type="button"></button>
+        <div id="form">
+          <div id="lgin">
+            <div id="lgin2">
+              <input type="email" class="email" placeholder="Email Address" />
+              <input type="password" class="pw" placeholder="Password" />
+              <button id="loginBtn2" type="button" onclick="login()">Login</button>
+              <div id="facebook">
+              <button id="faceBtn" type="button" onclick="FB.login()"><img src="../picture/facebooklogin.png"></button>
+              </div>
+            </div>
           </div>
-        </div>
+          <div id="back">
+            <button id="backBtn" type="button"></button>
+          </div>
         </div>
       </div>
 
-      <!-- 회원가입클릭시 이메일,비밀번호,비밀번호,회원가입 -->
-      <div class="item" style="background: white;">
-        <div id="form2">
-          <input type="email" class="email" placeholder="Email Address" />
-          <input type="password" class="pw" placeholder="Password" /> 
-          <input type="password" class="pwc" placeholder="Password Confirm" />
-          <button id="signupBtn2" type="button" onclick="signUp()">SignUp</button>
-          <div id="back2">
-          <button id="backBtn2" type="button"></button>
+    <!-- 회원가입클릭시 이메일,비밀번호,비밀번호,회원가입 -->
+    <div class="item" style="background: white;">
+      <div id="form2">
+        <div id="lgin3">
+          <div id="lgin4">
+            <input type="email" class="email" placeholder="Email Address" />
+            <input type="password" class="pw" placeholder="Password" /> <input
+              type="password" class="pwc" placeholder="Password Confirm" />
+            <button id="signupBtn2" type="button" onclick="signUp()">SignUp</button>
           </div>
-          <br><span id="emailCheck"></span>
         </div>
+        <div id="back2">
+          <button id="backBtn2" type="button"></button>
+        </div>
+        <br> <span id="emailCheck"></span>
       </div>
     </div>
+  </div>
   </div>
 
 
@@ -292,92 +303,95 @@
     skrollr.init();
   </script>
 
-  <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
-  <script>
-  SC.initialize({
-    client_id: 'ce5851b9d9a3f12f384d93bdbea570e9',
-    redirect_uri: 'http://localhost:8080/codingM/mainpage/main.html'
-  });
-  
-  $('#soundcloud').click(function(){
-  
-  SC.connect().then(function() {
-      return SC.get('/me');
-    }).then(function(me) {
-      alert('Hello, ' + me.username);
-    });
-  });
-  
-  </script>
-
- <!-- client_id = ce5851b9d9a3f12f384d93bdbea570e9 -->
+  <script src="facebook.js"></script>
   <script src="../bower_components/handlebars/handlebars.min.js"></script>
   <script src="boxroll-slider.js"></script> 
   <script>
-  $('.slider').boxRollSlider() 
+    $('.slider').boxRollSlider()
 
-  function login () {
-     $.post("http://localhost:8080/codingM/auth/login.do", {
-       email: $(".email").val(),
-       password : $(".pw").val()
-     }, function(result) {
-     if (result.status == "success") {
-      sessionStorage.setItem("loginValid", "1")
-      location.href = "../sing/sing.html"
-     } else {
-      window.alert("로그인 실패입니다!")
-     }
-     }, "json");
-   }  
-  
-  $("#form2 .email").keyup(function(event) {
-      var regExp = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-      if( !$("#form2 .email").val()){ 
-         $('#emailCheck').html(""); 
-         $("#form2 .email").focus(); 
-         return false; 
-      } else {
-        if (!regExp.test($("#form2 .email").val())) {
-          $('#emailCheck').html("이메일 형식으로 입력해주세요.");
-          return false;
-        }
-        
-        var email = $("#form2 .email").val();
-        
-        if(regExp.test(email)) {
-          $.getJSON("http://localhost:3200/valid?email="+email, function(result) {
-              console.log(result)
-            if (result == "false") {
-              $('#emailCheck').html("중복된 이메일입니다."); 
-              $("#form2 .email").focus(); 
-              return false; 
-            } else {
-              $('#emailCheck').html("사용가능한 이메일입니다.");
-            }
-          });
-        }
-      }
-  });
- 
-  function signUp() {
-    if ($('#form2 .pw').val()&&($('#form2 .pw').val() == $('#form2 .pwc').val())) {
-      $.post("http://localhost:8080/codingM/member/add.do", {
-        email: $("#form2 .email").val(),
-        password : $("#form2 .pw").val()
+    function login() {
+      $.post("http://localhost:8080/codingM/auth/login.do", {
+        email : $(".email").val(),
+        password : $(".pw").val()
       }, function(result) {
-       if (result.status == "success") {
-         sessionStorage.setItem("loginValid", "1")
-         window.alert("가입 성공했습니다.\n서비스를 이용하시려면 로그인해주세요.")
-         $("#form2 .email").val("")
-         $("#form2 .pw").val("")
-         $("#form2 .pwc").val("")
-      } else {
-         window.alert("회원가입 실패입니다!")
-         $("#form2 .email").val("")
-         $("#form2 .pw").val("") 
-         $("#form2 .pwc").val("")
-      }}, "json");}
-  }  
+        if (result.status == "success") {
+          sessionStorage.setItem("loginValid", "1")
+          location.href = "../sing/sing.html"
+        } else {
+          window.alert("로그인 실패입니다!")
+        }
+      }, "json");
+    }
+
+    $("#form2 .email")
+        .keyup(
+            function(event) {
+              var regExp = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+              if (!$("#form2 .email").val()) {
+                $('#emailCheck').html("");
+                $("#form2 .email").focus();
+                return false;
+              } else {
+                if (!regExp.test($("#form2 .email").val())) {
+                  $('#emailCheck').html("이메일 형식으로 입력해주세요.");
+                  return false;
+                }
+
+                var email = $("#form2 .email").val();
+
+                if (regExp.test(email)) {
+                  $.getJSON(
+                      "http://localhost:3200/valid?email="
+                          + email, function(result) {
+                        console.log(result)
+                        if (result == "false") {
+                          $('#emailCheck').html(
+                              "중복된 이메일입니다.");
+                          $("#form2 .email").focus();
+                          return false;
+                        } else {
+                          $('#emailCheck').html(
+                              "사용가능한 이메일입니다.");
+                        }
+                      });
+                }
+              }
+            });
+
+    function signUp() {
+      if ($('#form2 .pw').val()
+          && ($('#form2 .pw').val() == $('#form2 .pwc').val())) {
+        $.post("http://localhost:8080/codingM/member/add.do", {
+          email : $("#form2 .email").val(),
+          password : $("#form2 .pw").val()
+        }, function(result) {
+          if (result.status == "success") {
+            sessionStorage.setItem("loginValid", "1")
+            window.alert("가입 성공했습니다.\n서비스를 이용하시려면 로그인해주세요.")
+            $("#form2 .email").val("")
+            $("#form2 .pw").val("")
+            $("#form2 .pwc").val("")
+          } else {
+            window.alert("회원가입 실패입니다!")
+            $("#form2 .email").val("")
+            $("#form2 .pw").val("")
+            $("#form2 .pwc").val("")
+          }
+        }, "json");
+      }
+    }
   </script>
+
+
+  <!--
+  아래는 소셜 플러그인으로 로그인 버튼을 넣는다.
+  이 버튼은 자바스크립트 SDK에 그래픽 기반의 로그인 버튼을 넣어서 클릭시 FB.login() 함수를 실행하게 된다.
+-->
+
+  <fb:login-button scope="public_profile,email"
+    onlogin="checkLoginState();">
+  </fb:login-button>
+  <div id="status"></div>
+
 </body>
 </html>

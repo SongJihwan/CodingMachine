@@ -56,27 +56,57 @@ input:focus {
 
 #form {
   height: 70px;
-  width: 1000px;
+  width: 100%;
   margin: 0 auto;
 }
 #form2 {
   height: 70px;
-  width: 1000px;
+  width: 100%;
   margin: 0 auto;
 }
-#sound {
-  margin-right: 30px;
-  float: right;
+#lgin {
+  width: 95%;
+  margin: 0 auto;
+  float: left;
 }
-#back{
-  margin-top: 10px;
+
+#facebook {
+  background: #ffffff;
   float: right;
+  margin-right: 50px;
+}
+#faceBtn {
+  width: 90px;
+  height: 40px;
+}
+
+
+
+#lgin2 {
+  width: 880px;
+  height: 70px;
+  margin: 0 auto;
+}
+#lgin3 {
+  width: 95.5%;
+  margin: 0 auto;
+  float: left;
+}
+#lgin4 {
+  width: 950px;
+  height: 70px;
+  margin: 0 auto;
+}
+
+#back {
+  width: 50px;
+  height: 70px;
+  float: right; 
 }
 #back2{
   margin-top: 20px;
   float: right;
 }
-
 
 #btn {
   height: 70px;
@@ -99,18 +129,12 @@ button {
   border: 0;
   outline: 0;
 }
-#soundcloud {
-  background:URL('../picture/soundcloud.png'); 
-  width:170px; 
-  height:40px; 
-  cursor:pointer;
-  border: 0;
-  outline: 0;
-}
+
 #backBtn {
   background:URL('../picture/backBtn.png'); 
   width:20px; 
   height:20px;
+  margin-top: 30px;
   cursor:pointer;
   border: 0;
   outline: 0;
@@ -124,7 +148,9 @@ button {
   outline: 0;
   margin-top: 10px;
 }
+
+
 #emailCheck {
-	margin-left: 30px;
-	color: lightblue;
+  margin-left: 30px;
+  color: lightblue;
 }
