@@ -103,17 +103,18 @@ a:focus {
 	display: none;
 }
 
-.js .view--player {
-	/*position: fixed;*/
-	top: 100px;
-	left: 35px;
+#viewPlayer {
+	position: absolute;
+	top: 0px;
+	left: 40px;
+	/* border: 1px solid lightgray; */
 	display: inline-block;
 	width: 300px;
 	height: 100%;
 }
 
 .js .view--current {
-	border: 1px solid green;
+	/* border: 1px solid green; */
 	position: absolute;
 	margin: 0;
 	pointer-events: auto;
@@ -748,7 +749,7 @@ a:focus {
 }
 
 .player-stand {
-	border: 1px solid #FD9BED;
+	/* border: 1px solid #FD9BED; */
 	position: absolute;
 	top: 106%;
 	left: 5%;
@@ -821,8 +822,8 @@ a:focus {
 }
 
 .player {
-	border: 1px solid #AFFDEF;
-	position: relative;
+	/* border: 1px solid #AFFDEF; */
+	position: inherit;
 	width: 0%;
 	height: 100%;
 	pointer-events: none;
@@ -956,8 +957,8 @@ we use margins because transforms will be applied dynamically */
 
 .player__controls {
 	position: absolute;
-	bottom: 174px;
-	left: 395px;
+	bottom: 225px;
+	left: 410px;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
