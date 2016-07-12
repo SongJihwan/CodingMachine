@@ -15,10 +15,11 @@
 
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="song.css">
+    <link rel="stylesheet" href="../nav.css">
     <link rel="stylesheet" href="../bower_components/jquery-gi-thewall/assets/css/style.css">
     <link href="http://fast.fonts.net/cssapi/4bedbdc9-7261-43be-b2e9-f34abce90975.css" media="all" type="text/css" rel="stylesheet">
     <script src="../bower_components/jquery/dist/jquery.js"></script>
-
+		<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../login.js"></script>
     <script src="../tinydropdown.js"></script>
 </head>
@@ -33,7 +34,7 @@
         <li><div id="hof" onclick='location.href="../halloffame/halloffame.html"'>HALL OF FAME</div></li>
         <li><div id="profile"><img id="profile2" src="../picture/default.png" align="right" /></div>
           <ul>
-            <li><div id="mypage">MY PAGE</div></li>
+            <li><div data-toggle="modal" data-target="#exampleModal" data-whatever="test@test.com">MY PAGE</div></li>
             <li><div id="mysong">MY SONG</div></li>
             <li><div id="logout" onclick='location.href="../mainpage/main.html"'>LOGOUT</div></li>
           </ul>
@@ -42,6 +43,36 @@
     </div>
   </div>
 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Email:</label>
+            test@test.com
+          </div>
+          <div class="form-group">
+            <label class="control-label">Password:</label>
+            <input type=password class="form-control"></input>
+          </div>
+          <div class="form-group">
+            <label class="control-label">NickName:</label>
+            <input class="form-control"></input>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <svg class="hidden">
     <!-- made with Icomoon.io, Icons from http://www.entypo.com/ and https://icomoon.io/ -->
@@ -171,7 +202,7 @@
             {{title}} - {{singer}}<br>
           </div>
           <div class="disc">
-            {{nickname}} 
+            {{nickname}}
             {{#statusBool}}
               <div class="glyphicon glyphicon-heart-empty" data-status={{status}} aria-hidden="true" onclick="event.stopPropagation(); sessionStorage.setItem('sno', {{sno}}); changeHeart()"></div> <span id="heartCount">{{heart}}</span>
             {{else}}
@@ -198,8 +229,16 @@
   {{/each}}
 </script>
 
-<script type="text/javascript">
-  
+<script>
+  $('#exampleModal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) // Button that triggered the modal
+      var recipient = button.data('whatever') // Extract info from data-* attributes
+      // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+      // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+      var modal = $(this)
+      modal.find('.modal-title').text(recipient + '님의 MyPage')
+      modal.find('.modal-body input').val(recipient)
+    })
 </script>
 
 <script src="../common.js"></script>
