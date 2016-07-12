@@ -58,7 +58,3 @@
     js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.6&appId=1741725199375220";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
-
-FB.login(function(response) {
-	   // response 처리
-	 }, {scope: 'public_profile,email'});

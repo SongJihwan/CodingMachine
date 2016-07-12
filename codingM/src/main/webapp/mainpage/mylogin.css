@@ -60,7 +60,7 @@ input:focus {
   margin: 0 auto;
 }
 #form2 {
-  height: 70px;
+	height: 70px;
   width: 100%;
   margin: 0 auto;
 }
@@ -69,26 +69,14 @@ input:focus {
   margin: 0 auto;
   float: left;
 }
-
-#facebook {
-  background: #ffffff;
-  float: right;
-  margin-right: 50px;
-}
-#faceBtn {
-  width: 90px;
-  height: 40px;
-}
-
-
-
 #lgin2 {
-  width: 880px;
+  width: 950px;
   height: 70px;
   margin: 0 auto;
 }
+
 #lgin3 {
-  width: 95.5%;
+  width: 95%;
   margin: 0 auto;
   float: left;
 }
@@ -96,6 +84,15 @@ input:focus {
   width: 950px;
   height: 70px;
   margin: 0 auto;
+}
+#facebook {
+  background: #ffffff;
+  float: right;
+  margin-right: 5px;
+}
+#faceBtn {
+  width: 200px;
+  height: 40px;
 }
 
 #back {
