@@ -3,9 +3,6 @@
   <head>
     <title></title>
     <link rel="stylesheet" href="../nav.css">
-
-    <script src="../bower_components/jquery/dist/jquery.js"></script>
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   </head>
   <body>
     <div id='container-fluid'>
@@ -18,7 +15,7 @@
           <li><div id="hof" onclick='location.href="../halloffame/halloffame.html"'>HALL OF FAME</div></li>
           <li><div id="profile"><img id="profile2" src="../picture/default.png" align="right" /></div>
             <ul>
-              <li><div data-toggle="modal" data-target="#exampleModal" data-whatever="test@test.com">MY PAGE</div></li>
+              <li><div id="mypage" data-toggle="modal" data-target="#exampleModal" data-whatever="test@test.com">MY PAGE</div></li>
               <li><div id="mysong">MY SONG</div></li>
               <li><div id="logout" onclick='location.href="../mainpage/main.html"'>LOGOUT</div></li>
             </ul>
@@ -61,12 +58,17 @@
         </div>
       </div>
     </div>
+    
     <script>
       var dropdown = new TINY.dropdown.init("dropdown", {
         id : 'menu',
         active : 'menuhover'
       });
     </script>
+    
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../tinydropdown.js"></script>
   </body>
   </html>
 

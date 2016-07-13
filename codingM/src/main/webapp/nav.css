@@ -53,11 +53,14 @@
 
 /* 드롭다운 간격 */
 #mypage {
-  margin-top: 15px;
+	padding-top: 4px;
+	margin-top: 25px;
 }
 #mysong {
-  margin-top: 13px;
-  margin-bottom: 5px;
+	margin-top: 1px;
+}
+#logout {
+	margin-top: 1px;
 }
 #profile {
   width: 80px;
@@ -91,7 +94,6 @@
   z-index: 1000
 }
 .menu ul {
-  display: none;
   position: absolute;
   top: 36px;
   background: none;
@@ -103,9 +105,9 @@ ul {
 .menu ul li div, li.menuhover li div, li.menuhover li.menuhover li div {
   float: none;
   display: block;
-  background: none;
-  height: 22px;
-  padding-top: 5px
+  background: white;
+  height: 25px;
+  padding-top: 3px;
 }
 .menu li div:hover, li.menuhover li a:hover, li.menuhover li.menuhover li div:hover{
   color: red; /* 메뉴글씨 hover */

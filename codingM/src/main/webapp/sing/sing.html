@@ -19,27 +19,10 @@
   <link href="../bower_components/record/css/style.css" rel="stylesheet">
   <script src="../bower_components/jquery/dist/jquery.js"></script>
   <script src="../login.js"></script>
+  <script src="http://www.w3schools.com/lib/w3data.js"></script>
 </head>
 <body>
-   <div id='container-fluid'>
-    <div id='logo' onclick='location.href="../mainpage/main.html"'>S e o k W o n S o n g</div>
-    <div class="nav">
-      <ul id="menu" class="menu">
-        <li class="nodiv"><div id="home">HOME</div></li>
-        <li><div id="sing" onclick='location.href="../sing/sing.html"'>SING</div></li>
-        <li><div id="song" onclick='location.href="../songs/song.html"'>SONG</div></li>
-        <li><div id="hof" onclick='location.href="../halloffame/halloffame.html"'>HALL OF FAME</div></li>
-        <li><div id="profile"><img id="profile2" src="../picture/default.png" align="right" /></div>
-          <ul>
-            <li><div id="mypage">MY PAGE</div></li>
-            <li><div id="mysong">MY SONG</div></li>
-            <li><div id="logout" onclick='location.href="../mainpage/main.html"'>LOGOUT</div></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-
+<div w3-include-html="../nav.html"></div>
     <div id='picture' class='container'>
       <img src='../picture/sing.PNG' />
     </div>
@@ -73,11 +56,11 @@
     <script src="../bower_components/jquery-gi-thewall/jQuery.GI.TheWall2.js"></script>
     <script src="../bower_components/videocontroller/dist/jquery.videoController.js"></script>
     <script src="tab_table.js"></script>
+    <script type="text/javascript" src="../tinydropdown.js"></script>
     <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../bower_components/handlebars/handlebars.min.js"></script>
     <script src="../bower_components/yui/build/yui/yui-min.js"></script>
     <script src="../bower_components/record/js/audiorecorder.js"></script>
-    <script type="text/javascript" src="../tinydropdown.js"></script>
     <script>
       var t1 = document.querySelector("#search")
       var imgbox = document.querySelector("#imgbox")
@@ -97,12 +80,10 @@
         $('#playing').videoController('stop');
       }
     </script>
-    <script type="text/javascript">
-    var dropdown = new TINY.dropdown.init("dropdown", {
-      id : 'menu',
-      active : 'menuhover'
-    });
+    <script>
+    w3IncludeHTML();
     </script>
+
 
 
   </body>
