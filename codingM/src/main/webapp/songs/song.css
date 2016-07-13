@@ -76,3 +76,8 @@ a:visited {
   display: inline-block;
 }
 
+#modalPic {
+  position: relative;
+  width: 300px;
+  left: 110px;
+}

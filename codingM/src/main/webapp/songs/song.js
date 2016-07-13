@@ -1,7 +1,4 @@
-var dropdown = new TINY.dropdown.init("dropdown", {
-    id : 'menu',
-    active : 'menuhover'
-  });
+
 
 function imageWall() {
   var wall = $('.GITheWall').GITheWall({
@@ -15,10 +12,10 @@ $(document).ready(function() {
 	    var template = Handlebars.compile(templateData)
 	    var html = template(result)
 	    $(".page").append(html)
-	    
+
 	    imageWall()
 	    $('.lili').css("display", "none")
-	    
+
 	    var count = parseInt(sessionStorage.getItem("scrollCount")) + 18;
 	    for (var i = sessionStorage.getItem("scrollCount"); i < count; i++) {
 	    	$($('.lili')[i]).toggle()
@@ -30,7 +27,7 @@ $(document).ready(function() {
 jQuery(window).scroll(function(){
     var docH=$(document).height();
     var scrollH = jQuery(window).height() + jQuery(window).scrollTop();
-    
+
     if(scrollH>=docH) {
     	var count = parseInt(sessionStorage.getItem("scrollCount")) + 18;
         for (var i = sessionStorage.getItem("scrollCount"); i < count; i++) {
@@ -46,7 +43,7 @@ function addListen() {
 
 Handlebars.registerHelper('statusBool', function(options) {
     if (this.status % 2 == 0) {
-    	return options.fn(this);    	
+    	return options.fn(this);
     } else {
     	return options.inverse(this);
     }
@@ -54,7 +51,7 @@ Handlebars.registerHelper('statusBool', function(options) {
 
 function changeHeart() {
 	var self = $('[data-sno=' + sessionStorage.getItem("sno") + '] div .disc div')
-	
+
 	if (self.attr("data-status") == 0) {
 		self.attr("data-status", 1)
 		$.getJSON("http://localhost:8080/codingM/like/add.do?sno=" + sessionStorage.getItem("sno"), function(result) {
