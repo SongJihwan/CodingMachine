@@ -14,15 +14,31 @@
   <link rel="stylesheet"
   href="../bower_components/jquery-ui/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" href="sing.css">
-  <link rel="stylesheet" href="../nav.css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="../bower_components/record/css/style.css" rel="stylesheet">
   <script src="../bower_components/jquery/dist/jquery.js"></script>
   <script src="../login.js"></script>
-  <script src="http://www.w3schools.com/lib/w3data.js"></script>
 </head>
 <body>
-<div w3-include-html="../nav.html"></div>
+    <div id='container-fluid'>
+      <div id='logo' onclick='location.href="../mainpage/main.html"'>S e o k W o n S o n g</div>
+      <div class="nav">
+        <ul id="menu" class="menu">
+          <li class="nodiv"><div id="home">HOME</div></li>
+          <li><div id="sing" onclick='location.href="../sing/sing.html"'>SING</div></li>
+          <li><div id="song" onclick='location.href="../songs/song.html"'>SONG</div></li>
+          <li><div id="hof" onclick='location.href="../halloffame/halloffame.html"'>HALL OF FAME</div></li>
+          <li><div id="profile"><img id="profile2" src="../picture/default.png" align="right" /></div>
+            <ul>
+              <li><div id="mypage" data-toggle="modal" data-target="#exampleModal" data-whatever="test@test.com">MY PAGE</div></li>
+              <li><div id="mysong">MY SONG</div></li>
+              <li><div id="logout" onclick='location.href="../mainpage/main.html"'>LOGOUT</div></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
     <div id='picture' class='container'>
       <img src='../picture/sing.PNG' />
     </div>
@@ -80,11 +96,14 @@
         $('#playing').videoController('stop');
       }
     </script>
+
+
     <script>
-    w3IncludeHTML();
+      var dropdown = new TINY.dropdown.init("dropdown", {
+        id : 'menu',
+        active : 'menuhover'
+      });
     </script>
-
-
 
   </body>
   </html>
