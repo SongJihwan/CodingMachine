@@ -51,13 +51,12 @@
 
 /* 드롭다운 간격 */
 #mypage {
-  padding-top: 4px;
+	border: 1px solid gray;
+  padding-top: 2px;
   margin-top: 25px;
 }
-#mysong {
-  margin-top: 1px;
-}
 #logout {
+	border: 1px solid gray;
   margin-top: 1px;
 }
 #profile {
