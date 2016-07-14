@@ -82,7 +82,6 @@ public class ReplyAjaxController {
     HashMap<String, Object> result = new HashMap<>();
     result.put("list", list);
     
-    System.out.println(new Gson().toJson(result));
     return new Gson().toJson(result);
   }
 }

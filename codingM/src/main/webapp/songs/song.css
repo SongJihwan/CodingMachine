@@ -112,7 +112,9 @@ li.menuhover div, li.menuhover li.menuhover div {
   background: none;
 }
 
-
+.glyphicon{
+	color: red;
+}
 
 .sect1 {
   float: left;
