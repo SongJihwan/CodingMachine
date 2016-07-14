@@ -1,5 +1,3 @@
-
-
 function imageWall() {
   var wall = $('.GITheWall').GITheWall({
   });
@@ -69,4 +67,8 @@ function changeHeart() {
 			}
 		});
 	}
+}
+
+function myUpdate() {
+	alert("수정되었습니다.")
 }
