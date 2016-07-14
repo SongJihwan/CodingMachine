@@ -20,9 +20,10 @@ import codingM.vo.Member;
 @RequestMapping("/auth")
 public class AuthController {
   @Autowired MemberService memberService;
+  @Autowired HttpSession session;
   @RequestMapping(value="/login", produces="application/json;charset=utf-8")
   @ResponseBody
-  public String login(String email, String password, HttpSession session) {
+  public String login(String email, String password) {
     Map<String, String> result = new HashMap<>();
     if (memberService.exist(email, password)) {
       Member member = memberService.retrieveByEmail(email);
@@ -36,7 +37,7 @@ public class AuthController {
   }
   
   @RequestMapping("/logout")
-  public String logout(HttpSession session, SessionStatus status) {
+  public String logout(SessionStatus status) {
     status.setComplete();
     session.invalidate();
     return "redirect:login.do";

@@ -12,26 +12,26 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.google.gson.Gson;
 
 import codingM.service.ReplyService;
+import codingM.vo.Member;
 import codingM.vo.Reply;
 import codingM.vo.ReplyMember;
 
 @Controller
 @RequestMapping("/replys/")
-@SessionAttributes("loginUser")
 public class ReplyAjaxController {
   @Autowired
   ReplyService replyService;
+  @Autowired
+  HttpSession session;
   
-  @RequestMapping(value="add", produces="application/json;charset=utf-8")
+  @RequestMapping(value="add", method=RequestMethod.POST, produces="application/json;charset=utf-8")
   @ResponseBody
-  public String add(String content, HttpSession session) {
-    Reply reply = new Reply();
-    reply.setContent(content);
+  public String add(int sno, String content) {
+    Reply reply = new Reply(((Member)session.getAttribute("loginUser")).getMno(), sno, content);
     
     HashMap<String, Object> result = new HashMap<>();
     try {
@@ -82,6 +82,7 @@ public class ReplyAjaxController {
     HashMap<String, Object> result = new HashMap<>();
     result.put("list", list);
     
+    System.out.println(new Gson().toJson(result));
     return new Gson().toJson(result);
   }
 }

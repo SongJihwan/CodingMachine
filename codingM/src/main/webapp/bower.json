@@ -24,6 +24,8 @@
     "jquery-session-plugin": "^0.0.1",
     "skrollr": "^0.6.30",
     "jquery.paging": "^0.2.0",
-    "react": "^15.2.0"
+    "react": "^15.2.0",
+    "babel": "*",
+    "remarkable": "^1.6.2"
   }
 }

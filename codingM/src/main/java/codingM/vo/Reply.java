@@ -8,6 +8,17 @@ public class Reply {
   private int sno;
   private String content;
   private Date writeDate;
+  
+  public Reply() {
+    super();
+    // TODO Auto-generated constructor stub
+  }
+
+  public Reply(int mno, int sno, String content) {
+    this.mno = mno;
+    this.sno = sno;
+    this.content = content;
+  }
 
   public int getRno() {
     return rno;

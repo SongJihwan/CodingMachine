@@ -5,6 +5,7 @@
   
 <mapper namespace="codingM.dao.ReplyDao">
   <insert id="insert" parameterType="Reply">
+    insert into reply(mno, sno, content, writeDate) values(#{mno}, #{sno}, #{content}, now()) 
   </insert>
 
   <update id="update" parameterType="Reply">

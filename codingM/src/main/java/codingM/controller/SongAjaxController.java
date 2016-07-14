@@ -25,6 +25,8 @@ import codingM.vo.SongMember;
 public class SongAjaxController {
   @Autowired
   SongService songService;
+  @Autowired
+  HttpSession session;
   
   @RequestMapping(value="add", produces="application/json;charset=utf-8")
   @ResponseBody
@@ -73,7 +75,7 @@ public class SongAjaxController {
   
   @RequestMapping(value="list", produces="application/json;charset=utf-8")
   @ResponseBody
-  public String list(HttpSession session) 
+  public String list() 
        throws ServletException, IOException {
     List<SongMember> list = songService.list(((Member)session.getAttribute("loginUser")).getMno());
 
@@ -85,7 +87,7 @@ public class SongAjaxController {
   
   @RequestMapping(value="listen", produces="application/json;charset=utf-8")
   @ResponseBody
-  public String listen(int sno, HttpSession session) throws ServletException, IOException {
+  public String listen(int sno) throws ServletException, IOException {
     HashMap<String, Object> result = new HashMap<>();
     if (((Member)session.getAttribute("loginUser")).getMno() != songService.getMno(sno)) {
       try {
