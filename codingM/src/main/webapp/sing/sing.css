@@ -125,7 +125,6 @@ li.menuhover div, li.menuhover li.menuhover div {
 #picture>img {
   width: 99.7%;
 }
-
 /* sing 검색 */
 
 #searchbox {
@@ -157,6 +156,9 @@ li.menuhover div, li.menuhover li.menuhover div {
   height: 20px;
   margin: 5px 0px 0px 0px;
   padding: 0px;
+}
+.imgboxtest {
+	margin-left: 200px;
 }
 
 .container {
