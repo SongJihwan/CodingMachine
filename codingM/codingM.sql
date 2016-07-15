@@ -200,6 +200,61 @@ insert into member(email, password, nickname) values('test4@test.co.kr', '1111',
 insert into member(email, password, nickname) values('test5@naver.com', '1111', 'test계정5');
 insert into member(email, password, nickname) values('test6', '1111', 'test계정6');
 
+insert into member(email, password, nickname) values('test01@test.com', '1111', '../picture/images01.PNG', 'test계정01');
+insert into member(email, password, nickname) values('test02@test.com', '1111', '../picture/images02.PNG', 'test계정02');
+insert into member(email, password, nickname) values('test03@test.com', '1111', '../picture/images03.PNG', 'test계정03');
+insert into member(email, password, nickname) values('test04@test.com', '1111', '../picture/images04.PNG', 'test계정04');
+insert into member(email, password, nickname) values('test05@test.com', '1111', '../picture/images05.PNG', 'test계정05');
+insert into member(email, password, nickname) values('test06@test.com', '1111', '../picture/images06.PNG', 'test계정06');
+insert into member(email, password, nickname) values('test07@test.com', '1111', '../picture/images07.PNG', 'test계정07');
+insert into member(email, password, nickname) values('test08@test.com', '1111', '../picture/images08.PNG', 'test계정08');
+insert into member(email, password, nickname) values('test09@test.com', '1111', '../picture/images09.PNG', 'test계정09');
+insert into member(email, password, nickname) values('test10@test.com', '1111', '../picture/images10.PNG', 'test계정10');
+insert into member(email, password, nickname) values('test11@test.com', '1111', '../picture/images11.PNG', 'test계정11');
+insert into member(email, password, nickname) values('test12@test.com', '1111', '../picture/images12.PNG', 'test계정12');
+insert into member(email, password, nickname) values('test13@test.com', '1111', '../picture/images13.PNG', 'test계정13');
+insert into member(email, password, nickname) values('test14@test.com', '1111', '../picture/images14.PNG', 'test계정14');
+insert into member(email, password, nickname) values('test15@test.com', '1111', '../picture/images15.PNG', 'test계정15');
+insert into member(email, password, nickname) values('test16@test.com', '1111', '../picture/images16.PNG', 'test계정16');
+insert into member(email, password, nickname) values('test17@test.com', '1111', '../picture/images17.JPG', 'test계정17');
+insert into member(email, password, nickname) values('test18@test.com', '1111', '../picture/images18.JPG', 'test계정18');
+insert into member(email, password, nickname) values('test19@test.com', '1111', '../picture/images19.JPG', 'test계정19');
+insert into member(email, password, nickname) values('test20@test.com', '1111', '../picture/images20.JPG', 'test계정20');
+insert into member(email, password, nickname) values('test21@test.com', '1111', '../picture/images21.JPG', 'test계정21');
+insert into member(email, password, nickname) values('test22@test.com', '1111', '../picture/images22.JPG', 'test계정22');
+insert into member(email, password, nickname) values('test23@test.com', '1111', '../picture/images23.JPG', 'test계정23');
+insert into member(email, password, nickname) values('test24@test.com', '1111', '../picture/images24.JPG', 'test계정24');
+insert into member(email, password, nickname) values('test25@test.com', '1111', '../picture/images25.JPG', 'test계정25');
+insert into member(email, password, nickname) values('test26@test.com', '1111', '../picture/images26.JPG', 'test계정26');
+insert into member(email, password, nickname) values('test27@test.com', '1111', '../picture/images27.JPG', 'test계정27');
+insert into member(email, password, nickname) values('test28@test.com', '1111', '../picture/images28.JPG', 'test계정28');
+insert into member(email, password, nickname) values('test29@test.com', '1111', '../picture/images29.JPG', 'test계정29');
+insert into member(email, password, nickname) values('test30@test.com', '1111', '../picture/images30.JPG', 'test계정30');
+insert into member(email, password, nickname) values('test31@test.com', '1111', '../picture/images31.JPG', 'test계정31');
+insert into member(email, password, nickname) values('test32@test.com', '1111', '../picture/images32.JPG', 'test계정32');
+insert into member(email, password, nickname) values('test33@test.com', '1111', '../picture/images33.JPG', 'test계정33');
+insert into member(email, password, nickname) values('test34@test.com', '1111', '../picture/images34.JPG', 'test계정34');
+insert into member(email, password, nickname) values('test35@test.com', '1111', '../picture/images35.JPG', 'test계정35');
+insert into member(email, password, nickname) values('test36@test.com', '1111', '../picture/images36.JPG', 'test계정36');
+insert into member(email, password, nickname) values('test37@test.com', '1111', '../picture/images37.JPG', 'test계정37');
+insert into member(email, password, nickname) values('test38@test.com', '1111', '../picture/images38.JPG', 'test계정38');
+insert into member(email, password, nickname) values('test39@test.com', '1111', '../picture/images39.JPG', 'test계정39');
+insert into member(email, password, nickname) values('test40@test.com', '1111', '../picture/images40.JPG', 'test계정40');
+insert into member(email, password, nickname) values('test41@test.com', '1111', '../picture/images41.JPG', 'test계정41');
+insert into member(email, password, nickname) values('test42@test.com', '1111', '../picture/images42.JPG', 'test계정42');
+insert into member(email, password, nickname) values('test43@test.com', '1111', '../picture/images43.JPG', 'test계정43');
+insert into member(email, password, nickname) values('test44@test.com', '1111', '../picture/images44.JPG', 'test계정44');
+insert into member(email, password, nickname) values('test45@test.com', '1111', '../picture/images45.JPG', 'test계정45');
+insert into member(email, password, nickname) values('test46@test.com', '1111', '../picture/images46.JPG', 'test계정46');
+insert into member(email, password, nickname) values('test47@test.com', '1111', '../picture/images47.JPG', 'test계정47');
+insert into member(email, password, nickname) values('test48@test.com', '1111', '../picture/images48.JPG', 'test계정48');
+insert into member(email, password, nickname) values('test49@test.com', '1111', '../picture/default.png', 'test계정49');
+insert into member(email, password, nickname) values('test50@test.com', '1111', '../picture/default.png', 'test계정50');
+
+
+
+
+
 
 insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)17', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
 insert into song(mno, title, singer, recordDate,fileName) values(1, '여러분(윤복희)18', '임재범', now(), '../upload/audio_recording_1467698467242.wav');
